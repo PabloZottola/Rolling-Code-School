@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../style/custominput.css";
 
-function CustomInput() {
+function CustomInput(props) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
@@ -16,6 +16,7 @@ function CustomInput() {
         value={inputValue}
         onChange={handleChange}
       />
+      <label>{props.name}</label>
     </>
   );
 }

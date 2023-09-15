@@ -1,33 +1,28 @@
 import "../style/register.css";
+import fondeRegistro from "../img/fondoRegistro.png";
 import CustomInput from "../components/CustomImput";
 
 function Register() {
   return (
     <>
       <section className="register">
-        <img src="" alt="" />
-        <form>
-          <CustomInput />
-          <label htmlFor="">E-Mail</label>
-          <div>
+        <div className="wrapper">
+          <img src={fondeRegistro} alt="" />
+          <form>
             <div>
-              <CustomInput />
-              <label htmlFor="">Nombre</label>
-              <CustomInput />
-              <label htmlFor="">Telefono</label>
-              <CustomInput />
-              <label htmlFor="">Confirmar contraseña</label>
+              <div>
+                <CustomInput name="Nombre" />
+                <CustomInput name="Numero de telefono" />
+                <CustomInput name="Contraseña" />
+              </div>
+              <div>
+                <CustomInput name="Apellido" />
+                <CustomInput name="Email" />
+                <CustomInput name="Repetir contraseña" />
+              </div>
             </div>
-            <div>
-              <CustomInput />
-              <label htmlFor="">Apellido</label>
-              <CustomInput />
-              <label htmlFor="">Fecha de nacimiento</label>
-              <CustomInput />
-              <label htmlFor="">Contraseña</label>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </section>
     </>
   );
