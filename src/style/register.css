@@ -1,0 +1,15 @@
+.register form {
+  display: grid;
+  grid-template-columns: repeat(1, 0fr);
+  justify-content: center;
+  grid-gap: 8px;
+}
+.register form div {
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+  grid-gap: 8px;
+}
+.register form div div {
+  display: flex;
+  flex-direction: column;
+}
