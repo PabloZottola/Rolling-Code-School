@@ -1,0 +1,40 @@
+label{
+    display: block;
+    position: relative;
+    top: -24px;
+    padding-left: 4px;
+
+}
+input{
+    display: block;
+    height: 24px;
+    padding: 1px 2px 0 4px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    z-index: 999;
+}
+input:focus{    
+    outline: none;
+}
+input:focus + label{    
+    outline: none;
+    top: -44px;
+    font-size: 10px;
+    transition: all 100ms;
+}
+.register form {
+    display: grid;
+    grid-template-columns: repeat(1, 0fr); 
+    justify-content: center;
+    grid-gap: 4px;
+}
+.register form div{
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);  
+    grid-gap: 4px;
+}
+.register form div div{
+    display: flex;
+    flex-direction: column;
+}
