@@ -1,6 +1,15 @@
 import "./style/App.css";
 
 function App() {
+
+  myInput.addEventListener('input', function() {
+    if (this.value.trim() !== '') {
+        this.classList.add('active');
+    } else {
+        this.classList.remove('active');
+    }
+  });
+
   return <>
   <main>
     <section className="register">
@@ -11,7 +20,7 @@ function App() {
         <div>
           <div>
             <input type="text" />
-            <label htmlFor="">Nombre</label>
+            <label id="myInput" htmlFor="">Nombre</label>
             <input type="text" />
             <label htmlFor="">Telefono</label>
             <input type="text" />
