@@ -1,6 +1,6 @@
-import "../style/register.css";
-import fondoRegistro from "../img/fondoRegistro.png";
-import CustomInput from "../components/CustomImput";
+import CustomInput from "../../components/CustomImput";
+import fondoRegistro from "../../img/fondoRegistro.png";
+import "../css/register.css";
 
 function Register() {
   return (

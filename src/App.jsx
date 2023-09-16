@@ -1,11 +1,11 @@
-import Register from "./components/Register";
+import { AppRouter } from "./routes/AppRouter";
 import "./style/app.css";
 
 function App() {
   return (
     <>
       <main>
-        <Register />
+        <AppRouter />
       </main>
     </>
   );

@@ -41,6 +41,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
   background-color: rgba(0, 0, 255, 0.6);
   cursor: pointer;
+  transition: transform 250ms ease;
+}
+.register div form button:hover {
+  transform: scale(1.08);
 }
 .register div form span {
   font-size: large;
