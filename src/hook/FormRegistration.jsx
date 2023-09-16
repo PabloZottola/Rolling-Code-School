@@ -62,6 +62,7 @@ function useRegistrationForm() {
         repeatPassword,
       });
       console.log(res);
+      setErrorMessage(res.data.msg);
     } catch (error) {
       console.log(error);
     }
