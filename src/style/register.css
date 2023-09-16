@@ -1,32 +1,56 @@
+.wrapper {
+  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+  border-radius: 20px;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top h2 {
+  position: absolute;
+  color: azure;
+  font-size: 54px;
+  text-shadow: 1px 1px 2px rgba(60, 95, 155, 0.7);
+}
 .register {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.wrapper {
-  box-shadow: 0 1px 6px rgba(0, 0, 255, 0.652);
-  border-radius: 20px;
-}
-.register img {
+
+.register div img {
   max-width: 559px;
   height: auto;
-  border-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
-.register form {
-  position: relative;
-  bottom: 20px;
+.register div form {
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(1, 0fr);
   grid-gap: 16px;
+  position: relative;
+  bottom: 20px;
   padding: 60px 30px 0 30px;
   border-radius: 20px;
 }
-.register form div {
+.register div form button {
+  padding: 14px 28px;
+  font-size: x-large;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.652);
+  background-color: rgba(0, 0, 255, 0.652);
+  cursor: pointer;
+}
+.register div form div {
   display: grid;
   grid-template-columns: repeat(2, 0fr);
   grid-gap: 16px;
 }
-.register form div div {
+.register div form div div {
   display: flex;
   flex-direction: column;
 }

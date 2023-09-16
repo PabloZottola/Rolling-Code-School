@@ -7,7 +7,10 @@ function Register() {
     <>
       <section className="register">
         <div className="wrapper">
-          <img src={fondeRegistro} alt="" />
+          <div className="top">
+            <h2>REGISTRO</h2>
+            <img src={fondeRegistro} alt="" />
+          </div>
           <form>
             <div>
               <div>
@@ -21,6 +24,7 @@ function Register() {
                 <CustomInput name="Repetir contraseña" />
               </div>
             </div>
+            <button>Registrarse</button>
           </form>
         </div>
       </section>
