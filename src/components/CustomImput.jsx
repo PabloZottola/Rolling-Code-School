@@ -20,6 +20,8 @@ function CustomInput() {
         repeatPassword
       )
     )
+      // PASAR A MINUSCULA EL NOMRE Y APELLIDO
+      // VALIDAR LOS .. CARACTERES ESPECIALES EN NOMBRE, APELLIDO Y TELEFONO
       return console.log("Todos los campos son obligatorios.");
     if (/\d/.test(firstName)) return console.log("Nombre invalido.");
     if (firstName.length < 2) return console.log("Nombre invalido.");
@@ -30,6 +32,7 @@ function CustomInput() {
     if (phone.length < 9 || phone.length > 10)
       return console.log("Numero de telefono invalido.");
     // if (phoneExist) return console.log("Numero de telefono invalido.");
+    // PASAR A MINUSCULA EL EMAIL
     if (!validateEmail(email)) return console.log("E-mail no valido.");
     // if (emailExist) return console.log("E-mail no valido.");
     if (password.length <= 5) return console.log("Contraseña invalida.");
@@ -71,7 +74,6 @@ function CustomInput() {
       const validateEmail = regEx.test(email);
       return validateEmail;
     }
-
     clearState();
   };
   const clearState = () => {
@@ -88,30 +90,53 @@ function CustomInput() {
         <div>
           <div>
             <input
-              id="name"
+              type="name"
               name="name"
-              maxlength="24"
-              type="text"
+              maxLength="24"
               className={firstName ? "custom-input active" : "custom-input"}
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
             <label>Nombre</label>
+          </div>
+          <div>
+            <input
+              type="lastname"
+              name="lastname"
+              maxLength="24"
+              className={lastName ? "custom-input active" : "custom-input"}
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            <label>Apellido</label>
+          </div>
+          <div>
             <input
               type="phone"
-              id="phone"
               name="phone"
-              maxlength="11"
+              maxLength="10"
               className={phone ? "custom-input active" : "custom-input"}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
             <label>Numero de telefono</label>
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              maxLength="35"
+              className={email ? "custom-input active" : "custom-input"}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>Email</label>
+          </div>
+          <div>
             <input
               type="password"
-              id="password"
               name="password"
-              maxlength="20"
+              maxLength="20"
               className={password ? "custom-input active" : "custom-input"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -120,30 +145,9 @@ function CustomInput() {
           </div>
           <div>
             <input
-              type="lastname"
-              id="lastname"
-              name="lastname"
-              maxlength="24"
-              className={lastName ? "custom-input active" : "custom-input"}
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <label>Apellido</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              maxlength="35"
-              className={email ? "custom-input active" : "custom-input"}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label>Email</label>
-            <input
               type="password"
-              id="password"
               name="password"
-              maxlength="20"
+              maxLength="20"
               className={
                 repeatPassword ? "custom-input active" : "custom-input"
               }
