@@ -9,7 +9,10 @@ function Register() {
         <div className="wrapper">
           <div className="top">
             <h2>REGISTRO</h2>
-            <img src={fondoRegistro} alt="" />
+            <img
+              src={fondoRegistro}
+              alt="Formulario de registro para los profesores"
+            />
           </div>
           <CustomInput />
         </div>

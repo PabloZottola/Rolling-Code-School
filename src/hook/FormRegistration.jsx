@@ -48,10 +48,10 @@ function useRegistrationForm() {
       return;
     }
 
-    startLogin();
+    startRegister();
   };
 
-  const startLogin = async () => {
+  const startRegister = async () => {
     try {
       const res = await EscuelaApi.post("/auth/register", {
         firstName,
