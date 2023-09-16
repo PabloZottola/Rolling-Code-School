@@ -1,5 +1,5 @@
 import "../style/register.css";
-import fondeRegistro from "../img/fondoRegistro.png";
+import fondoRegistro from "../img/fondoRegistro.png";
 import CustomInput from "../components/CustomImput";
 
 function Register() {
@@ -9,23 +9,9 @@ function Register() {
         <div className="wrapper">
           <div className="top">
             <h2>REGISTRO</h2>
-            <img src={fondeRegistro} alt="" />
+            <img src={fondoRegistro} alt="" />
           </div>
-          <form>
-            <div>
-              <div>
-                <CustomInput name="Nombre" />
-                <CustomInput name="Numero de telefono" />
-                <CustomInput name="Contraseña" />
-              </div>
-              <div>
-                <CustomInput name="Apellido" />
-                <CustomInput name="Email" />
-                <CustomInput name="Repetir contraseña" />
-              </div>
-            </div>
-            <button>Registrarse</button>
-          </form>
+          <CustomInput />
         </div>
       </section>
     </>
