@@ -1,3 +1,4 @@
+import EscuelaApi from "../api/EscuelaApi";
 import { useState } from "react";
 
 function useRegistrationForm() {
@@ -13,7 +14,14 @@ function useRegistrationForm() {
     e.preventDefault();
     setErrorMessage("");
 
-    if (checkEmptySpacesRegister()) {
+    if (
+      firstName.trim() === "" ||
+      lastName.trim() === "" ||
+      phone.trim() === "" ||
+      email.trim() === "" ||
+      password.trim() === "" ||
+      repeatPassword.trim() === ""
+    ) {
       setErrorMessage("Todos los campos son obligatorios.");
       return;
     }
@@ -40,45 +48,28 @@ function useRegistrationForm() {
       return;
     }
 
-    const datos = {
-      firstName: firstName,
-      lastName: lastName,
-      phone: phone,
-      email: email,
-      password: password,
-      repeatPassword: repeatPassword,
-    };
-    clearState();
+    startLogin();
   };
 
-  const checkEmptySpacesRegister = () => {
-    if (
-      firstName.trim() === "" ||
-      lastName.trim() === "" ||
-      phone.trim() === "" ||
-      email.trim() === "" ||
-      password.trim() === "" ||
-      repeatPassword.trim() === ""
-    ) {
-      return true;
-    } else {
-      return false;
+  const startLogin = async () => {
+    try {
+      const res = await EscuelaApi.post("/auth/register", {
+        firstName,
+        lastName,
+        phone,
+        email,
+        password,
+        repeatPassword,
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
     }
   };
-
   const validateEmail = () => {
     const regEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const validateEmail = regEx.test(email);
     return validateEmail;
-  };
-
-  const clearState = () => {
-    setFirstName("");
-    setLastName("");
-    setPhone("");
-    setEmail("");
-    setPassword("");
-    setRepeatPassword("");
   };
 
   return {
