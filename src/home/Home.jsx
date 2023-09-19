@@ -1,9 +1,12 @@
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
+
 function Index() {
   return (
     <>
-      <header></header>
-      <main></main>
-      <footer></footer>
+      <NavBar />
+      <main>asda</main>
+      <Footer />
     </>
   );
 }
