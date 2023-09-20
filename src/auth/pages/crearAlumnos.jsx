@@ -1,6 +1,6 @@
 import CustomImputCrearAlumnos from "../../components/CustomImputCrearAlumnos";
 import fondoRegistro from "../../img/fondoRegistro.png";
-import "../css/register.css";
+import "../css/crearAlumnos.css";
 
 function CrearAlumnos() {
   return (

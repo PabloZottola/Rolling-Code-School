@@ -1,6 +1,6 @@
-import useCrearAlumnosForm from "../hook/useCrearAlumnosForm";
+import useCrearAlumnosForm from "../hook/FormCrearAlumnos";
 
-function useCrearAlumnosForm() {
+function CustomImputCrearAlumnos() {
   const {
     firstName,
     setFirstName,
@@ -69,4 +69,4 @@ function useCrearAlumnosForm() {
   );
 }
 
-export default useCrearAlumnosForm;
+export default CustomImputCrearAlumnos;
