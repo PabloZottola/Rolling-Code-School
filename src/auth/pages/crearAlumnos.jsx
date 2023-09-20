@@ -2,7 +2,7 @@ import customImputCrearAlumnos from "../../components/customImputCrearAlumnos";
 import fondoRegistro from "../../img/fondoRegistro.png";
 import "../css/register.css";
 
-function crearAlumnos() {
+function CrearAlumnos() {
   return (
     <>
       <section className="register">
@@ -21,4 +21,4 @@ function crearAlumnos() {
   );
 }
 
-export default crearAlumnos;
+export default CrearAlumnos;

@@ -16,7 +16,7 @@ function useRegistrationForm() {
       firstName.trim() === "" ||
       lastName.trim() === "" ||
       phone.trim() === "" ||
-      email.trim() === "" ||
+      email.trim() === ""    //aquí no hay ||
     ) {
       setErrorMessage("Todos los campos son obligatorios.");
       return;
