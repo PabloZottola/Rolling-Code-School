@@ -1,0 +1,29 @@
+.layout {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  &.proximity {
+    scroll-snap-type: y proximity;
+  }
+}
+.layout div {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  margin: 0;
+  padding: 0;
+}
+.layout div img {
+  scroll-snap-align: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  filter: contrast(80%);
+  filter: blur(0.6px);
+  object-fit: cover;
+}
