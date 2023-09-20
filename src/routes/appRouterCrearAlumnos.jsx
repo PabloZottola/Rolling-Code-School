@@ -6,7 +6,7 @@ export const AppRouterCrearAlumnos = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/CrearAlumnos" element={<CrearAlumnos />} />
+        <Route path="/crearAlumnos" element={<CrearAlumnos />} />
       </Routes>
     </BrowserRouter>
   );

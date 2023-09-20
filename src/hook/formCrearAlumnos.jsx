@@ -21,7 +21,7 @@ function useCrearAlumnosForm() {
       setErrorMessage("Todos los campos son obligatorios.");
       return;
     }
-    if (/\d/.test(firstName) || firstName.length < 2) {
+    if (/\d/.test(firstName) || firstName.length < 3) {
       setErrorMessage("Nombre invalido.");
       return;
     }
