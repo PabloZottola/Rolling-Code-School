@@ -95,3 +95,27 @@ label {
   font-size: medium;
   color: rgb(100, 100, 100);
 }
+@media screen and (max-width: 580px) {
+  .register div form {
+    padding: 30px 16px 16px 16px;
+  }
+  .register div form div {
+    grid-template-columns: repeat(1, 0fr);
+    gap: 8px;
+  }
+  .register div img {
+    max-width: 272px;
+  }
+  label {
+    font-size: large;
+  }
+  .custom-input {
+    font-size: medium;
+  }
+  .custom-input:focus + label {
+    font-size: smaller;
+  }
+  .custom-input.active + label {
+    font-size: smaller;
+  }
+}

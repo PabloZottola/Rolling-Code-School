@@ -27,6 +27,7 @@ header div {
 header div a img {
   width: auto;
   height: 48px;
+  color: white;
 }
 .right {
   flex-direction: row-reverse;
