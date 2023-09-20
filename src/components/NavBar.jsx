@@ -7,7 +7,7 @@ function NavBar() {
     <header>
       <div className="left">
         <a href="">
-          <img src={Logo} alt="Logo sin fondo" />
+          <img src={Logo} alt="Logo de la escuela sin fondo" />
         </a>
       </div>
       <ul>
@@ -17,7 +17,7 @@ function NavBar() {
       </ul>
       <div className="right">
         <a href="">
-          <img src={login} alt="" />
+          <img src={login} alt="Boton ingresar a su cuenta de usuario" />
         </a>
       </div>
     </header>
