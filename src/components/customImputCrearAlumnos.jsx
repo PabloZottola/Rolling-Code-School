@@ -1,6 +1,6 @@
 import useCrearAlumnosForm from "../hook/useCrearAlumnosForm";
 
-function CustomInput() {
+function useCrearAlumnosForm() {
   const {
     firstName,
     setFirstName,

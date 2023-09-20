@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Register from "../auth/pages/crearAlumnos";
+import crearAlumnos from "../auth/pages/crearAlumnos";
 
 export const AppRouter = () => {
   return (

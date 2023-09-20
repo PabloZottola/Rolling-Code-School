@@ -2,7 +2,7 @@ import customImputCrearAlumnos from "../../components/customImputCrearAlumnos";
 import fondoRegistro from "../../img/fondoRegistro.png";
 import "../css/register.css";
 
-function Register() {
+function crearAlumnos() {
   return (
     <>
       <section className="register">
@@ -14,7 +14,7 @@ function Register() {
               alt="Formulario de registro de alumnos"
             />
           </div>
-          <CustomInput />
+          <customImputCrearAlumnos />
         </div>
       </section>
     </>
