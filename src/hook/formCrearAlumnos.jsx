@@ -4,6 +4,7 @@ import { useState } from "react";
 function useCrearAlumnosForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [yearOfStudy, setYearOfStudy] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -15,6 +16,7 @@ function useCrearAlumnosForm() {
     if (
       firstName.trim() === "" ||
       lastName.trim() === "" ||
+      yearOfStudy.trim() === "" ||
       phone.trim() === "" ||
       email.trim() === ""    //aquí no hay ||
     ) {
@@ -27,6 +29,10 @@ function useCrearAlumnosForm() {
     }
     if (/\d/.test(lastName) || lastName.length < 2) {
       setErrorMessage("Apellido invalido.");
+      return;
+    }
+    if (!YearOfStudy || isNaN(YearOfStudy) || YearOfStudy < 1 || YearOfStudy > 6) {
+      setErrorMessage("Seleccione un año válido.");
       return;
     }
     if (/[a-zA-Z]/.test(phone) || phone.length < 9 || phone.length > 10) {
@@ -47,6 +53,7 @@ function useCrearAlumnosForm() {
       const res = await EscuelaApi.post("/auth/crearAlumnos", {
         firstName,
         lastName,
+        yearOfStudy,
         phone,
         email,
       });
@@ -67,6 +74,8 @@ function useCrearAlumnosForm() {
     setFirstName,
     lastName,
     setLastName,
+    yearOfStudy,
+    setYearOfStudy,
     phone,
     setPhone,
     email,

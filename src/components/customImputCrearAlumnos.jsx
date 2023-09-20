@@ -8,6 +8,8 @@ function CustomImputCrearAlumnos() {
     setLastName,
     phone,
     setPhone,
+    yearOfStudy,
+    setYearOfStudy,
     email,
     setEmail,
     errorMessage,
@@ -39,6 +41,27 @@ function CustomImputCrearAlumnos() {
             />
             <label>Apellido</label>
           </div>
+
+          <div>
+            <select
+              name="YearOfStudy"
+              value={yearOfStudy}
+              onChange={(e) => setYearOfStudy(e.target.value)}
+              className={yearOfStudy ? "custom-input active" : "custom-input"}
+            >
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            <label>Año de cursado</label>
+
+          </div>
+
+
           <div>
             <input
               type="phone"
@@ -61,7 +84,7 @@ function CustomImputCrearAlumnos() {
             />
             <label>Email</label>
           </div>
-          </div>
+        </div>
         <span>{errorMessage}</span>
         <button type="submit">Registrar alumno</button>
       </form>
