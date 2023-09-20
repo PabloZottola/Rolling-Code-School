@@ -14,7 +14,6 @@ header div {
   display: flex;
   flex-grow: 1;
   flex-basis: 0;
-  padding: 16px 32px 0 0;
 }
 header div a img {
   width: auto;
