@@ -1,7 +1,7 @@
 import EscuelaApi from "../api/EscuelaApi";
 import { useState } from "react";
 
-function useRegistrationForm() {
+function useCrearAlumnosForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");

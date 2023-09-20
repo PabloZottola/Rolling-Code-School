@@ -1,14 +1,14 @@
-import { appRouterCrearAlumnos } from "./routes/appRouterCrearAlumnos";
+import { AppRouterCrearAlumnos } from "./routes/AppRouterCrearAlumnos";
 import "./style/app.css";
 
-function appCrearAlumnos() {
+function AppCrearAlumnos() {
   return (
     <>
       <main>
-        <appRouterCrearAlumnos />
+        <AppRouterCrearAlumnos />
       </main>
     </>
   );
 }
 
-export default appCrearAlumnos;
+export default AppCrearAlumnos;

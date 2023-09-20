@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import crearAlumnos from "../auth/pages/crearAlumnos";
+import CrearAlumnos from "../auth/pages/CrearAlumnos";
 
-export const AppRouter = () => {
+export const AppRouterCrearAlumnos = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/crearAlumnos" element={<crearAlumnos />} />
+        <Route path="/CrearAlumnos" element={<CrearAlumnos />} />
       </Routes>
     </BrowserRouter>
   );

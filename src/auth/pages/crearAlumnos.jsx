@@ -1,4 +1,4 @@
-import customImputCrearAlumnos from "../../components/customImputCrearAlumnos";
+import CustomImputCrearAlumnos from "../../components/CustomImputCrearAlumnos";
 import fondoRegistro from "../../img/fondoRegistro.png";
 import "../css/register.css";
 
@@ -14,7 +14,7 @@ function CrearAlumnos() {
               alt="Formulario de registro de alumnos"
             />
           </div>
-          <customImputCrearAlumnos />
+          <CustomImputCrearAlumnos />
         </div>
       </section>
     </>
