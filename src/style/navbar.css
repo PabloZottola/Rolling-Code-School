@@ -2,6 +2,7 @@ header {
   display: flex;
   align-items: center;
   position: relative;
+  margin: 16px 32px;
 }
 header ul {
   display: flex;
@@ -9,6 +10,9 @@ header ul {
   padding: 0;
   margin: 0;
   gap: 60px;
+}
+header ul li {
+  text-align: center;
 }
 header div {
   display: flex;
@@ -21,4 +25,12 @@ header div a img {
 }
 .right {
   flex-direction: row-reverse;
+}
+@media screen and (max-width: 490px) {
+  header {
+    margin: 8px 16px;
+  }
+  header ul {
+    display: none;
+  }
 }
