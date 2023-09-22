@@ -1,6 +1,6 @@
 import "../style/navbar.css";
 import Logo from "../img/Logo.png";
-import login from "../img/login.png";
+import login from "../img/usuario.png";
 
 function NavBar() {
   return (
