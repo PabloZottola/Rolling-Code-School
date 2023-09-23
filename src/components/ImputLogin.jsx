@@ -31,7 +31,7 @@ function ImputLogin() {
           </div>
         </div>
         <span>{errorMessage}</span>
-        <button type="submit">Registrarse</button>
+        <button type="submit">Ingresar</button>
       </form>
     </>
   );

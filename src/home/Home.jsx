@@ -1,4 +1,3 @@
-import { useState } from "react";
 import escuela1 from "../img/escuela1.jpg";
 import escuela2 from "../img/escuela2.jpg";
 import escuela3 from "../img/escuela3.jpg";
@@ -9,15 +8,17 @@ import "../style/home.css";
 import "../style/navbar.css";
 import "../style/footer.css";
 import Login from "../auth/pages/Login";
+import { useState } from "react";
 
 function Index() {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleClick = () => {
-    console.log(isModalOpen);
-    if (isModalOpen) {
-      return setModalOpen(false);
-    } else setModalOpen(true);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
   return (
     <>
@@ -29,7 +30,7 @@ function Index() {
           <img src={escuela4} alt="" />
         </div>
       </div>
-      {isModalOpen ? <Login></Login> : ""}
+      {isModalOpen ? <Login isOpen={isModalOpen} onClose={closeModal} /> : ""}
       <header>
         <div className="left">
           <a href="">
@@ -42,7 +43,7 @@ function Index() {
           <li>Tienda</li>
         </ul>
         <div className="right">
-          <button onClick={handleClick}>
+          <button onClick={openModal}>
             <img src={login} alt="Boton ingresar a su cuenta de usuario" />
           </button>
         </div>

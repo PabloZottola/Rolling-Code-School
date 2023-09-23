@@ -7,6 +7,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.top button {
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
+  background-color: rgba(24, 24, 255, 0.9);
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: x-large;
+  font-weight: 600;
+  transition: transform 250ms ease;
+}
+.top button:hover {
+  transform: scale(1.1);
 }
 .top h2 {
   position: absolute;
@@ -26,7 +44,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 .auth div img {
-  max-width: 559px;
+  width: 60vh;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
@@ -98,7 +116,7 @@ label {
 .custom-input.active + label {
   bottom: 60px;
   font-size: medium;
-  color: rgb(100, 100, 100);a
+  color: rgb(100, 100, 100);
 }
 @media screen and (max-width: 580px) {
   .auth div form {
@@ -109,22 +127,25 @@ label {
     gap: 8px;
   }
   .auth div img {
-    width: 280px;
+    width: 42vh;
   }
   .auth div form button {
     padding: 12px 20px;
     font-size: large;
   }
   label {
-    font-size: large;
+    font-size: x-large;
+    bottom: 40px;
   }
   .custom-input {
     font-size: medium;
   }
   .custom-input:focus + label {
     font-size: smaller;
+    bottom: 60px;
   }
   .custom-input.active + label {
     font-size: smaller;
+    bottom: 60px;
   }
 }
