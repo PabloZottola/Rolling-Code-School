@@ -32,6 +32,12 @@ header div a img {
 .right {
   flex-direction: row-reverse;
 }
+.right button {
+  border: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
 @media screen and (max-width: 490px) {
   header {
     padding: 8px 16px;

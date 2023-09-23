@@ -1,6 +1,7 @@
 .wrapper {
   box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
   border-radius: 20px;
+  background-color: white;
 }
 .top {
   display: flex;
@@ -18,8 +19,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-
 .auth div img {
   max-width: 559px;
   border-top-right-radius: 20px;
@@ -93,18 +98,22 @@ label {
 .custom-input.active + label {
   bottom: 60px;
   font-size: medium;
-  color: rgb(100, 100, 100);
+  color: rgb(100, 100, 100);a
 }
 @media screen and (max-width: 580px) {
   .auth div form {
-    padding: 30px 16px 16px 16px;
+    padding: 38px 16px 24px 16px;
   }
   .auth div form div {
     grid-template-columns: repeat(1, 0fr);
     gap: 8px;
   }
   .auth div img {
-    max-width: 272px;
+    width: 280px;
+  }
+  .auth div form button {
+    padding: 12px 20px;
+    font-size: large;
   }
   label {
     font-size: large;
