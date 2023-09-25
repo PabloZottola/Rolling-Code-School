@@ -28,7 +28,7 @@ function Admin() {
             <span>Año: </span>
             <span>Expediente: </span>
             <button>
-              <img src=" " alt="Boton para ver los detalles del alumnos" />
+              <img src="" alt="Boton para ver los detalles del alumnos" />
             </button>
           </div>
         </section>
