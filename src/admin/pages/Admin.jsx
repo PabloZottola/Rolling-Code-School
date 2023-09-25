@@ -19,7 +19,20 @@ function Admin() {
           <img src={login} alt="Boton ingresar a su cuenta de usuario" />
         </div>
       </header>
-      <main></main>
+      <main>
+        <section>
+          <div>
+            <div></div>
+            <span>Nombre: </span>
+            <span>Apellido: </span>
+            <span>Año: </span>
+            <span>Expediente: </span>
+            <button>
+              <img src=" " alt="Boton para ver los detalles del alumnos" />
+            </button>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
