@@ -31,7 +31,7 @@ function Index() {
         </div>
       </div>
       {isModalOpen ? <Login isOpen={isModalOpen} onClose={closeModal} /> : ""}
-      <header>
+      <header className="header">
         <div className="left">
           <a href="">
             <img src={Logo} alt="Logo de la escuela sin fondo" />

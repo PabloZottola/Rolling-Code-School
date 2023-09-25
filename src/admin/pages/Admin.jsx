@@ -1,3 +1,4 @@
+import ListAlumnos from "../../components/ListAlumnos";
 import Logo from "../../img/Logo.png";
 import login from "../../img/usuario.png";
 import "../css/admin.css";
@@ -21,16 +22,17 @@ function Admin() {
       </header>
       <main>
         <section>
-          <div>
-            <div></div>
-            <span>Nombre: </span>
-            <span>Apellido: </span>
-            <span>Año: </span>
-            <span>Expediente: </span>
-            <button>
-              <img src="" alt="Boton para ver los detalles del alumnos" />
-            </button>
-          </div>
+          <ul className="cardAlummnos">
+            <ListAlumnos />
+            <ListAlumnos />
+            <ListAlumnos />
+            <ListAlumnos />
+            <ListAlumnos />
+            <ListAlumnos />
+            <ListAlumnos />
+            <ListAlumnos />
+            <ListAlumnos />
+          </ul>
         </section>
       </main>
     </>
