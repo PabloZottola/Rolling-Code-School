@@ -31,6 +31,7 @@ function useLoginForm() {
         password,
       });
       setErrorMessage(res.data.msg);
+      console.log(res);
       localStorage.setItem("token", res.data.token);
     } catch (error) {
       console.log(error);
