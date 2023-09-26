@@ -1,17 +1,14 @@
 import "../admin/css/admin.css";
 
-function ListAlumnos({ firstName, lastName, phone, id }) {
+function ListAlumnos({ user }) {
   return (
-    <>
-      <li key={id}>
-        <div></div>
-        <span>Nombre: {firstName}</span>
-        <span>Apellido: {lastName}</span>
-        <span>Año: {phone}</span>
-        <span>Expediente: {id}</span>
-        <button>Detalle del Alumno</button>
-      </li>
-    </>
+    <li>
+      <span>Nombre: {user.firstName}</span>
+      <span>Apellido: {user.lastName}</span>
+      <span>Año: {user.phone}</span>
+      <span>Expediente: {user._id}</span>
+      <button>Detalle del Alumno</button>
+    </li>
   );
 }
 

@@ -40,16 +40,9 @@ function Admin() {
       <main>
         <section>
           <ul className="cardAlummnos">
-            {cargarAlumno.map((user) => {
-              return (
-                <ListAlumnos
-                  firstName={user.firstName}
-                  lastName={user.lastName}
-                  phone={user.phone}
-                  id={user._id}
-                />
-              );
-            })}
+            {cargarAlumno.map((user) => (
+              <ListAlumnos user={user} key={user._id} />
+            ))}
           </ul>
         </section>
       </main>
