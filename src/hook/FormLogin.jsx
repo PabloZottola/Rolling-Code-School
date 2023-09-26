@@ -30,8 +30,8 @@ function useLoginForm() {
         email,
         password,
       });
-      console.log(res);
       setErrorMessage(res.data.msg);
+      localStorage.setItem("token", res.data.token);
     } catch (error) {
       console.log(error);
     }

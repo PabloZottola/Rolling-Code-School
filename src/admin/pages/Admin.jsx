@@ -12,7 +12,6 @@ function Admin() {
     try {
       const res = await EscuelaApi.get("/admin");
       setCargarAlumno(res.data.user);
-      console.log(cargarAlumno);
     } catch (error) {
       if (error) {
       }
