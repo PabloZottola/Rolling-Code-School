@@ -1,0 +1,16 @@
+.wrapper {
+  box-shadow: 3px 3px 8px rgba(255, 0, 0, 0.404);
+  border-radius: 20px;
+}
+
+* {
+padding: 0;
+margin: 0;
+}
+
+/*
+.register div img {
+  max-width: 615px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+} */
