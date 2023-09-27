@@ -18,8 +18,8 @@
   color: white;
   cursor: pointer;
   position: absolute;
-  top: 6px;
-  right: 8px;
+  top: 10px;
+  right: 12px;
   font-size: x-large;
   font-weight: 600;
   transition: transform 250ms ease;
