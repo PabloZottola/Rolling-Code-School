@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 import AppContext from "./AppContext";
 import PublicRouter from "./routes/PublicRouter";
 import "./style/app.css";
 import PrivateRouter from "./routes/PrivateRouter";
-import { BrowserRouter } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [loading, setLoading] = useState(true);
   const logged = localStorage.getItem("token");
@@ -34,7 +35,7 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={{ isUserLogged, setIsUserLogged }}>
+    <AppContext.Provider value={{ isUserLogged, setIsUserLogged , isModalOpen, setIsModalOpen}}>
       {isUserLogged ? (
         <BrowserRouter>
           <PrivateRouter />

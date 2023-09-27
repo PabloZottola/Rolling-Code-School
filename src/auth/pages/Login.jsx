@@ -1,15 +1,24 @@
-import ImputLogin from "../../components/ImputLogin";
+import { useContext } from "react";
+import AppContext from "../../AppContext";
 import fondoRegistro from "../../img/fondoRegistro.png";
+import ImputLogin from "../../components/ImputLogin";
 import "../css/auth.css";
 
-function Login({ isOpen, onClose }) {
-  if (!isOpen) return null;
+function Login() {
+  const {isModalOpen, setIsModalOpen} = useContext(AppContext);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  if (!isModalOpen) return null;
+
   return (
     <>
       <section className="auth">
         <div className="wrapper">
           <div className="top">
-            <button onClick={onClose}>X</button>
+            <button onClick={closeModal}>X</button>
             <h2>LOGIN</h2>
             <img
               src={fondoRegistro}
