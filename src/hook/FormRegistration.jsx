@@ -1,5 +1,5 @@
-import EscuelaApi from "../api/EscuelaApi";
 import { useState } from "react";
+import EscuelaApi from "../api/EscuelaApi";
 
 function useRegistrationForm() {
   const [firstName, setFirstName] = useState("");

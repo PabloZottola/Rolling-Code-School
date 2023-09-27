@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppContext from "./AppContext";
 import PublicRouter from "./routes/PublicRouter";
-import "./style/app.css";
 import PrivateRouter from "./routes/PrivateRouter";
 import jwt_decode from "jwt-decode";
+import "./style/app.css";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);

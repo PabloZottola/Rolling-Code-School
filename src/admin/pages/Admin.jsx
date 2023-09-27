@@ -1,9 +1,8 @@
+import { useState, useEffect } from "react";
 import EscuelaApi from "../../api/EscuelaApi";
 import ListAlumnos from "../../components/ListAlumnos";
 import Logo from "../../img/Logo.png";
 import login from "../../img/usuario.png";
-import { useState } from "react";
-import { useEffect } from "react";
 import "../css/admin.css";
 
 function Admin() {

@@ -1,5 +1,5 @@
-import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
 import Register from "../auth/pages/Register";
 import Admin from "../admin/pages/Admin";
 

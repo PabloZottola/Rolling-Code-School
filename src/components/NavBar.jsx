@@ -1,8 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
+import AppContext from "../AppContext";
 import Logo from "../img/Logo.png";
 import login from "../img/usuario.png";
 import "../style/navbar.css";
-import AppContext from "../AppContext";
 
 function NavBar() {
     const {setIsModalOpen, isUserLogged} = useContext(AppContext);   

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../../AppContext";
-import fondoRegistro from "../../img/fondoRegistro.png";
+import fondoLogin from "../../img/backLogin.png";
 import ImputLogin from "../../components/ImputLogin";
 import "../css/auth.css";
 
@@ -21,7 +21,7 @@ function Login() {
             <button onClick={closeModal}>X</button>
             <h2>LOGIN</h2>
             <img
-              src={fondoRegistro}
+              src={fondoLogin}
               alt="Formulario de registro para los profesores"
             />
           </div>
