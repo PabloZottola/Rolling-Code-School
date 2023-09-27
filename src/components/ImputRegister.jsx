@@ -1,6 +1,6 @@
 import useRegistrationForm from "../hook/FormRegistration";
 
-function CustomInput() {
+function ImputRegister() {
   const {
     firstName,
     setFirstName,
@@ -97,4 +97,4 @@ function CustomInput() {
   );
 }
 
-export default CustomInput;
+export default ImputRegister;

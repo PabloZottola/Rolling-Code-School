@@ -1,11 +1,30 @@
 .wrapper {
   box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
   border-radius: 20px;
+  background-color: white;
 }
 .top {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.top button {
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
+  background-color: rgba(24, 24, 255, 0.9);
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: x-large;
+  font-weight: 600;
+  transition: transform 250ms ease;
+}
+.top button:hover {
+  transform: scale(1.1);
 }
 .top h2 {
   position: absolute;
@@ -14,25 +33,31 @@
   text-shadow: 1px 1px 2px rgba(60, 95, 155, 0.7);
   user-select: none;
 }
-.register {
+.auth {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
 }
-
-.register div img {
-  max-width: 559px;
+.auth div img {
+  height: 30vh;
+  width: 64vh;
+  object-fit: cover;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
-.register div form {
+.auth div form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 30px 30px 30px;
   border-radius: 20px;
 }
-.register div form button {
+.auth div form button {
   padding: 14px 28px;
   font-size: x-large;
   color: white;
@@ -43,22 +68,22 @@
   cursor: pointer;
   transition: transform 250ms ease;
 }
-.register div form button:hover {
+.auth div form button:hover {
   transform: scale(1.08);
 }
-.register div form span {
+.auth div form span {
   font-size: large;
   font-weight: 600;
   color: red;
   height: 10px;
   margin-bottom: 24px;
 }
-.register div form div {
+.auth div form div {
   display: grid;
   grid-template-columns: repeat(2, 0fr);
   grid-gap: 16px;
 }
-.register div form div div {
+.auth div form div div {
   display: flex;
   flex-direction: column;
 }
@@ -94,4 +119,35 @@ label {
   bottom: 60px;
   font-size: medium;
   color: rgb(100, 100, 100);
+}
+@media screen and (max-width: 580px) {
+  .auth div form {
+    padding: 38px 16px 24px 16px;
+  }
+  .auth div form div {
+    grid-template-columns: repeat(1, 0fr);
+    gap: 8px;
+  }
+  .auth div img {
+    width: 42vh;
+  }
+  .auth div form button {
+    padding: 12px 20px;
+    font-size: large;
+  }
+  label {
+    font-size: x-large;
+    bottom: 40px;
+  }
+  .custom-input {
+    font-size: medium;
+  }
+  .custom-input:focus + label {
+    font-size: smaller;
+    bottom: 60px;
+  }
+  .custom-input.active + label {
+    font-size: smaller;
+    bottom: 60px;
+  }
 }

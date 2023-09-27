@@ -1,11 +1,11 @@
-import CustomInput from "../../components/CustomImput";
+import ImputRegister from "../../components/ImputRegister";
 import fondoRegistro from "../../img/fondoRegistro.png";
-import "../css/register.css";
+import "../css/auth.css";
 
 function Register() {
   return (
     <>
-      <section className="register">
+      <section className="auth">
         <div className="wrapper">
           <div className="top">
             <h2>REGISTRO</h2>
@@ -14,7 +14,7 @@ function Register() {
               alt="Formulario de registro para los profesores"
             />
           </div>
-          <CustomInput />
+          <ImputRegister />
         </div>
       </section>
     </>

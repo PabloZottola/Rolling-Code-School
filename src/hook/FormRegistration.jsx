@@ -1,5 +1,5 @@
-import EscuelaApi from "../api/EscuelaApi";
 import { useState } from "react";
+import EscuelaApi from "../api/EscuelaApi";
 
 function useRegistrationForm() {
   const [firstName, setFirstName] = useState("");
@@ -25,11 +25,11 @@ function useRegistrationForm() {
       setErrorMessage("Todos los campos son obligatorios.");
       return;
     }
-    if (/\d/.test(firstName) || firstName.length < 2) {
+    if (/\d/.test(firstName) || firstName.length < 2 || firstName.length > 24) {
       setErrorMessage("Nombre invalido.");
       return;
     }
-    if (/\d/.test(lastName) || lastName.length < 2) {
+    if (/\d/.test(lastName) || lastName.length < 2 || lastName.length > 24) {
       setErrorMessage("Apellido invalido.");
       return;
     }
@@ -37,13 +37,17 @@ function useRegistrationForm() {
       setErrorMessage("Numero de telefono invalido.");
       return;
     }
-    // if (phoneExist)
-    if (!validateEmail(email)) {
-      setErrorMessage("E-mail no valido.");
+    if (!validateEmail(email) || email.length > 35) {
+      setErrorMessage("E-mail no valisdo.");
       return;
     }
-    // if (emailExist)
-    if (password.length <= 5 || password !== repeatPassword) {
+    if (
+      password.length <= 5 ||
+      password.length > 20 ||
+      repeatPassword.length <= 5 ||
+      repeatPassword.length > 20 ||
+      password !== repeatPassword
+    ) {
       setErrorMessage("Contraseña invalida o las contraseñas no coinciden.");
       return;
     }
@@ -61,8 +65,8 @@ function useRegistrationForm() {
         password,
         repeatPassword,
       });
-      console.log(res);
       setErrorMessage(res.data.msg);
+      localStorage.setItem("token", res.data.token);
     } catch (error) {
       console.log(error);
     }

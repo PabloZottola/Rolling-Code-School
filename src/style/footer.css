@@ -1,0 +1,31 @@
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer ul {
+  display: flex;
+  list-style: none;
+  gap: 48px;
+  position: fixed;
+  bottom: 0;
+  padding: 8px;
+  margin: 0;
+  font-size: medium;
+}
+footer ul li {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0);
+}
+
+@media screen and (max-width: 460px) {
+  footer ul {
+    align-items: center;
+  }
+  footer ul li {
+    width: 100px;
+  }
+  footer ul :last-child {
+    display: none;
+  }
+}
