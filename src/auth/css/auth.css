@@ -44,7 +44,9 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 .auth div img {
-  width: 90vh;
+  height: 30vh;
+  width: 64vh;
+  object-fit: cover;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
