@@ -1,6 +1,6 @@
 import useCrearAlumnosForm from "../hook/FormCrearAlumnos";
 
-function CustomImputCrearAlumnos() {
+function ImputCreateStudents() {
   const {
     firstName,
     setFirstName,
@@ -58,9 +58,7 @@ function CustomImputCrearAlumnos() {
               <option value="6">6</option>
             </select>
             <label>Año de cursado</label>
-
           </div>
-
 
           <div>
             <input
@@ -92,4 +90,4 @@ function CustomImputCrearAlumnos() {
   );
 }
 
-export default CustomImputCrearAlumnos;
+export default ImputCreateStudents;

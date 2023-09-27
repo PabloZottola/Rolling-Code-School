@@ -5,7 +5,7 @@ import ImputLogin from "../../components/ImputLogin";
 import "../css/auth.css";
 
 function Login() {
-  const {isModalOpen, setIsModalOpen} = useContext(AppContext);
+  const { isModalOpen, setIsModalOpen } = useContext(AppContext);
 
   const closeModal = () => {
     setIsModalOpen(false);

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import EscuelaApi from "../../api/EscuelaApi";
-import ListAlumnos from "../../components/ListAlumnos";
 import Logo from "../../img/Logo.png";
 import login from "../../img/usuario.png";
 import "../css/admin.css";
+import ListStudents from "../../components/ListStudents";
 
 function Admin() {
   const [cargarAlumno, setCargarAlumno] = useState([]);
@@ -39,7 +39,7 @@ function Admin() {
         <section>
           <ul className="cardAlummnos">
             {cargarAlumno.map((user) => (
-              <ListAlumnos user={user} key={user._id} />
+              <ListStudents user={user} key={user._id} />
             ))}
           </ul>
         </section>

@@ -26,7 +26,6 @@ function App() {
     if (isUserLogged) {
       const decoded = jwt_decode(logged);
       let exp = decoded.exp * 1000;
-      console.log(new Date(exp));
     }
   }, [isUserLogged]);
 
@@ -35,7 +34,9 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={{ isUserLogged, setIsUserLogged , isModalOpen, setIsModalOpen}}>
+    <AppContext.Provider
+      value={{ isUserLogged, setIsUserLogged, isModalOpen, setIsModalOpen }}
+    >
       {isUserLogged ? (
         <BrowserRouter>
           <PrivateRouter />

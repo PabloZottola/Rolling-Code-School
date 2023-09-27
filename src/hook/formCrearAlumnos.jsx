@@ -18,20 +18,25 @@ function useCrearAlumnosForm() {
       lastName.trim() === "" ||
       yearOfStudy.trim() === "" ||
       phone.trim() === "" ||
-      email.trim() === ""    //aquí no hay ||
+      email.trim() === "" //aquí no hay ||
     ) {
       setErrorMessage("Todos los campos son obligatorios.");
       return;
     }
-    if (/\d/.test(firstName) || firstName.length < 3) {
+    if (/\d/.test(firstName) || firstName.length < 2 || firstName.length > 24) {
       setErrorMessage("Nombre inválido.");
       return;
     }
-    if (/\d/.test(lastName) || lastName.length < 2) {
+    if (/\d/.test(lastName) || lastName.length < 2 || lastName.length > 24) {
       setErrorMessage("Apellido inválido.");
       return;
     }
-    if (!yearOfStudy || isNaN(yearOfStudy) || yearOfStudy < 1 || yearOfStudy > 6) {
+    if (
+      !yearOfStudy ||
+      isNaN(yearOfStudy) ||
+      yearOfStudy < 1 ||
+      yearOfStudy > 6
+    ) {
       setErrorMessage("Seleccione un año válido.");
       return;
     }
@@ -39,8 +44,7 @@ function useCrearAlumnosForm() {
       setErrorMessage("Número de telefono invalido.");
       return;
     }
-    // if (phoneExist)
-    if (!validateEmail(email)) {
+    if (!validateEmail(email) || email.length > 35) {
       setErrorMessage("E-mail no válido.");
       return;
     }
