@@ -1,10 +1,12 @@
+import AppContext from "../AppContext";
 import EscuelaApi from "../api/EscuelaApi";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 function useLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const { setIsUserLogged } = useContext(AppContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,8 +33,10 @@ function useLoginForm() {
         password,
       });
       setErrorMessage(res.data.msg);
-      console.log(res);
       localStorage.setItem("token", res.data.token);
+
+      setIsUserLogged(true);
+      console.log("object");
     } catch (error) {
       console.log(error);
     }

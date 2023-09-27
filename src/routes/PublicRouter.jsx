@@ -8,8 +8,7 @@ function PublicRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

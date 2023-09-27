@@ -1,11 +1,48 @@
+import { useEffect, useState } from "react";
+import AppContext from "./AppContext";
 import PublicRouter from "./routes/PublicRouter";
 import "./style/app.css";
+import PrivateRouter from "./routes/PrivateRouter";
+import { BrowserRouter } from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 function App() {
+  const [isUserLogged, setIsUserLogged] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const logged = localStorage.getItem("token");
+
+  useEffect(() => {
+    if (logged) {
+      setIsUserLogged(true);
+      setLoading(false);
+    } else {
+      setIsUserLogged(false);
+      setLoading(false);
+    }
+  }, [logged]);
+
+  useEffect(() => {
+    if (isUserLogged) {
+      const decoded = jwt_decode(logged);
+      let exp = decoded.exp * 1000;
+      console.log(new Date(exp));
+    }
+  }, [isUserLogged]);
+
+  if (loading) {
+    return <div>loading...</div>;
+  }
+
   return (
-    <>
-      <PublicRouter />
-    </>
+    <AppContext.Provider value={{ isUserLogged, setIsUserLogged }}>
+      {isUserLogged ? (
+        <BrowserRouter>
+          <PrivateRouter />
+        </BrowserRouter>
+      ) : (
+        <PublicRouter />
+      )}
+    </AppContext.Provider>
   );
 }
 
