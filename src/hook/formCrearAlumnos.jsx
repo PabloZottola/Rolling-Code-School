@@ -24,24 +24,24 @@ function useCrearAlumnosForm() {
       return;
     }
     if (/\d/.test(firstName) || firstName.length < 3) {
-      setErrorMessage("Nombre invalido.");
+      setErrorMessage("Nombre inválido.");
       return;
     }
     if (/\d/.test(lastName) || lastName.length < 2) {
-      setErrorMessage("Apellido invalido.");
+      setErrorMessage("Apellido inválido.");
       return;
     }
-    if (!YearOfStudy || isNaN(YearOfStudy) || YearOfStudy < 1 || YearOfStudy > 6) {
+    if (!yearOfStudy || isNaN(yearOfStudy) || yearOfStudy < 1 || yearOfStudy > 6) {
       setErrorMessage("Seleccione un año válido.");
       return;
     }
     if (/[a-zA-Z]/.test(phone) || phone.length < 9 || phone.length > 10) {
-      setErrorMessage("Numero de telefono invalido.");
+      setErrorMessage("Número de telefono invalido.");
       return;
     }
     // if (phoneExist)
     if (!validateEmail(email)) {
-      setErrorMessage("E-mail no valido.");
+      setErrorMessage("E-mail no válido.");
       return;
     }
 
@@ -50,7 +50,7 @@ function useCrearAlumnosForm() {
 
   const startRegister = async () => {
     try {
-      const res = await EscuelaApi.post("/auth/crearAlumnos", {
+      const res = await EscuelaApi.post("/createstudents", {
         firstName,
         lastName,
         yearOfStudy,
