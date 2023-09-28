@@ -22,8 +22,8 @@ function AboutUs() {
                             </div>
                         </Col>
                     </Row>
+                    <Footer />
                 </Container>
-                <Footer />
             </div>
         </body>
 
