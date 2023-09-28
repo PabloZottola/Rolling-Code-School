@@ -46,6 +46,7 @@ function App() {
         setIsUserLogged,
         isModalOpen,
         setIsModalOpen,
+        decoded,
       }}
     >
       {isUserLogged ? (

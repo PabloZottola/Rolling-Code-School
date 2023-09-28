@@ -6,8 +6,10 @@ import login from "../img/usuario.png";
 import "../style/navbar.css";
 
 function NavBar() {
-  const { setIsModalOpen, isUserLogged } = useContext(AppContext);
+  const { setIsModalOpen, isUserLogged, decoded } = useContext(AppContext);
   const navigate = useNavigate();
+  console.log(decoded.role)
+
   const handleNavigate = () => {
     navigate("/admin");
   };
@@ -38,14 +40,33 @@ function NavBar() {
         )}
       </ul>
       <div className="right">
-        {isUserLogged ? (
-          <button onClick={handleNavigate}>
+        {!isUserLogged ? (
+          <button onClick={handleOpenModal}>
             <img src={login} alt="Boton para ingresar a su cuenta de usuario" />
           </button>
         ) : (
-          <button onClick={handleOpenModal}>
-            <img src={login} alt="Boton para salir de su cuenta" />
-          </button>
+          isUserLogged ? (
+            <>
+              <button onClick={handleNavigate}>
+                <img src={login} alt="Boton para salir de su cuenta" />
+              </button>
+              <button>
+                <img src={login} alt="Boton para salir de su cuenta" />
+              </button>
+            </>
+          ) : (
+            <>
+              <button>
+                <img src={login} alt="Boton para salir de su cuenta" />
+              </button>
+              <button>
+                <img src={login} alt="Boton para salir de su cuenta" />
+              </button>
+              <button>
+                <img src={login} alt="Boton para salir de su cuenta" />
+              </button>
+            </>
+          )
         )}
       </div>
     </header>
