@@ -11,7 +11,10 @@ function App() {
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [loading, setLoading] = useState(true);
   const logged = localStorage.getItem("token");
-
+  let decoded = [];
+  if (logged) {
+    decoded = jwt_decode(logged);
+  }
   useEffect(() => {
     if (logged) {
       setIsUserLogged(true);
@@ -24,10 +27,13 @@ function App() {
 
   useEffect(() => {
     if (isUserLogged) {
-      const decoded = jwt_decode(logged);
-      let exp = decoded.exp * 1000;
+      const exp = new Date(decoded.exp * 1000);
+      const currentDate = new Date();
+      if (exp < currentDate) {
+        localStorage.removeItem("token");
+      }
     }
-  }, [isUserLogged]);
+  }, [isUserLogged, logged]);
 
   if (loading) {
     return <div>loading...</div>;
@@ -35,7 +41,12 @@ function App() {
 
   return (
     <AppContext.Provider
-      value={{ isUserLogged, setIsUserLogged, isModalOpen, setIsModalOpen }}
+      value={{
+        isUserLogged,
+        setIsUserLogged,
+        isModalOpen,
+        setIsModalOpen,
+      }}
     >
       {isUserLogged ? (
         <BrowserRouter>

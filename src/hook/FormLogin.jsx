@@ -26,7 +26,6 @@ function useLoginForm() {
       return;
     }
     startLogin();
-    navigate("/admin");
   };
 
   const startLogin = async () => {
@@ -38,6 +37,7 @@ function useLoginForm() {
       setErrorMessage(res.data.msg);
       localStorage.setItem("token", res.data.token);
       setIsUserLogged(true);
+      navigate("/admin");
     } catch (error) {
       console.log(error);
     }

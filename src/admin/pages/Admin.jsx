@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import EscuelaApi from "../../api/EscuelaApi";
-import "../css/admin.css";
 import ListStudents from "../../components/ListStudents";
 import NavBar from "../../components/NavBar";
+import "../css/admin.css";
 
 function Admin() {
   const [cargarAlumno, setCargarAlumno] = useState([]);
