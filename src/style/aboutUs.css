@@ -1,0 +1,25 @@
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding:0;
+}
+
+
+.custom-p{
+    font-family: "Roboto", sans-serif;
+    margin: 5px;
+    padding: top 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-weight: 300;
+    
+}
+
+  .layout{
+    margin: 0; /* Elimina los márgenes predeterminados del body */
+    padding: 0; /* Elimina el relleno predeterminado del body */
+    background-image: url('../img/escuela4.jpg'); /* Ruta de la imagen que deseas utilizar */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
