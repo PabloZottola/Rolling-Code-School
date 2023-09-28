@@ -1,35 +1,86 @@
 * {
     font-family: "Roboto", sans-serif;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
-
-.custom-p{
-    font-family: "Roboto", sans-serif;
-    margin: 5px;
-    padding: top 5px;
-    padding-bottom: 5px;
+.custom-p {
     color: white;
     font-weight: 300;
-    
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 8%;
+    box-shadow: 15px black;
+    padding: 15px;
 }
 
-.custom-h1{
-    font-family: "Roboto", sans-serif;
-    margin: 5px;
-    padding: top 5px;
-    padding-bottom: 5px;
+.custom-h1 {
+    padding-top: 30px;
     color: white;
     font-weight: 800;
-    
+    font-size: 24px;
+    /* Tamaño de fuente base */
 }
 
-  .layout{
-    margin: 0; /* Elimina los márgenes predeterminados del body */
-    padding: 0; /* Elimina el relleno predeterminado del body */
-    background-image: url('../img/escuela4.jpg'); /* Ruta de la imagen que deseas utilizar */
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen en el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+/* Tamaño de fuente para pantallas XS */
+@media (min-width: 200px) {
+    .custom-h1 {
+        font-size: 30px;
+    }
+
+}
+
+/* Tamaño de fuente para pantallas S*/
+@media (min-width: 300px) {
+    .custom-h1 {
+        font-size: 40px;
+    }
+
+    .custom-p {
+        font-size: 18px;
+    }
+}
+
+/* Tamaño de fuente para pantallas MS */
+@media (min-width: 576px) {
+    .custom-h1 {
+        font-size: 40px;
+    }
+
+    .custom-p {
+        font-size: 21px;
+    }
+}
+
+/* Tamaño de fuente para pantallas M */
+@media (min-width: 768px) {
+    .custom-h1 {
+        font-size: 50px;
+    }
+
+    .custom-p {
+        font-size: 25px;
+    }
+}
+
+/* Tamaño de fuente para pantallas L */
+@media (min-width: 992px) {
+    .custom-h1 {
+        font-size: 60px;
+    }
+}
+
+/* Tamaño de fuente para pantallas Xl */
+@media (min-width: 1200px) {
+    .custom-h1 {
+        font-size: 70px;
+    }
+}
+
+.layout {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/escuela4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
