@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { Link } from 'react-router-dom';
 import { Button, Stack,  } from 'react-bootstrap';
 import "../style/aboutUs.css";
 
@@ -20,7 +21,8 @@ function AboutUs() {
                     donde aprenden a dominar las herramientas del mañana y a cultivar las habilidades
                     humanas que los destacarán en cualquier campo.
                 </p></div>
-                <div><Button variant="warning">Contactanos</Button>
+                <div>
+                    <Link to="/contact" ><Button variant="warning">Contactanos</Button></Link>
                 </div>
             </Stack>
         </div>

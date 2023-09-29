@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap"; // Importa los componentes de React Bootstrap
 import "../style/contactForm.css";
 
 const ContactForm = () => {
@@ -24,21 +25,22 @@ const ContactForm = () => {
         alert(result.status);
     };
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" required />
-            </div>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" required />
-            </div>
-            <div>
-                <label htmlFor="message">Message:</label>
-                <textarea id="message" required />
-            </div>
-            <button type="submit">{status}</button>
-        </form>
+        <Form onSubmit={handleSubmit}> 
+        <h2 className="text-light">Dejanos tu contacto</h2>
+            <Form.Group>
+            <Form.Label></Form.Label>
+                <Form.Control type="text" id="name" minLength="3" maxLength="20" pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$" placeholder="Escribe tu nombre" required />
+            </Form.Group>
+            <Form.Group>
+            <Form.Label></Form.Label>
+                <Form.Control type="email" id="email"  minLength="11" maxLength="35" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"required />
+            </Form.Group>
+            <Form.Group>
+            <Form.Label></Form.Label>
+                <Form.Control as="textarea" id="message" minLength="15" maxLength="300" placeholder="Escribe hasta 300 caracteres" required />
+            </Form.Group>
+            <Button type="submit" variant="success">{status}</Button> 
+        </Form>
     );
 };
 
