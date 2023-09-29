@@ -27,6 +27,7 @@
   user-select: none;
   text-align: center;
   width: 70vh;
+  margin: 0;
 }
 .layout div div img {
   width: 100%;
