@@ -5,7 +5,7 @@
   position: relative;
   z-index: 999;
   padding: 16px 32px;
-  margin: 0;
+  margin-bottom: 30px;
 }
 
 .header ul {

@@ -25,21 +25,23 @@ const ContactForm = () => {
         alert(result.status);
     };
     return (
-        <Form onSubmit={handleSubmit}> 
-        <h2 className="text-light">Dejanos tu contacto</h2>
+        <Form onSubmit={handleSubmit}>
+            <h2 className="text-light">Dejanos tu contacto</h2>
             <Form.Group>
-            <Form.Label></Form.Label>
+                <Form.Label></Form.Label>
                 <Form.Control type="text" id="name" minLength="3" maxLength="20" pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$" placeholder="Escribe tu nombre" required />
             </Form.Group>
             <Form.Group>
-            <Form.Label></Form.Label>
-                <Form.Control type="email" id="email"  minLength="11" maxLength="35" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email"required />
+                <Form.Label></Form.Label>
+                <Form.Control type="email" id="email" minLength="11" maxLength="35" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Email" required />
             </Form.Group>
             <Form.Group>
-            <Form.Label></Form.Label>
+                <Form.Label></Form.Label>
                 <Form.Control as="textarea" id="message" minLength="15" maxLength="300" placeholder="Escribe hasta 300 caracteres" required />
             </Form.Group>
-            <Button type="submit" variant="success">{status}</Button> 
+              <div className="text-center pt-3">
+                <Button type="submit" variant="success">  {status}</Button>
+              </div>
         </Form>
     );
 };

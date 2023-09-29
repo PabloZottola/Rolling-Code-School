@@ -26,6 +26,11 @@
     .custom-h1 {
         font-size: 30px;
     }
+    .custom-boton {
+        padding: 15px;
+        margin: 10px;
+        margin-bottom: 60px;
+        }
 
 }
 
@@ -38,6 +43,11 @@
     .custom-p {
         font-size: 18px;
     }
+    .custom-boton {
+        padding: 15px;
+        margin: 10px;
+        margin-bottom: 60px;
+        }
 }
 
 /* Tamaño de fuente para pantallas MS */
@@ -49,16 +59,24 @@
     .custom-p {
         font-size: 21px;
     }
+    .custom-boton {
+        padding: 15px;
+        margin: 10px;
+        margin-bottom: 60px;
+        }
 }
 
 /* Tamaño de fuente para pantallas M */
 @media (min-width: 768px) {
     .custom-h1 {
         font-size: 50px;
+        max-width: 60%;
+
     }
 
     .custom-p {
         font-size: 25px;
+        max-width: 60%;
     }
 }
 
@@ -67,6 +85,7 @@
     .custom-h1 {
         font-size: 60px;
     }
+    
 }
 
 /* Tamaño de fuente para pantallas Xl */

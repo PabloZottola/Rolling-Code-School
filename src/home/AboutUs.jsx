@@ -21,7 +21,7 @@ function AboutUs() {
                     donde aprenden a dominar las herramientas del mañana y a cultivar las habilidades
                     humanas que los destacarán en cualquier campo.
                 </p></div>
-                <div>
+                <div className="custom-boton">
                     <Link to="/contact" ><Button variant="warning">Contactanos</Button></Link>
                 </div>
             </Stack>
