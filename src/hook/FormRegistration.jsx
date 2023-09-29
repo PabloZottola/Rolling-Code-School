@@ -68,7 +68,7 @@ function useRegistrationForm() {
       setErrorMessage(res.data.msg);
       localStorage.setItem("token", res.data.token);
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.response.data.msg);
     }
   };
   const validateEmail = () => {

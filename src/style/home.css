@@ -19,7 +19,7 @@
   justify-content: center;
 }
 .layout div div h2 {
-  z-index: 999;
+  z-index: 1;
   position: absolute;
   color: white;
   font-size: 64px;

@@ -1,43 +1,6 @@
-.wrapper {
-  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
-  border-radius: 20px;
-  background-color: white;
-}
-.top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.top button {
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
-  width: 38px;
-  background-color: rgba(24, 24, 255, 0.9);
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: x-large;
-  font-weight: 600;
-  transition: transform 250ms ease;
-}
-.top button:hover {
-  transform: scale(1.11);
-}
-.top h2 {
-  position: absolute;
-  text-align: center;
-  color: azure;
-  font-size: 54px;
-  text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
-  user-select: none;
-}
 .auth {
+  z-index: 10;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -57,7 +20,6 @@
   flex-direction: column;
   align-items: center;
   padding: 40px 30px 30px 30px;
-  border-radius: 20px;
 }
 .auth div form button {
   padding: 14px 28px;
@@ -88,6 +50,42 @@
 .auth div form div div {
   display: flex;
   flex-direction: column;
+}
+.wrapper {
+  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+  border-radius: 20px;
+  background-color: white;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.top button {
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
+  width: 38px;
+  background-color: rgba(24, 24, 255, 0.9);
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: x-large;
+  font-weight: 600;
+  transition: transform 250ms ease;
+}
+.top button:hover {
+  transform: scale(1.11);
+}
+.top h2 {
+  position: absolute;
+  text-align: center;
+  color: azure;
+  font-size: 54px;
+  text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
+  user-select: none;
 }
 label {
   position: relative;

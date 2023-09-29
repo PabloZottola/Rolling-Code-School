@@ -61,10 +61,9 @@ function useCrearAlumnosForm() {
         phone,
         email,
       });
-      console.log(res);
       setErrorMessage(res.data.msg);
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.response.data.msg);
     }
   };
   const validateEmail = () => {

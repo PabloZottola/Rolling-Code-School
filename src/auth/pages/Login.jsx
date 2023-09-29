@@ -14,21 +14,19 @@ function Login() {
   if (!isModalOpen) return null;
 
   return (
-    <>
-      <section className="auth">
-        <div className="wrapper">
-          <div className="top">
-            <button onClick={closeModal}>X</button>
-            <h2>LOGIN</h2>
-            <img
-              src={fondoLogin}
-              alt="Formulario de registro para los profesores"
-            />
-          </div>
-          <ImputLogin />
+    <section className="auth">
+      <div className="wrapper">
+        <div className="top">
+          <button onClick={closeModal}>X</button>
+          <h2>LOGIN</h2>
+          <img
+            src={fondoLogin}
+            alt="Formulario de registro para los profesores"
+          />
         </div>
-      </section>
-    </>
+        <ImputLogin />
+      </div>
+    </section>
   );
 }
 

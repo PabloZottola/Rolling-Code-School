@@ -39,7 +39,7 @@ function useLoginForm() {
       setIsUserLogged(true);
       navigate("/admin");
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.response.data.msg);
     }
   };
 
