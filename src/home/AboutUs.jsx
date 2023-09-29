@@ -9,7 +9,7 @@ function AboutUs() {
     return (
         <>
         <div className="layout">
-            <Stack className="layout text-center align-items-center" gap={3}>
+            <Stack className="layout text-center align-items-center pt-5" gap={3}>
                 <div><h1 className="custom-h1 pt-15">¿Quiénes somos?</h1></div>
                 <div><p className="custom-p">Descubre un mundo de posibilidades en Rolling School
                     En el corazón de Tucumán, emerge una escuela única que está transformando el futuro de la
