@@ -18,7 +18,9 @@ function Register() {
       <div className="wrapper">
         <div className="top">
           <button onClick={closeModal}>X</button>
-          <h2>REGISTRO</h2>
+          <h2>
+            REGISTRO <br /> DE PROFESORES
+          </h2>
           <img
             src={fondoRegistro}
             alt="Formulario de registro para los profesores"

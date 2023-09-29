@@ -1,8 +1,13 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AppContext from "../AppContext";
 import Logo from "../img/Logo.png";
-import login from "../img/usuario.png";
+import createuser from "../img/createuser.png";
+import deleteuser from "../img/delete.png";
+import edit from "../img/edit.png";
+import user from "../img/user.png";
+import login from "../img/login.png";
+import students from "../img/students.png";
 import "../style/navbar.css";
 import CreateStudents from "../auth/pages/CreateStudents";
 import Register from "../auth/pages/Register";
@@ -39,9 +44,9 @@ function NavBar() {
       {isModalOpenProfesor ? <Register /> : ""}
       <header className="header">
         <div className="left">
-          <a href="http://localhost:5173/home">
+          <Link to="/home">
             <img src={Logo} alt="Logo de la escuela sin fondo" />
-          </a>
+          </Link>
         </div>
         <ul>
           {window.location.href === "http://localhost:5173/admin" ? (
@@ -53,7 +58,6 @@ function NavBar() {
             <>
               <li>Nosotros</li>
               <li>Contacto</li>
-              <li>Tienda</li>
             </>
           )}
         </ul>
@@ -68,22 +72,22 @@ function NavBar() {
           ) : decoded.role === "Profesor" ? (
             <>
               <button onClick={handleNavigate}>
-                <img src={login} alt="Boton para salir de su cuenta" />
+                <img src={user} alt="Boton para salir de su cuenta" />
               </button>
               <button onClick={handleOpenModalStudents}>
-                <img src={login} alt="Boton para salir de su cuenta" />
+                <img src={students} alt="Boton para salir de su cuenta" />
               </button>
             </>
           ) : (
             <>
               <button onClick={handleNavigate}>
-                <img src={login} alt="Boton para salir de su cuenta" />
+                <img src={user} alt="Boton para salir de su cuenta" />
               </button>
               <button onClick={handleOpenModalStudents}>
-                <img src={login} alt="Boton para salir de su cuenta" />
+                <img src={students} alt="Boton para salir de su cuenta" />
               </button>
               <button onClick={handleOpenModalProfesor}>
-                <img src={login} alt="Boton para salir de su cuenta" />
+                <img src={createuser} alt="Boton para salir de su cuenta" />
               </button>
             </>
           )}
