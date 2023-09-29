@@ -1,9 +1,9 @@
 import React from "react";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 import { Link } from 'react-router-dom';
 import { Button, Stack,  } from 'react-bootstrap';
-import "../style/aboutUs.css";
+import "../../style/AboutUs.css";
 
 function AboutUs() {
     return (

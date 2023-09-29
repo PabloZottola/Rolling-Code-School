@@ -4,8 +4,8 @@
   align-items: center;
   position: relative;
   z-index: 999;
-  padding: 16px 32px;
-  margin-bottom: 30px;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .header ul {

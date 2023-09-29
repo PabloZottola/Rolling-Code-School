@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import React from "react";
 //Import pages
 import Home from "../home/Home";
-import AboutUs from "../home/AboutUs";
-import Contact from "../home/Contact";
+import AboutUs from "../auth/pages/AboutUs";
+import Contact from "../auth/pages/Contact";
 //Function here
 function PublicRouter() {
   return (
