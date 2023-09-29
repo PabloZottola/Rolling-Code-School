@@ -22,7 +22,7 @@ function AboutUs() {
                     humanas que los destacarán en cualquier campo.
                 </p></div>
                 <div className="custom-boton">
-                    <Link to="/contact" ><Button variant="warning">Contactanos</Button></Link>
+                    <Link to="/contact" ><Button variant="warning" className="m-2">Por favor, déjanos tus datos de contacto</Button></Link>
                 </div>
             </Stack>
         </div>

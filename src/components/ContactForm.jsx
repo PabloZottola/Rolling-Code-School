@@ -26,7 +26,7 @@ const ContactForm = () => {
     };
     return (
         <Form onSubmit={handleSubmit}>
-            <h2 className="text-light">Dejanos tu contacto</h2>
+            <h1 className="text-light">Dejanos tu dirección mail</h1>
             <Form.Group>
                 <Form.Label></Form.Label>
                 <Form.Control type="text" id="name" minLength="3" maxLength="20" pattern="^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$" placeholder="Escribe tu nombre" required />
