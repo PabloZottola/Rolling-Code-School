@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import AppContext from "../AppContext";
 import EscuelaApi from "../api/EscuelaApi";
+import { useNavigate } from "react-router";
 
 function useLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const { setIsUserLogged } = useContext(AppContext);
+  const { setIsUserLogged, setIsModalOpen } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,11 +36,11 @@ function useLoginForm() {
       });
       setErrorMessage(res.data.msg);
       localStorage.setItem("token", res.data.token);
-
       setIsUserLogged(true);
-      console.log("object");
+      setIsModalOpen(false);
+      navigate("/admin");
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.response.data.msg);
     }
   };
 

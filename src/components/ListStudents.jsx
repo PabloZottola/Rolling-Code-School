@@ -1,6 +1,6 @@
 import "../admin/css/admin.css";
 
-function ListAlumnos({ user }) {
+function ListStudents({ user }) {
   return (
     <li>
       <span>Nombre: {user.firstName}</span>
@@ -12,4 +12,4 @@ function ListAlumnos({ user }) {
   );
 }
 
-export default ListAlumnos;
+export default ListStudents;

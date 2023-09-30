@@ -1,40 +1,99 @@
-import { useContext} from "react";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import AppContext from "../AppContext";
 import Logo from "../img/Logo.png";
-import login from "../img/usuario.png";
+import createuser from "../img/createuser.png";
+import deleteuser from "../img/delete.png";
+import edit from "../img/edit.png";
+import user from "../img/user.png";
+import login from "../img/login.png";
+import students from "../img/students.png";
 import "../style/navbar.css";
+import CreateStudents from "../auth/pages/CreateStudents";
+import Register from "../auth/pages/Register";
 
 function NavBar() {
-    const {setIsModalOpen, isUserLogged} = useContext(AppContext);   
+  const {
+    setIsModalOpen,
+    setIsModalOpenStudents,
+    setIsModalOpenProfesor,
+    isUserLogged,
+    decoded,
+    isModalOpenStudents,
+    isModalOpenProfesor,
+  } = useContext(AppContext);
+  const navigate = useNavigate();
 
-    const openModal = () => {
-        setIsModalOpen(true);
-      };
+  const handleNavigate = () => {
+    navigate("/admin");
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOpenModalStudents = () => {
+    setIsModalOpenStudents(true);
+  };
+  const handleOpenModalProfesor = () => {
+    setIsModalOpenProfesor(true);
+  };
 
   return (
-    <header className="header">
+    <>
+      {isModalOpenStudents ? <CreateStudents /> : ""}
+      {isModalOpenProfesor ? <Register /> : ""}
+      <header className="header">
         <div className="left">
-          <a href="">
+          <Link to="/home">
             <img src={Logo} alt="Logo de la escuela sin fondo" />
-          </a>
+          </Link>
         </div>
         <ul>
-          <li>Nosotros</li>
-          <li>Contacto</li>
-          <li>Tienda</li>
+          {window.location.href === "http://localhost:5173/admin" ? (
+            <>
+              <li>Contacto</li>
+              <li>Tienda</li>
+            </>
+          ) : (
+            <>
+              <li>Nosotros</li>
+              <li>Contacto</li>
+            </>
+          )}
         </ul>
         <div className="right">
-            {isUserLogged ? (
-              <button onClick={openModal}>
-                <img src={login} alt="Boton para ingresar a su cuenta de usuario" />
+          {!isUserLogged ? (
+            <button onClick={handleOpenModal}>
+              <img
+                src={login}
+                alt="Boton para ingresar a su cuenta de usuario"
+              />
+            </button>
+          ) : decoded.role === "Profesor" ? (
+            <>
+              <button onClick={handleNavigate}>
+                <img src={user} alt="Boton para salir de su cuenta" />
               </button>
-            ) : (
-              <button onClick={openModal}>
-                <img src={login} alt="Boton para salir de su cuenta" />
+              <button onClick={handleOpenModalStudents}>
+                <img src={students} alt="Boton para salir de su cuenta" />
               </button>
-            )} 
+            </>
+          ) : (
+            <>
+              <button onClick={handleNavigate}>
+                <img src={user} alt="Boton para salir de su cuenta" />
+              </button>
+              <button onClick={handleOpenModalStudents}>
+                <img src={students} alt="Boton para salir de su cuenta" />
+              </button>
+              <button onClick={handleOpenModalProfesor}>
+                <img src={createuser} alt="Boton para salir de su cuenta" />
+              </button>
+            </>
+          )}
         </div>
       </header>
+    </>
   );
 }
 
