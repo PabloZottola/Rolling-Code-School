@@ -1,8 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-Form {
+.Form {
   max-width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -17,7 +13,6 @@ Form {
 
 .Form h2 {
   font-family: "Roboto", sans-serif;
-
 }
 
 .Form button {
@@ -32,11 +27,9 @@ Form {
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 5px;
-
-
 }
 
 .Form button:hover {
   background-color: rgb(3, 77, 80);
-  transition: all .3s;
+  transition: all 0.3s;
 }

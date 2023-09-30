@@ -1,105 +1,96 @@
-* {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 .custom-p {
-    color: white;
-    font-weight: 300;
-    background-color: rgba(128, 128, 128, 0.5);
-    border-radius: 8%;
-    box-shadow: 15px black;
-    padding: 15px;
+  color: white;
+  font-weight: 300;
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 8%;
+  box-shadow: 15px black;
+  padding: 15px;
 }
 
 .custom-h1 {
-    padding-top: 30px;
-    color: white;
-    font-weight: 800;
-    font-size: 24px;
-    /* Tamaño de fuente base */
+  padding-top: 30px;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+  /* Tamaño de fuente base */
 }
 
 /* Tamaño de fuente para pantallas XS */
 @media (min-width: 200px) {
-    .custom-h1 {
-        font-size: 30px;
-    }
-    .custom-boton {
-        padding: 15px;
-        margin: 10px;
-        margin-bottom: 60px;
-        }
-
+  .custom-h1 {
+    font-size: 30px;
+  }
+  .custom-boton {
+    padding: 15px;
+    margin: 10px;
+    margin-bottom: 60px;
+  }
 }
 
 /* Tamaño de fuente para pantallas S*/
 @media (min-width: 300px) {
-    .custom-h1 {
-        font-size: 40px;
-    }
+  .custom-h1 {
+    font-size: 40px;
+  }
 
-    .custom-p {
-        font-size: 18px;
-    }
-    .custom-boton {
-        padding: 15px;
-        margin: 10px;
-        margin-bottom: 60px;
-        }
+  .custom-p {
+    font-size: 18px;
+  }
+  .custom-boton {
+    padding: 15px;
+    margin: 10px;
+    margin-bottom: 60px;
+  }
 }
 
 /* Tamaño de fuente para pantallas MS */
 @media (min-width: 576px) {
-    .custom-h1 {
-        font-size: 40px;
-    }
+  .custom-h1 {
+    font-size: 40px;
+  }
 
-    .custom-p {
-        font-size: 21px;
-    }
-    .custom-boton {
-        padding: 15px;
-        margin: 10px;
-        margin-bottom: 60px;
-        }
+  .custom-p {
+    font-size: 21px;
+  }
+  .custom-boton {
+    padding: 15px;
+    margin: 10px;
+    margin-bottom: 60px;
+  }
 }
 
 /* Tamaño de fuente para pantallas M */
 @media (min-width: 768px) {
-    .custom-h1 {
-        font-size: 50px;
-        max-width: 60%;
+  .custom-h1 {
+    font-size: 50px;
+    max-width: 60%;
+  }
 
-    }
-
-    .custom-p {
-        font-size: 25px;
-        max-width: 60%;
-    }
+  .custom-p {
+    font-size: 25px;
+    max-width: 60%;
+  }
 }
 
 /* Tamaño de fuente para pantallas L */
 @media (min-width: 992px) {
-    .custom-h1 {
-        font-size: 60px;
-    }
-    
+  .custom-h1 {
+    font-size: 60px;
+  }
 }
 
 /* Tamaño de fuente para pantallas Xl */
 @media (min-width: 1200px) {
-    .custom-h1 {
-        font-size: 70px;
-    }
+  .custom-h1 {
+    font-size: 70px;
+  }
 }
 
-.layout {
-    margin: 0;
-    padding: 0;
-    background-image: url('../img/escuela4.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.backAboutUs {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/escuela4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }

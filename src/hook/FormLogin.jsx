@@ -7,7 +7,7 @@ function useLoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const { setIsUserLogged } = useContext(AppContext);
+  const { setIsUserLogged, setIsModalOpen } = useContext(AppContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -37,6 +37,7 @@ function useLoginForm() {
       setErrorMessage(res.data.msg);
       localStorage.setItem("token", res.data.token);
       setIsUserLogged(true);
+      setIsModalOpen(false);
       navigate("/admin");
     } catch (error) {
       setErrorMessage(error.response.data.msg);

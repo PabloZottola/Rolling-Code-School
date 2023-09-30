@@ -66,7 +66,6 @@ function useRegistrationForm() {
         repeatPassword,
       });
       setErrorMessage(res.data.msg);
-      localStorage.setItem("token", res.data.token);
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }

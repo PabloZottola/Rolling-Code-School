@@ -3,7 +3,7 @@
   align-items: center;
   position: relative;
   z-index: 999;
-  padding: 0;
+  padding: 16px 32px;
   margin-bottom: 0;
 }
 
@@ -14,7 +14,6 @@
   margin: 0;
   gap: 60px;
 }
-
 
 .header ul li {
   color: white;
