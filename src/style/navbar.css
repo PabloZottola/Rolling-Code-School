@@ -1,5 +1,4 @@
 .header {
-  background-color: transparent;
   display: flex;
   align-items: center;
   position: relative;
@@ -18,7 +17,6 @@
 
 
 .header ul li {
-  text-align: center;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0);
 }
@@ -32,7 +30,6 @@
 .header div a img {
   width: auto;
   height: 64px;
-  color: white;
 }
 
 .right {
@@ -41,12 +38,9 @@
 
 .right button {
   border: none;
-  border-radius: 50%;
   background: none;
-  cursor: pointer;
 }
-
-@media screen and (max-width: 490px) {
+@media screen and (max-width: 480px) {
   .header {
     padding: 8px 16px;
     margin: 0;

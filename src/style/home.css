@@ -19,14 +19,15 @@
   justify-content: center;
 }
 .layout div div h2 {
-  z-index: 999;
+  z-index: 1;
   position: absolute;
   color: white;
-  font-size: 96px;
+  font-size: 90px;
   text-shadow: 4px 4px 8px rgba(0, 0, 0);
   user-select: none;
   text-align: center;
   width: 70vh;
+  margin: 0;
 }
 .layout div div img {
   width: 100%;
@@ -38,15 +39,15 @@
 ::-webkit-scrollbar {
   display: none;
 }
-@media screen and (max-width: 600px) and (min-width: 400px) {
+@media screen and (max-width: 700px) and (min-width: 430px) {
   .layout div div h2 {
     font-size: 64px;
-    width: 50vh;
+    width: 45vh;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) and (min-width: 1px) {
   .layout div div h2 {
     font-size: 40px;
-    width: 50vh;
+    width: 40vh;
   }
 }
