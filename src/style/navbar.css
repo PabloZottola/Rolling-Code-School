@@ -2,8 +2,11 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 16px 32px;
+  z-index: 999;
+  padding: 0;
+  margin-bottom: 0;
 }
+
 .header ul {
   display: flex;
   list-style: none;
@@ -11,22 +14,28 @@
   margin: 0;
   gap: 60px;
 }
+
+
 .header ul li {
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0);
 }
+
 .header div {
   display: flex;
   flex-grow: 1;
   flex-basis: 0;
 }
+
 .header div a img {
   width: auto;
   height: 64px;
 }
+
 .right {
   flex-direction: row-reverse;
 }
+
 .right button {
   border: none;
   background: none;
@@ -36,6 +45,7 @@
     padding: 8px 16px;
     margin: 0;
   }
+
   .header ul {
     display: none;
   }

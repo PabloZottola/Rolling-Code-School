@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+Form {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  font-size: small;
+  background-color: rgba(128, 128, 128, 0.5);
+  padding-top: 10px;
+}
+
+.Form h2 {
+  font-family: "Roboto", sans-serif;
+
+}
+
+.Form button {
+  padding: 5px;
+  width: 100%;
+  background-color: rgb(138, 138, 230);
+  border: none;
+  outline: none;
+  color: rgb(23, 23, 24);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+
+
+}
+
+.Form button:hover {
+  background-color: rgb(3, 77, 80);
+  transition: all .3s;
+}
