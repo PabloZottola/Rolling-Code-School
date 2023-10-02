@@ -3,14 +3,24 @@ import EscuelaApi from "../../api/EscuelaApi";
 import ListStudents from "../../components/ListStudents";
 import NavBar from "../../components/NavBar";
 import "../css/admin.css";
-import Popover from "../../components/Popover";
 
 function Admin() {
-  const [cargarAlumno, setCargarAlumno] = useState([]);
-  const cargarAlumnos = async () => {
+  const [isCargarAlumno, setCargarAlumno] = useState([]);
+  const [isCargarProfesor, setCargarProfesor] = useState([]);
+  const cargarAlumno = async () => {
     try {
       const res = await EscuelaApi.get("/admin");
       setCargarAlumno(res.data.user);
+    } catch (error) {
+      if (error) {
+      }
+    }
+  };
+  const cargarProfesor = async () => {
+    try {
+      const res = await EscuelaApi.get("/admin");
+      setCargarAlumno(res.data.user);
+      console.log(isCargarProfesor);
     } catch (error) {
       if (error) {
       }

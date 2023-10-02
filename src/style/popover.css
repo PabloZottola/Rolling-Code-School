@@ -20,3 +20,21 @@
     list-style: none;
     box-shadow: 1px 1px 4px rgba(0, 0, 255, 0.7);
   }
+  .popover-container ul li {
+    color: black;
+    text-shadow: none;
+  }
+  .popover-container ul button {
+    padding: 4px 12px;
+    font-size: large;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 255, 0.6);
+    background-color: rgba(0, 0, 255, 0.6);
+    transition: transform 250ms ease;
+    margin: 0 30px;
+    }
+  .popover-container ul button:hover {
+    transform: scale(1.04);
+  }
