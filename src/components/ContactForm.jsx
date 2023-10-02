@@ -1,5 +1,4 @@
 import { Form, Button } from "react-bootstrap"; // Importa los componentes de React Bootstrap
-import "../style/contactForm.css";
 import useContactFormHook from "../hook/FormContact";
 
 function ImputFormContact() {
@@ -61,8 +60,7 @@ function ImputFormContact() {
         <div className="text-center pt-3">
           <span>{errorMessage}</span>
           <Button type="submit" variant="success">
-            {" "}
-            Enviar {status}
+            Enviar
           </Button>
         </div>
       </Form>

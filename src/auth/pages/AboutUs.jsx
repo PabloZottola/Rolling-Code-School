@@ -8,16 +8,14 @@ import "../../style/AboutUs.css";
 function AboutUs() {
   return (
     <>
-      <div className="backAboutUs">
-        <Stack
-          className="backAboutUs text-center align-items-center pt-5"
-          gap={3}
-        >
+      <div className="layout-about-1">
+      <NavBar />
+        <Stack className="layout-about-2" gap={3} >
           <div>
-            <h1 className="custom-h1 pt-15">¿Quiénes somos?</h1>
+          <h1 className="custom-h1 pt-5 text-center mx-auto">¿Quiénes somos?</h1> 
           </div>
           <div>
-            <p className="custom-p">
+            <p className="custom-p text-center mx-auto">
               Descubre un mundo de posibilidades en Rolling School En el corazón
               de Tucumán, emerge una escuela única que está transformando el
               futuro de la educación. Bienvenidos a "Rolling School," donde los
@@ -30,17 +28,16 @@ function AboutUs() {
               humanas que los destacarán en cualquier campo.
             </p>
           </div>
-          <div className="custom-boton">
+          <div className="custom-boton text-center mx-auto">
             <Link to="/contact">
               <Button variant="warning" className="m-2">
                 Por favor, déjanos tus datos de contacto
               </Button>
             </Link>
           </div>
+          <Footer />
         </Stack>
       </div>
-      <Footer />
-      <NavBar />
     </>
   );
 }

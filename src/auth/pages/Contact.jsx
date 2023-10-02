@@ -2,16 +2,18 @@ import React from "react";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import ContactForm from "../../components/ContactForm";
-import "../../style/AboutUs.css";
+import "../../style/contact.css";
 
 function Contact() {
   return (
     <>
-      <div className="backAboutUs d-flex justify-content-center align-items-center">
-        <ContactForm />
+      <div className="layout-contact-1 text-center mx-auto">
+        <NavBar />
+        <div className="layout-contact-2 text-center mx-auto p-3">
+          <ContactForm />
+        </div>
+        <Footer />
       </div>
-      <NavBar />
-      <Footer />
     </>
   );
 }
