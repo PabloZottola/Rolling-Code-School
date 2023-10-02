@@ -11,6 +11,7 @@ import students from "../img/students.png";
 import "../style/navbar.css";
 import CreateStudents from "../auth/pages/CreateStudents";
 import Register from "../auth/pages/Register";
+import Popover from "../components/Popover";
 
 function NavBar() {
   const {
@@ -63,12 +64,16 @@ function NavBar() {
         </ul>
         <div className="right">
           {!isUserLogged ? (
+            <>
+            <Popover/>
             <button onClick={handleOpenModal}>
               <img
                 src={login}
                 alt="Boton para ingresar a su cuenta de usuario"
               />
             </button>
+            
+            </>
           ) : decoded.role === "Profesor" ? (
             <>
               <button onClick={handleNavigate}>
@@ -86,9 +91,7 @@ function NavBar() {
               <button onClick={handleOpenModalStudents}>
                 <img src={students} alt="Boton para salir de su cuenta" />
               </button>
-              <button onClick={handleOpenModalProfesor}>
-                <img src={createuser} alt="Boton para salir de su cuenta" />
-              </button>
+              <Popover/>
             </>
           )}
         </div>

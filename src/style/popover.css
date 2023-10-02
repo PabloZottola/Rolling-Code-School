@@ -1,28 +1,22 @@
- .popover-container {
-    width: 200px;
-    margin: 50px auto;
-    position: relative;
-  }
+
 .popover-container button {
-    background: #34495e;
-    border: 0;
-    color: #fff;
-    display: block;
-    width: 100%;
-    margin: 0 auto 20px;
-    border-radius: 4px;
-    padding: 0;
-    line-height: 40px;
+  border: none;
+  background: none;
   }
   
-  .popover-container div {
+  .popover-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     background: #fff;
-    border-radius: 4px;
-    width: 300px;
-    margin: 20px auto;
-    padding: 15px;
+    border-radius: 16px;
+    width: auto;
+    padding: 8px 12px;
     position: absolute;
-    top: 100%;
-    right: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    top: 85%;
+    right: 40px;
+    font-size: medium;
+    font-weight: 600;
+    list-style: none;
+    box-shadow: 1px 1px 4px rgba(0, 0, 255, 0.7);
   }

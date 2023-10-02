@@ -1,5 +1,6 @@
 import "../style/popover.css";
-import React, { Component } from 'react';
+import React from 'react';
+import createuser from "../img/createuser.png";
 
 class Popover extends React.Component {
     constructor() {
@@ -35,20 +36,22 @@ class Popover extends React.Component {
   
     render() {
       return (
-        <div className="popover-container" ref={node => { this.node = node; }}>
+        <span className="popover-container" ref={node => { this.node = node; }}>
           <button
             onClick={this.handleClick}
           >
-            Toggle Popover
+            <img src={createuser} alt="Boton para salir de su cuenta" />
           </button>
           {this.state.popupVisible && (
-            <div
-              className="popover"
-            >
-              I'm a popover!
-            </div>
+            <ul className="popover">
+              <li>Nombre: </li>
+              <li>Apellido: </li>
+              <li>Telefono: </li>
+              <li>Email: </li>
+              <button>Cerrar sesion</button>
+            </ul>
            )}
-        </div>
+        </span>
       );
     }
   }

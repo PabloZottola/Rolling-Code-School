@@ -21,7 +21,6 @@ function Admin() {
   }, []);
   return (
     <>
-      <Popover/>
       <NavBar />
       <main>
         <section>
