@@ -3,6 +3,7 @@ import React from "react";
 import Home from "../home/Home";
 import AboutUs from "../auth/pages/AboutUs";
 import Contact from "../auth/pages/Contact";
+import Admin from "../admin/pages/Admin";
 
 function PublicRouter() {
   return (
@@ -12,6 +13,7 @@ function PublicRouter() {
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/about-us" element={<AboutUs />} />
         <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/admin" element={<Admin />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

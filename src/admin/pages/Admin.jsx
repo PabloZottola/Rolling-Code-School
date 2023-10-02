@@ -3,6 +3,7 @@ import EscuelaApi from "../../api/EscuelaApi";
 import ListStudents from "../../components/ListStudents";
 import NavBar from "../../components/NavBar";
 import "../css/admin.css";
+import Popover from "../../components/Popover";
 
 function Admin() {
   const [cargarAlumno, setCargarAlumno] = useState([]);
@@ -20,6 +21,7 @@ function Admin() {
   }, []);
   return (
     <>
+      <Popover/>
       <NavBar />
       <main>
         <section>
