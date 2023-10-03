@@ -1,6 +1,7 @@
 import "../style/popover.css";
 import React from 'react';
 import createuser from "../img/createuser.png";
+import { redirect } from "react-router-dom";
 
 class Popover extends React.Component {
     constructor() {
@@ -30,11 +31,15 @@ class Popover extends React.Component {
       if (this.node.contains(e.target)) {
         return;
       }
-      
       this.handleClick();
     }
   
-    render() {
+    handleLoggout(){
+      localStorage.removeItem("token");
+      redirect("/home");
+    }
+
+    render(profesor) {
       return (
         <span className="popover-container" ref={node => { this.node = node; }}>
           <button
@@ -44,11 +49,11 @@ class Popover extends React.Component {
           </button>
           {this.state.popupVisible && (
             <ul className="popover">
-              <li>Nombre: </li>
-              <li>Apellido: </li>
-              <li>Telefono: </li>
-              <li>Email: </li>
-              <button>Cerrar sesion</button>
+              <li>Nombre: {profesor.firstname}</li>
+              <li>Apellido: {profesor.lastname}</li>
+              <li>Telefono: {profesor.phone}</li>
+              <li>Email:{profesor.email} </li>
+              <button onClick={this.handleLoggout}>Cerrar sesion</button>
             </ul>
            )}
         </span>
