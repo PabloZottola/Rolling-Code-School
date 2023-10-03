@@ -23,6 +23,7 @@ function NavBar() {
     isModalOpenStudents,
     isModalOpenProfesor,
   } = useContext(AppContext);
+
   const navigate = useNavigate();
 
   const handleNavigate = () => {
@@ -65,17 +66,22 @@ function NavBar() {
         <div className="right">
           {!isUserLogged ? (
             <>
-            <Popover/>
-            <button onClick={handleOpenModal}>
-              <img
-                src={login}
-                alt="Boton para ingresar a su cuenta de usuario"
-              />
-            </button>
-            
+              <button onClick={handleOpenModal}>
+                <img
+                  src={login}
+                  alt="Boton para ingresar a su cuenta de usuario"
+                />
+              </button>
             </>
           ) : decoded.role === "Profesor" ? (
             <>
+              {window.location.href === "http://localhost:5173/admin" ? (
+                <>
+                  <Popover />{" "}
+                </>
+              ) : (
+                ""
+              )}
               <button onClick={handleNavigate}>
                 <img src={user} alt="Boton para salir de su cuenta" />
               </button>
@@ -91,7 +97,6 @@ function NavBar() {
               <button onClick={handleOpenModalStudents}>
                 <img src={students} alt="Boton para salir de su cuenta" />
               </button>
-              <Popover/>
             </>
           )}
         </div>

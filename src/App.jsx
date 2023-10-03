@@ -17,12 +17,14 @@ function App() {
   if (logged) {
     decoded = jwt_decode(logged);
   }
+
   useEffect(() => {
     if (logged) {
       setIsUserLogged(true);
       setLoading(false);
     } else {
       setIsUserLogged(false);
+
       setLoading(false);
     }
   }, [logged]);
@@ -40,7 +42,6 @@ function App() {
   if (loading) {
     return <div>loading...</div>;
   }
-
   return (
     <AppContext.Provider
       value={{
