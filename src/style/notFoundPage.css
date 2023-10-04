@@ -1,0 +1,41 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #d4e6ff;
+    /*background-image: url('../img/notFound.jpg');*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    /* Oculta cualquier texto que se desborde */
+}
+
+h1,
+p,
+ .btn{
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    opacity: 0;
+    animation: appear 5s linear forwards;
+    /* Ajusta la duración de la animación según tu preferencia */
+}
+
+@keyframes appear {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
