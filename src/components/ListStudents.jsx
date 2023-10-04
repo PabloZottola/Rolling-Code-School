@@ -1,28 +1,38 @@
-import { useContext, useState } from "react";
-import "../admin/css/admin.css";
+import { useContext } from "react";
 import AppContext from "../AppContext";
+import "../admin/css/admin.css";
 
-function ListStudents({ user }) {
-  const { isModalOpenEdit, setIsModalOpenEdit } =
+function ListStudents({ alumnos }) {
+  const { setIsModalOpenEdit, setSelectedStudent, selectedStudent } =
     useContext(AppContext);
-  const [selectedStudent, setSelectedStudent] = useState({});
 
-  const handleEditStudents = (user) => {
-    setSelectedStudent(user);
+  const handleEditStudents = (alumnos) => {
+    setSelectedStudent(alumnos);
     setIsModalOpenEdit(true);
   };
   return (
-    <li>
-      <span>Nombre: {user.firstName}</span>
-      <span>Apellido: {user.lastName}</span>
-      <span>Telefono: {user.phone}</span>
-      <span>Años: {user.yearOfStudy}</span>
-      <span>Expediente: {user._id}</span>
-      <button onClick={() => handleEditStudents(user)}>
-        Detalle del Alumno
-      </button>
-    </li>
+    <ul className="cardAlummnos">
+      {alumnos.map((alumno) => (
+        <li key={alumno._id}>
+          <span>Nombre: {alumno.firstName}</span>
+          <span>Apellido: {alumno.lastName}</span>
+          <span>Telefono: {alumno.phone}</span>
+          <span>Años: {alumno.yearOfStudy}</span>
+          <span>Expediente: {alumno._id}</span>
+          <button onClick={() => handleEditStudents(alumno)}>
+            Detalle del Alumno
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 }
+function NoListStudents() {
+  return <p>No se encontraron alumnos para esta búsqueda</p>;
+}
 
-export default ListStudents;
+export function Students({ alumnos }) {
+  const hasStudents = alumnos?.length > 0;
+
+  return hasStudents ? <ListStudents alumnos={alumnos} /> : <NoListStudents />;
+}

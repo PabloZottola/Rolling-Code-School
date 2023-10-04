@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
-import "../css/auth.css";
 import AppContext from "../../AppContext";
+import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
 import ImputEditStudents from "../../components/ImputEditStudents";
+import "../css/auth.css";
 
 function EditStudents() {
-  const { isModalOpenEdit, setIsModalOpenEdit } =
-    useContext(AppContext);
+  const { isModalOpenEdit, setIsModalOpenEdit } = useContext(AppContext);
 
   const closeModal = () => {
     setIsModalOpenEdit(false);

@@ -1,36 +1,38 @@
-import { useState, useEffect } from "react";
-import EscuelaApi from "../../api/EscuelaApi";
-import ListStudents from "../../components/ListStudents";
+import { useState, useEffect, useRef } from "react";
 import NavBar from "../../components/NavBar";
-import "../css/admin.css";
+import { Students } from "../../components/ListStudents";
 import EditStudents from "../../auth/components/EditStudents";
+import { useStudents } from "../../hook/useStudents";
+import "../css/admin.css";
 
 function Admin() {
-  const [isCargarAlumno, setCargarAlumno] = useState([]);
+  const [search, setSearch] = useState("");
+  const { students, loading, getStudents } = useStudents();
 
-  const cargarAlumno = async () => {
-    try {
-      const res = await EscuelaApi.get("/admin/students");
-      setCargarAlumno(res.data.students);
-    } catch (error) {
-      if (error) {
-      }
-    }
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+    getStudents(event.target.value);
   };
+
   useEffect(() => {
-    cargarAlumno();
+    getStudents("");
   }, []);
+
   return (
     <>
       <EditStudents />
       <NavBar />
+      <form>
+        <input
+          onChange={handleChange}
+          value={search}
+          name="query"
+          placeholder="Filtro"
+        />
+      </form>
       <main>
         <section>
-          <ul className="cardAlummnos">
-            {isCargarAlumno.map((user) => (
-              <ListStudents user={user} key={user._id} />
-            ))}
-          </ul>
+          {loading ? <p>Cargando...</p> : <Students alumnos={students} />}
         </section>
       </main>
     </>
