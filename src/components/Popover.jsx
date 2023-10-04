@@ -1,8 +1,9 @@
 import "../style/popover.css";
 import React from "react";
-import createuser from "../img/createuser.png";
+import user from "../img/user.png";
 import EscuelaApi from "../api/EscuelaApi";
 import jwt_decode from "jwt-decode";
+import fondoLogin from "../img/backLogin.png";
 
 class Popover extends React.Component {
   constructor() {
@@ -74,10 +75,14 @@ class Popover extends React.Component {
         }}
       >
         <button onClick={this.handleClick}>
-          <img src={createuser} alt="Boton para salir de su cuenta" />
+          <img src={user} alt="Boton para salir de su cuenta" />
         </button>
         {this.state.popupVisible && (
           <ul className="popover">
+            <img
+              src={fondoLogin}
+              alt="Formulario de registro para los profesores"
+            />
             <li>Nombre: {profesor[0].firstName}</li>
             <li>Apellido: {profesor[0].lastName}</li>
             <li>Telefono: {profesor[0].phone}</li>

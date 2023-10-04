@@ -80,10 +80,12 @@ function NavBar() {
                   <Popover />{" "}
                 </>
               ) : (
-                ""
+                <button onClick={handleNavigate}>
+                  <img src={user} alt="Boton para salir de su cuenta" />
+                </button>
               )}
-              <button onClick={handleNavigate}>
-                <img src={user} alt="Boton para salir de su cuenta" />
+              <button onClick={handleOpenModalProfesor}>
+                <img src={createuser} alt="Boton para salir de su cuenta" />
               </button>
               <button onClick={handleOpenModalStudents}>
                 <img src={students} alt="Boton para salir de su cuenta" />
@@ -91,8 +93,17 @@ function NavBar() {
             </>
           ) : (
             <>
-              <button onClick={handleNavigate}>
-                <img src={user} alt="Boton para salir de su cuenta" />
+              {window.location.href === "http://localhost:5173/admin" ? (
+                <>
+                  <Popover />{" "}
+                </>
+              ) : (
+                <button onClick={handleNavigate}>
+                  <img src={user} alt="Boton para salir de su cuenta" />
+                </button>
+              )}
+              <button onClick={handleOpenModalProfesor}>
+                <img src={createuser} alt="Boton para salir de su cuenta" />
               </button>
               <button onClick={handleOpenModalStudents}>
                 <img src={students} alt="Boton para salir de su cuenta" />
