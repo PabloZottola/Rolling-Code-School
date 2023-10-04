@@ -3,6 +3,7 @@ import EscuelaApi from "../../api/EscuelaApi";
 import ListStudents from "../../components/ListStudents";
 import NavBar from "../../components/NavBar";
 import "../css/admin.css";
+import EditStudents from "../../auth/components/EditStudents";
 
 function Admin() {
   const [isCargarAlumno, setCargarAlumno] = useState([]);
@@ -22,6 +23,7 @@ function Admin() {
   return (
     <>
       <NavBar />
+      <EditStudents />
       <main>
         <section>
           <ul className="cardAlummnos">

@@ -9,6 +9,7 @@ import "./style/app.css";
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenStudents, setIsModalOpenStudents] = useState(false);
+  const [isModalOpenEdit, setIsModalOpenEdit] = useState(false);
   const [isModalOpenProfesor, setIsModalOpenProfesor] = useState(false);
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -54,6 +55,8 @@ function App() {
         setIsModalOpenStudents,
         isModalOpenProfesor,
         setIsModalOpenProfesor,
+        isModalOpenEdit,
+        setIsModalOpenEdit,
       }}
     >
       {isUserLogged ? (

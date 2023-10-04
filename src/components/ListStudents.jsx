@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "../admin/css/admin.css";
+import AppContext from "../AppContext";
 
 function ListStudents({ user }) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { isModalOpenEdit, setIsModalOpenEdit } =
+    useContext(AppContext);
   const [selectedStudent, setSelectedStudent] = useState({});
 
   const handleEditStudents = (user) => {
-    setIsModalOpen(true);
     setSelectedStudent(user);
+    setIsModalOpenEdit(true);
     console.log(selectedStudent);
   };
   return (
