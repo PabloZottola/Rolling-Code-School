@@ -84,9 +84,6 @@ function NavBar() {
                   <img src={user} alt="Boton para salir de su cuenta" />
                 </button>
               )}
-              <button onClick={handleOpenModalProfesor}>
-                <img src={createuser} alt="Boton para salir de su cuenta" />
-              </button>
               <button onClick={handleOpenModalStudents}>
                 <img src={students} alt="Boton para salir de su cuenta" />
               </button>

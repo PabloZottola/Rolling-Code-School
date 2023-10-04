@@ -10,13 +10,13 @@ function ListStudents({ user }) {
   const handleEditStudents = (user) => {
     setSelectedStudent(user);
     setIsModalOpenEdit(true);
-    console.log(selectedStudent);
   };
   return (
     <li>
       <span>Nombre: {user.firstName}</span>
       <span>Apellido: {user.lastName}</span>
-      <span>Año: {user.phone}</span>
+      <span>Telefono: {user.phone}</span>
+      <span>Años: {user.yearOfStudy}</span>
       <span>Expediente: {user._id}</span>
       <button onClick={() => handleEditStudents(user)}>
         Detalle del Alumno

@@ -22,8 +22,8 @@ function Admin() {
   }, []);
   return (
     <>
-      <NavBar />
       <EditStudents />
+      <NavBar />
       <main>
         <section>
           <ul className="cardAlummnos">
