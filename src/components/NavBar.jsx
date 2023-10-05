@@ -52,10 +52,7 @@ function NavBar() {
         </div>
         <ul>
           {window.location.href === "http://localhost:5173/admin" ? (
-            <>
-              <li>Alumnos</li>
-              <li>Calificaciones</li>
-            </>
+            ""
           ) : ( 
             <>
               <li>Nosotros</li>
