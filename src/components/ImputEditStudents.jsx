@@ -1,22 +1,37 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import AppContext from "../AppContext";
-import useCrearAlumnosForm from "../hook/FormCrearAlumnos";
+import EscuelaApi from "../api/EscuelaApi";
 
 function ImputEditStudents() {
-  const [isEdit, setIsEdit] = useState(false);
-  const { errorMessage, handleSubmit } = useCrearAlumnosForm();
-  const { selectedStudent, setSelectedStudent } = useContext(AppContext);
-  const { firstName, lastName, phone, email, yearOfStudy } = selectedStudent;
+  const { selectedStudent, setSelectedStudent, isEdit, setIsEdit } =
+    useContext(AppContext);
+  const { firstName, lastName, phone, email, yearOfStudy, _id } =
+    selectedStudent;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    editStudents();
+  };
+  const editStudents = async () => {
+    try {
+      const resp = await EscuelaApi.put("/admin/editstudents", {
+        firstName,
+        lastName,
+        yearOfStudy,
+        phone,
+        email,
+        _id,
+      });
 
+      console.log(resp);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleChangeEditar = (propiedad, valor) => {
     setSelectedStudent({
       ...selectedStudent,
       [propiedad]: valor,
     });
-  };
-
-  const handleIsEdit = () => {
-    setIsEdit(!isEdit);
   };
 
   return (
@@ -101,10 +116,7 @@ function ImputEditStudents() {
             <label>Email</label>
           </div>
         </div>
-        <span>{errorMessage}</span>
-        <button onClick={handleIsEdit} type="submit">
-          Editar alumno
-        </button>
+        <button type="submit">Editar alumno</button>
       </form>
     </>
   );

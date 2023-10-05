@@ -18,12 +18,18 @@ function CreateStudents() {
     <section className="auth">
       <div className="wrapper">
         <div className="top">
-          <button onClick={closeModal}>X</button>
+          <button className="closeModal" onClick={closeModal}>
+            X
+          </button>
           <h2>
             REGISTRO <br />
             DE ALUMNOS
           </h2>
-          <img src={fondoRegistro} alt="Formulario de registro de alumnos" />
+          <img
+            className="fondo"
+            src={fondoRegistro}
+            alt="Formulario de registro de alumnos"
+          />
         </div>
         <ImputCreateStudents />
       </div>

@@ -18,7 +18,7 @@ function useCrearAlumnosForm() {
       lastName.trim() === "" ||
       yearOfStudy.trim() === "" ||
       phone.trim() === "" ||
-      email.trim() === "" //aquí no hay ||
+      email.trim() === ""
     ) {
       setErrorMessage("Todos los campos son obligatorios.");
       return;

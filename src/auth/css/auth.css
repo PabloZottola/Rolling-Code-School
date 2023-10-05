@@ -8,7 +8,7 @@
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.auth div img {
+.fondo {
   height: 156px;
   width: 556px;
   object-fit: cover;
@@ -62,7 +62,23 @@
   align-items: center;
   position: relative;
 }
-.top button {
+.padLock {
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  background: none;
+  transition: transform 250ms ease;
+}
+.padLock img {
+  width: 32px;
+  height: auto;
+}
+.padLock:hover {
+  transform: scale(1.11);
+}
+.closeModal {
   border: none;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
@@ -76,7 +92,7 @@
   font-weight: 600;
   transition: transform 250ms ease;
 }
-.top button:hover {
+.closeModal:hover {
   transform: scale(1.11);
 }
 .top h2 {

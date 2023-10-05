@@ -13,6 +13,7 @@ function App() {
   const [isModalOpenProfesor, setIsModalOpenProfesor] = useState(false);
   const [isUserLogged, setIsUserLogged] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isEdit, setIsEdit] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState({});
   const logged = localStorage.getItem("token");
   let decoded = [];
@@ -60,6 +61,8 @@ function App() {
         setIsModalOpenEdit,
         selectedStudent,
         setSelectedStudent,
+        isEdit,
+        setIsEdit,
       }}
     >
       {isUserLogged ? (
