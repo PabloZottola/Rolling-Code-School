@@ -9,11 +9,20 @@ function ListStudents({ alumnos }) {
     setSelectedStudent(alumnos);
     setIsModalOpenEdit(true);
   };
-
+  const fecha = new Date().toISOString().slice(5, -14).replace("-", "");
   return (
     <ul className="cardAlummnos">
       {alumnos.map((alumno) => (
-        <li key={alumno._id}>
+        <li
+          key={alumno._id}
+          className={
+            alumno.BlockedStudent === true
+              ? "backRed"
+              : fecha > alumno.monthlyFees.replace(/-/g, "")
+              ? "backOrange"
+              : "backBlue"
+          }
+        >
           <span>Nombre: {alumno.firstName}</span>
           <span>Apellido: {alumno.lastName}</span>
           <span>Telefono: {alumno.phone}</span>

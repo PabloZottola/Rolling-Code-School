@@ -1,12 +1,20 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import AppContext from "../AppContext";
 import EscuelaApi from "../api/EscuelaApi";
 
 function ImputEditStudents({ getStudents }) {
-  const { selectedStudent, setSelectedStudent, isEdit} =
+  const { selectedStudent, setSelectedStudent, isEdit } =
     useContext(AppContext);
-  const { firstName, lastName, phone, email, yearOfStudy, _id , monthlyFees} =
-    selectedStudent;
+  const {
+    firstName,
+    lastName,
+    phone,
+    email,
+    yearOfStudy,
+    _id,
+    monthlyFees,
+    BlockedStudent,
+  } = selectedStudent;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,9 +30,10 @@ function ImputEditStudents({ getStudents }) {
         phone,
         email,
         monthlyFees,
+        BlockedStudent,
         _id,
       });
-      getStudents("")
+      getStudents("");
     } catch (error) {
       console.log(error);
     }
@@ -74,9 +83,8 @@ function ImputEditStudents({ getStudents }) {
               onChange={(e) =>
                 handleChangeEditar("yearOfStudy", e.target.value)
               }
-              className={yearOfStudy ? "custom-input active" : "custom-input"}
+              className={"custom-input active"}
             >
-              <option value=""></option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -119,21 +127,38 @@ function ImputEditStudents({ getStudents }) {
             <label>Email</label>
           </div>
           <div>
-  <input
-    disabled={!isEdit}
-    type="text"
-    name="monthlyFees"
-    maxLength="5"
-    minLength="5"
-    className={monthlyFees ? "custom-input active" : "custom-input"}
-    value={monthlyFees}
-    onChange={(e) =>
-      handleChangeEditar("monthlyFees", e.target.value.replace(/[^0-9-]/g, "")
-      )
-    }
-  />
-  <label>Matrícula (MM-DD)</label>
-</div>
+            <input
+              disabled={!isEdit}
+              type="text"
+              name="monthlyFees"
+              maxLength="5"
+              minLength="5"
+              className={monthlyFees ? "custom-input active" : "custom-input"}
+              value={monthlyFees}
+              onChange={(e) =>
+                handleChangeEditar(
+                  "monthlyFees",
+                  e.target.value.replace(/[^0-9-]/g, "")
+                )
+              }
+            />
+            <label>Matrícula (MM-DD)</label>
+          </div>
+          <div>
+            <select
+              disabled={!isEdit}
+              name="BlockedStudent"
+              value={BlockedStudent}
+              onChange={(e) =>
+                handleChangeEditar("BlockedStudent", e.target.value)
+              }
+              className={"custom-input active"}
+            >
+              <option value="true">Suspendido</option>
+              <option value="false">No suspendido</option>
+            </select>
+            <label>Estado de alumno</label>
+          </div>
         </div>
         <button type="submit">Editar alumno</button>
       </form>

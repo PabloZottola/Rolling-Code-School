@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AppContext from "../../AppContext";
-import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
+import fondoEdit from "../../img/fondoEditarAlum.jpg";
 import ImputEditStudents from "../../components/ImputEditStudents";
 import padLockOpen from "../../img/candado-abierto.png";
 import padLockBlock from "../../img/candado-cerrado.png";
@@ -43,7 +43,7 @@ function EditStudents({ getStudents }) {
           </h2>
           <img
             className="fondo"
-            src={fondoRegistro}
+            src={fondoEdit}
             alt="Formulario de registro de alumnos"
           />
         </div>

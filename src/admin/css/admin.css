@@ -4,6 +4,15 @@ main {
   position: absolute;
   margin-top: 10px;
 }
+.backBlue {
+  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+}
+.backOrange {
+  box-shadow: 3px 3px 8px rgba(255, 166, 0, 0.7);
+}
+.backRed {
+  box-shadow: 3px 3px 8px rgba(255, 0, 0, 0.7);
+}
 .cardAlummnos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -13,7 +22,7 @@ main {
 }
 .cardAlummnos li {
   border-radius: 12px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+
   padding: 16px 4px;
   display: flex;
   flex-direction: column;
