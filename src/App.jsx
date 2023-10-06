@@ -15,6 +15,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [isEdit, setIsEdit] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState({});
+  const [isReFresh, setReFresh] = useState(false);
   const logged = localStorage.getItem("token");
   let decoded = [];
   if (logged) {
@@ -63,6 +64,8 @@ function App() {
         setSelectedStudent,
         isEdit,
         setIsEdit,
+        isReFresh,
+        setReFresh,
       }}
     >
       {isUserLogged ? (

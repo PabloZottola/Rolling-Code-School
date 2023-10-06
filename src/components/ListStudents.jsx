@@ -3,8 +3,7 @@ import AppContext from "../AppContext";
 import "../admin/css/admin.css";
 
 function ListStudents({ alumnos }) {
-  const { setIsModalOpenEdit, setSelectedStudent, selectedStudent } =
-    useContext(AppContext);
+  const { setIsModalOpenEdit, setSelectedStudent } = useContext(AppContext);
 
   const handleEditStudents = (alumnos) => {
     setSelectedStudent(alumnos);

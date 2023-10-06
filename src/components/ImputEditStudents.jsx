@@ -1,15 +1,18 @@
 import { useContext } from "react";
 import AppContext from "../AppContext";
 import EscuelaApi from "../api/EscuelaApi";
+import { useStudents } from "../hook/useStudents";
 
 function ImputEditStudents() {
-  const { selectedStudent, setSelectedStudent, isEdit, setIsEdit } =
+  const { selectedStudent, setSelectedStudent, isEdit, setReFresh, isReFresh } =
     useContext(AppContext);
   const { firstName, lastName, phone, email, yearOfStudy, _id } =
     selectedStudent;
+  const { getStudents } = useStudents();
   const handleSubmit = (event) => {
     event.preventDefault();
     editStudents();
+    getStudents("");
   };
   const editStudents = async () => {
     try {
@@ -21,8 +24,6 @@ function ImputEditStudents() {
         email,
         _id,
       });
-
-      console.log(resp);
     } catch (error) {
       console.log(error);
     }

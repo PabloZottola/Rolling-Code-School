@@ -7,6 +7,7 @@ export function useStudents() {
   const [, setError] = useState(null);
 
   const getStudents = async (search) => {
+    console.log(search === "");
     try {
       setLoading(true);
       setError(null);
