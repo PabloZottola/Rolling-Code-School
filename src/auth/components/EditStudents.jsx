@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import AppContext from "../../AppContext";
 import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
 import ImputEditStudents from "../../components/ImputEditStudents";
@@ -6,11 +6,12 @@ import padLockOpen from "../../img/candado-abierto.png";
 import padLockBlock from "../../img/candado-cerrado.png";
 import "../css/auth.css";
 
-function EditStudents() {
+function EditStudents({ getStudents }) {
   const { isModalOpenEdit, setIsModalOpenEdit, isEdit, setIsEdit } =
     useContext(AppContext);
 
   const closeModal = () => {
+    setIsEdit(false);
     setIsModalOpenEdit(false);
   };
 
@@ -46,7 +47,7 @@ function EditStudents() {
             alt="Formulario de registro de alumnos"
           />
         </div>
-        <ImputEditStudents />
+        <ImputEditStudents getStudents={getStudents} />
       </div>
     </section>
   );

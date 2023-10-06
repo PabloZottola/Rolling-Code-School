@@ -5,6 +5,7 @@ import PublicRouter from "./routes/PublicRouter";
 import PrivateRouter from "./routes/PrivateRouter";
 import jwt_decode from "jwt-decode";
 import "./style/app.css";
+import { useStudents } from "./hook/useStudents";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,7 +16,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [isEdit, setIsEdit] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState({});
-  const [isReFresh, setReFresh] = useState(false);
   const logged = localStorage.getItem("token");
   let decoded = [];
   if (logged) {
@@ -64,8 +64,6 @@ function App() {
         setSelectedStudent,
         isEdit,
         setIsEdit,
-        isReFresh,
-        setReFresh,
       }}
     >
       {isUserLogged ? (

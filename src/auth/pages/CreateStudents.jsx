@@ -4,7 +4,7 @@ import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
 import "../css/auth.css";
 import AppContext from "../../AppContext";
 
-function CreateStudents() {
+function CreateStudents({getStudents}) {
   const { isModalOpenStudents, setIsModalOpenStudents } =
     useContext(AppContext);
 
@@ -31,7 +31,7 @@ function CreateStudents() {
             alt="Formulario de registro de alumnos"
           />
         </div>
-        <ImputCreateStudents />
+        <ImputCreateStudents getStudents={getStudents}/>
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ function ListStudents({ alumnos }) {
     setSelectedStudent(alumnos);
     setIsModalOpenEdit(true);
   };
+
   return (
     <ul className="cardAlummnos">
       {alumnos.map((alumno) => (

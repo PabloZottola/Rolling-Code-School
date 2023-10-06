@@ -7,7 +7,7 @@ export function useStudents() {
   const [, setError] = useState(null);
 
   const getStudents = async (search) => {
-    console.log(search === "");
+    setStudents([])
     try {
       setLoading(true);
       setError(null);
@@ -41,5 +41,5 @@ export function useStudents() {
     }
   };
 
-  return { students, getStudents, loading };
+  return { students, setStudents, getStudents, loading };
 }

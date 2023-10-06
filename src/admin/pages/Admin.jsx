@@ -7,7 +7,7 @@ import "../css/admin.css";
 
 function Admin() {
   const [search, setSearch] = useState("");
-  const { students, loading, getStudents } = useStudents();
+  const { students, loading, getStudents , setStudents} = useStudents();
 
   const handleChange = (event) => {
     setSearch(event.target.value);
@@ -20,8 +20,8 @@ function Admin() {
 
   return (
     <>
-      <EditStudents />
-      <NavBar />
+      <EditStudents getStudents={getStudents} />
+      <NavBar getStudents={getStudents}/>
       <form>
         <input
           onChange={handleChange}

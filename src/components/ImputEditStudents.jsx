@@ -1,19 +1,18 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import AppContext from "../AppContext";
 import EscuelaApi from "../api/EscuelaApi";
-import { useStudents } from "../hook/useStudents";
 
-function ImputEditStudents() {
-  const { selectedStudent, setSelectedStudent, isEdit, setReFresh, isReFresh } =
+function ImputEditStudents({ getStudents }) {
+  const { selectedStudent, setSelectedStudent, isEdit} =
     useContext(AppContext);
-  const { firstName, lastName, phone, email, yearOfStudy, _id } =
+  const { firstName, lastName, phone, email, yearOfStudy, _id , monthlyFees} =
     selectedStudent;
-  const { getStudents } = useStudents();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     editStudents();
-    getStudents("");
   };
+
   const editStudents = async () => {
     try {
       const resp = await EscuelaApi.put("/admin/editstudents", {
@@ -22,12 +21,15 @@ function ImputEditStudents() {
         yearOfStudy,
         phone,
         email,
+        monthlyFees,
         _id,
       });
+      getStudents("")
     } catch (error) {
       console.log(error);
     }
   };
+
   const handleChangeEditar = (propiedad, valor) => {
     setSelectedStudent({
       ...selectedStudent,
@@ -116,6 +118,22 @@ function ImputEditStudents() {
             />
             <label>Email</label>
           </div>
+          <div>
+  <input
+    disabled={!isEdit}
+    type="text"
+    name="monthlyFees"
+    maxLength="5"
+    minLength="5"
+    className={monthlyFees ? "custom-input active" : "custom-input"}
+    value={monthlyFees}
+    onChange={(e) =>
+      handleChangeEditar("monthlyFees", e.target.value.replace(/[^0-9-]/g, "")
+      )
+    }
+  />
+  <label>Matrícula (MM-DD)</label>
+</div>
         </div>
         <button type="submit">Editar alumno</button>
       </form>

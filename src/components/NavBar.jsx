@@ -13,7 +13,7 @@ import CreateStudents from "../auth/pages/CreateStudents";
 import Register from "../auth/pages/Register";
 import Popover from "../components/Popover";
 
-function NavBar() {
+function NavBar({getStudents}) {
   const {
     setIsModalOpen,
     setIsModalOpenStudents,
@@ -42,7 +42,7 @@ function NavBar() {
 
   return (
     <>
-      {isModalOpenStudents ? <CreateStudents /> : ""}
+      {isModalOpenStudents ? <CreateStudents getStudents={getStudents}/> : ""}
       {isModalOpenProfesor ? <Register /> : ""}
       <header className="header">
         <div className="left">
