@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import AppContext from "../AppContext";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import escuela1 from "../img/escuela1.jpg";
 import escuela2 from "../img/escuela2.jpg";
 import escuela3 from "../img/escuela3.jpg";
 import escuela4 from "../img/escuela4.jpg";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import Login from "../auth/pages/Login";
+import AppContext from "../AppContext";
 import "../style/home.css";
 
 function Index() {

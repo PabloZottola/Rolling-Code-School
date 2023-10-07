@@ -7,15 +7,14 @@ export function useStudents() {
   const [, setError] = useState(null);
 
   const getStudents = async (search) => {
-    setStudents([])
+    setStudents([]);
     try {
       setLoading(true);
       setError(null);
       const students = await EscuelaApi.get("/admin/students");
       const leakedStudents = students.data.students.filter((student) => {
-        if (search.length == 1) {
+        if (search.length === 1) {
           if (student.yearOfStudy.trim().includes(search.trim())) {
-            console.log(search.length == 1);
             return student;
           }
           return;

@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
-import AppContext from "./AppContext";
-import PublicRouter from "./routes/PublicRouter";
 import PrivateRouter from "./routes/PrivateRouter";
+import { BrowserRouter } from "react-router-dom";
+import PublicRouter from "./routes/PublicRouter";
+import AppContext from "./AppContext";
 import jwt_decode from "jwt-decode";
 import "./style/app.css";
-import { useStudents } from "./hook/useStudents";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +20,26 @@ function App() {
   if (logged) {
     decoded = jwt_decode(logged);
   }
+
+  useEffect(() => {
+    if (
+      isModalOpen === true ||
+      isModalOpenProfesor === true ||
+      isModalOpenStudents === true ||
+      isModalOpenEdit === true
+    ) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [
+    isModalOpen === true ||
+      isModalOpenProfesor === true ||
+      isModalOpenStudents === true ||
+      isModalOpenEdit === true,
+  ]);
 
   useEffect(() => {
     if (logged) {

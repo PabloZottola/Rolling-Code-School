@@ -1,17 +1,37 @@
 main {
-  height: 100vh;
+  height: auto;
   width: 100%;
   position: absolute;
-  margin-top: 10px;
+  padding: 20px 0 40px 0;
+}
+.search {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 36px 12px;
+}
+.search input {
+  padding: 4px 8px;
+  font-size: medium;
+  border: none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 255, 0.7);
+  transition: all 250ms ease;
+}
+.search input:focus {
+  outline: none;
+  transform: scale(1.04);
+}
+.search input:hover {
+  outline: none;
+  transform: scale(1.04);
 }
 .backBlue {
-  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+  box-shadow: 4px 4px 10px rgba(0, 0, 255, 1);
 }
 .backOrange {
-  box-shadow: 3px 3px 8px rgba(255, 166, 0, 0.7);
+  box-shadow: 4px 4px 10px rgba(255, 166, 0, 1);
 }
 .backRed {
-  box-shadow: 3px 3px 8px rgba(255, 0, 0, 0.7);
+  box-shadow: 4px 4px 10px rgba(255, 0, 0, 1);
 }
 .cardAlummnos {
   display: grid;
@@ -48,4 +68,14 @@ main {
 }
 .cardAlummnos li button:hover {
   transform: scale(1.08);
+}
+@media screen and (max-width: 480px) {
+  .search {
+    padding: 12px 16px 8px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .cardAlummnos {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
 }

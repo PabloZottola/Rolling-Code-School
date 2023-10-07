@@ -1,4 +1,5 @@
 .auth {
+  overflow: hidden;
   z-index: 20;
   display: flex;
   align-items: center;
@@ -137,15 +138,35 @@ label {
   color: rgb(100, 100, 100);
 }
 @media screen and (max-width: 580px) {
+  .wrapper {
+    border-radius: 0;
+    width: auto;
+    height: 100%;
+  }
+  .auth {
+    display: block;
+    position: fixed;
+  }
   .auth div form {
     padding: 38px 16px 24px 16px;
   }
   .auth div form div {
     grid-template-columns: repeat(1, 0fr);
-    gap: 8px;
+    gap: 6px;
   }
-  .auth div img {
-    width: 42vh;
+  .padLock {
+    position: relative;
+    left: 8px;
+  }
+  .top {
+    position: relative;
+    justify-content: flex-start;
+  }
+  .top h2 {
+    display: none;
+  }
+  .fondo {
+    display: none;
   }
   .auth div form button {
     padding: 12px 20px;

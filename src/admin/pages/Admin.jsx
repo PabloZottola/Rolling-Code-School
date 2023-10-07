@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import NavBar from "../../components/NavBar";
-import { Students } from "../../components/ListStudents";
 import EditStudents from "../../auth/components/EditStudents";
+import { Students } from "../../components/ListStudents";
 import { useStudents } from "../../hook/useStudents";
+import NavBar from "../../components/NavBar";
 import "../css/admin.css";
 
 function Admin() {
   const [search, setSearch] = useState("");
-  const { students, loading, getStudents , setStudents} = useStudents();
+  const { students, loading, getStudents } = useStudents();
 
   const handleChange = (event) => {
     setSearch(event.target.value);
@@ -21,13 +21,14 @@ function Admin() {
   return (
     <>
       <EditStudents getStudents={getStudents} />
-      <NavBar getStudents={getStudents}/>
-      <form>
+      <NavBar getStudents={getStudents} />
+      <form className="search">
         <input
+          type="search"
           onChange={handleChange}
           value={search}
           name="query"
-          placeholder="Filtro"
+          placeholder="Filtro de alumnos"
         />
       </form>
       <main>

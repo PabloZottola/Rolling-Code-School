@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import AppContext from "../../AppContext";
 import ImputRegister from "../../components/ImputRegister";
 import fondoRegistro from "../../img/fondoRegistro.png";
+import AppContext from "../../AppContext";
 import "../css/auth.css";
 
 function Register() {

@@ -1,19 +1,17 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import AppContext from "../AppContext";
-import Logo from "../img/Logo.png";
-import createuser from "../img/createuser.png";
-import deleteuser from "../img/delete.png";
-import edit from "../img/edit.png";
-import user from "../img/user.png";
-import login from "../img/login.png";
-import students from "../img/students.png";
-import "../style/navbar.css";
 import CreateStudents from "../auth/pages/CreateStudents";
+import { Link, useNavigate } from "react-router-dom";
+import createuser from "../img/createuser.png";
 import Register from "../auth/pages/Register";
 import Popover from "../components/Popover";
+import students from "../img/students.png";
+import AppContext from "../AppContext";
+import login from "../img/login.png";
+import Logo from "../img/Logo.png";
+import user from "../img/user.png";
+import "../style/navbar.css";
 
-function NavBar({getStudents}) {
+function NavBar({ getStudents }) {
   const {
     setIsModalOpen,
     setIsModalOpenStudents,
@@ -39,10 +37,9 @@ function NavBar({getStudents}) {
   const handleOpenModalProfesor = () => {
     setIsModalOpenProfesor(true);
   };
-
   return (
     <>
-      {isModalOpenStudents ? <CreateStudents getStudents={getStudents}/> : ""}
+      {isModalOpenStudents ? <CreateStudents getStudents={getStudents} /> : ""}
       {isModalOpenProfesor ? <Register /> : ""}
       <header className="header">
         <div className="left">
@@ -50,10 +47,10 @@ function NavBar({getStudents}) {
             <img src={Logo} alt="Logo de la escuela sin fondo" />
           </Link>
         </div>
-        <ul>
+        <ul className="NavUl">
           {window.location.href === "http://localhost:5173/admin" ? (
             ""
-          ) : ( 
+          ) : (
             <>
               <li>Nosotros</li>
               <li>Contacto</li>

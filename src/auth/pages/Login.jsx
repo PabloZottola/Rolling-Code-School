@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import AppContext from "../../AppContext";
-import fondoLogin from "../../img/backLogin.png";
 import ImputLogin from "../../components/ImputLogin";
+import fondoLogin from "../../img/backLogin.png";
+import AppContext from "../../AppContext";
 import "../css/auth.css";
 
 function Login() {

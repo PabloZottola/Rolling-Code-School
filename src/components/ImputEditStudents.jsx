@@ -1,8 +1,9 @@
-import { useContext } from "react";
-import AppContext from "../AppContext";
+import { useContext, useState } from "react";
 import EscuelaApi from "../api/EscuelaApi";
+import AppContext from "../AppContext";
 
 function ImputEditStudents({ getStudents }) {
+  const [openModal, setOpenModal] = useState(false);
   const { selectedStudent, setSelectedStudent, isEdit } =
     useContext(AppContext);
   const {
@@ -18,7 +19,8 @@ function ImputEditStudents({ getStudents }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    editStudents();
+    setOpenModal(true);
+    // editStudents();
   };
 
   const editStudents = async () => {
@@ -48,6 +50,13 @@ function ImputEditStudents({ getStudents }) {
 
   return (
     <>
+      {openModal === true ? (
+        <div className="editModal">
+          <button>Cerrar sesion</button>
+        </div>
+      ) : (
+        ""
+      )}
       <form onSubmit={handleSubmit}>
         <div>
           <div>

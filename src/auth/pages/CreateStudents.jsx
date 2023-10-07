@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import ImputCreateStudents from "../../components/ImputCreateStudents";
 import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
-import "../css/auth.css";
 import AppContext from "../../AppContext";
+import "../css/auth.css";
 
-function CreateStudents({getStudents}) {
+function CreateStudents({ getStudents }) {
   const { isModalOpenStudents, setIsModalOpenStudents } =
     useContext(AppContext);
 
@@ -31,7 +31,7 @@ function CreateStudents({getStudents}) {
             alt="Formulario de registro de alumnos"
           />
         </div>
-        <ImputCreateStudents getStudents={getStudents}/>
+        <ImputCreateStudents getStudents={getStudents} />
       </div>
     </section>
   );

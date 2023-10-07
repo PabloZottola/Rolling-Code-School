@@ -1,7 +1,7 @@
 import React from "react";
+import ContactForm from "../../components/ContactForm";
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
-import ContactForm from "../../components/ContactForm";
 import "../../style/AboutUs.css";
 
 function Contact() {
