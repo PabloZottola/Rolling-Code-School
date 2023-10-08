@@ -32,13 +32,14 @@ function EditStudents({ getStudents }) {
               <img src={padLockBlock} alt="" />
             </button>
           )}
-          <button className="closeModal" onClick={closeModal}>
-            X
-          </button>
+
           <h2>
             DETALLES <br />
             DE ALUMNOS
           </h2>
+          <button className="closeModal" onClick={closeModal}>
+            X
+          </button>
           <img
             className="fondo"
             src={fondoEdit}
