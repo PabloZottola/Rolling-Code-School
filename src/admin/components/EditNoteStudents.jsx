@@ -3,7 +3,7 @@ import AppContext from "../../AppContext";
 import fondoEdit from "../../img/fondoEditarAlum.jpg";
 import padLockOpen from "../../img/candado-abierto.png";
 import padLockBlock from "../../img/candado-cerrado.png";
-import ImputEditNoteStudents from "./imputEditNoteStudents";
+import ImputEditNoteStudents from "./ImputEditNoteStudents";
 import "../../style/modal.css";
 
 function EditNoteStudents({ getStudents }) {
