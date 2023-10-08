@@ -48,7 +48,8 @@ function NavBar({ getStudents }) {
           </Link>
         </div>
         <ul className="NavUl">
-          {window.location.href === "http://localhost:5173/admin" ? (
+          {window.location.href ===
+          "https://highschoolrolling.netlify.app/admin" ? (
             ""
           ) : (
             <>
@@ -69,7 +70,8 @@ function NavBar({ getStudents }) {
             </>
           ) : decoded.role === "Profesor" ? (
             <>
-              {window.location.href === "http://localhost:5173/admin" ? (
+              {window.location.href ===
+              "https://highschoolrolling.netlify.app/admin" ? (
                 <>
                   <Popover />{" "}
                 </>
@@ -84,7 +86,8 @@ function NavBar({ getStudents }) {
             </>
           ) : (
             <>
-              {window.location.href === "http://localhost:5173/admin" ? (
+              {window.location.href ===
+              "https://highschoolrolling.netlify.app/admin" ? (
                 <>
                   <Popover />{" "}
                 </>
