@@ -1,13 +1,18 @@
 import { useContext } from "react";
-import AppContext from "../AppContext";
-import "../admin/css/admin.css";
+import "../css/admin.css";
+import AppContext from "../../AppContext";
 
 function ListStudents({ alumnos }) {
-  const { setIsModalOpenEdit, setSelectedStudent } = useContext(AppContext);
+  const { setIsModalOpenEdit, setSelectedStudent, setIsModalOpenEditNote } =
+    useContext(AppContext);
 
   const handleEditStudents = (alumnos) => {
     setSelectedStudent(alumnos);
     setIsModalOpenEdit(true);
+  };
+  const handleEditNoteStudents = (alumnos) => {
+    setSelectedStudent(alumnos);
+    setIsModalOpenEditNote(true);
   };
   const fecha = new Date().toISOString().slice(5, -14).replace("-", "");
   return (
@@ -30,6 +35,9 @@ function ListStudents({ alumnos }) {
           <span>Expediente: {alumno._id}</span>
           <button onClick={() => handleEditStudents(alumno)}>
             Detalle del Alumno
+          </button>
+          <button onClick={() => handleEditNoteStudents(alumno)}>
+            Notas del Alumno
           </button>
         </li>
       ))}

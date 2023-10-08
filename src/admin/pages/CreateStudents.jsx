@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import ImputCreateStudents from "../../components/ImputCreateStudents";
+import ImputCreateStudents from "../components/ImputCreateStudents";
 import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
 import AppContext from "../../AppContext";
-import "../css/auth.css";
+import "../../style/modal.css";
 
 function CreateStudents({ getStudents }) {
   const { isModalOpenStudents, setIsModalOpenStudents } =

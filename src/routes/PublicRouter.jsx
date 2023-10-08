@@ -13,7 +13,6 @@ function PublicRouter() {
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/about-us" element={<AboutUs />} />
         <Route exact path="/contact" element={<Contact />} />
-        <Route exact path="/admin" element={<Admin />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

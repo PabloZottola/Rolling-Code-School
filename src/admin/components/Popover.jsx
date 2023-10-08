@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import fondoLogin from "../img/backLogin.png";
-import EscuelaApi from "../api/EscuelaApi";
+import fondoLogin from "../../img/backLogin.png";
+import EscuelaApi from "../../api/EscuelaApi";
 import jwt_decode from "jwt-decode";
-import user from "../img/user.png";
-import "../style/popover.css";
+import user from "../../img/user.png";
+import "../css/popover.css";
 
 function Popover() {
   const [popupVisible, setPopupVisible] = useState(false);

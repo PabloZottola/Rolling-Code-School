@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import ImputRegister from "../../components/ImputRegister";
+import ImputRegister from "../components/ImputRegister";
 import fondoRegistro from "../../img/fondoRegistro.png";
 import AppContext from "../../AppContext";
-import "../css/auth.css";
+import "../../style/modal.css";
 
 function Register() {
   const { isModalOpenProfesor, setIsModalOpenProfesor } =

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import EditStudents from "../../auth/components/EditStudents";
-import { Students } from "../../components/ListStudents";
+import { Students } from "../../admin/components/ListStudents";
 import { useStudents } from "../../hook/useStudents";
 import NavBar from "../../components/NavBar";
 import "../css/admin.css";
+import EditNoteStudents from "../components/EditNoteStudents";
+import EditStudents from "../components/EditStudents";
 
 function Admin() {
   const [search, setSearch] = useState("");
@@ -20,7 +21,8 @@ function Admin() {
 
   return (
     <>
-      <EditStudents getStudents={getStudents} />
+      {<EditStudents getStudents={getStudents} />}
+      <EditNoteStudents getStudents={getStudents} />
       <NavBar getStudents={getStudents} />
       <form className="search">
         <input

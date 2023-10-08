@@ -92,6 +92,7 @@
   font-size: x-large;
   font-weight: 600;
   transition: transform 250ms ease;
+  z-index: 10;
 }
 .closeModal:hover {
   transform: scale(1.11);

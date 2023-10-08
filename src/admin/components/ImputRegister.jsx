@@ -1,4 +1,4 @@
-import useRegistrationForm from "../hook/FormRegistration";
+import useRegistrationForm from "../../hook/FormRegistration";
 
 function ImputRegister() {
   const {

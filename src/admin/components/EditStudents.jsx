@@ -1,20 +1,18 @@
 import { useContext } from "react";
 import AppContext from "../../AppContext";
 import fondoEdit from "../../img/fondoEditarAlum.jpg";
-import ImputEditStudents from "../../components/ImputEditStudents";
+import ImputEditStudents from "./ImputEditStudents";
 import padLockOpen from "../../img/candado-abierto.png";
 import padLockBlock from "../../img/candado-cerrado.png";
-import "../css/auth.css";
+import "../../style/modal.css";
 
 function EditStudents({ getStudents }) {
   const { isModalOpenEdit, setIsModalOpenEdit, isEdit, setIsEdit } =
     useContext(AppContext);
-
   const closeModal = () => {
     setIsEdit(false);
     setIsModalOpenEdit(false);
   };
-
   if (!isModalOpenEdit) return null;
 
   const handleIsEdit = () => {

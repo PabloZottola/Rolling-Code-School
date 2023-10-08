@@ -1,70 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PrivateRouter from "./routes/PrivateRouter";
 import { BrowserRouter } from "react-router-dom";
 import PublicRouter from "./routes/PublicRouter";
 import AppContext from "./AppContext";
-import jwt_decode from "jwt-decode";
 import "./style/app.css";
+import UseModalOverflow from "./hook/UseModalOverflow";
+import UseAuth from "./hook/UseAuth";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenStudents, setIsModalOpenStudents] = useState(false);
   const [isModalOpenEdit, setIsModalOpenEdit] = useState(false);
+  const [isModalOpenEditNote, setIsModalOpenEditNote] = useState(false);
   const [isModalOpenProfesor, setIsModalOpenProfesor] = useState(false);
-  const [isUserLogged, setIsUserLogged] = useState(false);
-  const [loading, setLoading] = useState(true);
   const [isEdit, setIsEdit] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState({});
-  const logged = localStorage.getItem("token");
-  let decoded = [];
-  if (logged) {
-    decoded = jwt_decode(logged);
-  }
 
-  useEffect(() => {
-    if (
-      isModalOpen === true ||
-      isModalOpenProfesor === true ||
-      isModalOpenStudents === true ||
-      isModalOpenEdit === true
-    ) {
-      document.body.style.overflow = "hidden";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [
-    isModalOpen === true ||
-      isModalOpenProfesor === true ||
-      isModalOpenStudents === true ||
-      isModalOpenEdit === true,
-  ]);
-
-  useEffect(() => {
-    if (logged) {
-      setIsUserLogged(true);
-      setLoading(false);
-    } else {
-      setIsUserLogged(false);
-
-      setLoading(false);
-    }
-  }, [logged]);
-
-  useEffect(() => {
-    if (isUserLogged) {
-      const exp = new Date(decoded.exp * 1000);
-      const currentDate = new Date();
-      if (exp < currentDate) {
-        localStorage.removeItem("token");
-      }
-    }
-  }, [isUserLogged, logged]);
+  UseModalOverflow(
+    isModalOpen,
+    isModalOpenProfesor,
+    isModalOpenStudents,
+    isModalOpenEdit,
+    isModalOpenEditNote
+  );
+  const { isUserLogged, setIsUserLogged, loading, decoded } = UseAuth();
 
   if (loading) {
     return <div>loading...</div>;
   }
+
   return (
     <AppContext.Provider
       value={{
@@ -83,6 +47,8 @@ function App() {
         setSelectedStudent,
         isEdit,
         setIsEdit,
+        isModalOpenEditNote,
+        setIsModalOpenEditNote,
       }}
     >
       {isUserLogged ? (

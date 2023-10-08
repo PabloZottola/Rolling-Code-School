@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
-import EscuelaApi from "../api/EscuelaApi";
-import AppContext from "../AppContext";
+import { useContext, useEffect, useState } from "react";
+import EscuelaApi from "../../api/EscuelaApi";
+import AppContext from "../../AppContext";
 
 function ImputEditStudents({ getStudents }) {
   const [openModal, setOpenModal] = useState(false);
@@ -20,7 +20,7 @@ function ImputEditStudents({ getStudents }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setOpenModal(true);
-    // editStudents();
+    editStudents();
   };
 
   const editStudents = async () => {
@@ -47,6 +47,10 @@ function ImputEditStudents({ getStudents }) {
       [propiedad]: valor,
     });
   };
+
+  useEffect(() => {
+    getStudents("");
+  }, []);
 
   return (
     <>
@@ -83,7 +87,6 @@ function ImputEditStudents({ getStudents }) {
             />
             <label>Apellido</label>
           </div>
-
           <div>
             <select
               disabled={!isEdit}
@@ -103,7 +106,6 @@ function ImputEditStudents({ getStudents }) {
             </select>
             <label>Año de cursado</label>
           </div>
-
           <div>
             <input
               disabled={!isEdit}
@@ -169,7 +171,7 @@ function ImputEditStudents({ getStudents }) {
             <label>Estado de alumno</label>
           </div>
         </div>
-        <button type="submit">Editar alumno</button>
+        {isEdit ? <button type="submit">Editar alumno</button> : ""}
       </form>
     </>
   );

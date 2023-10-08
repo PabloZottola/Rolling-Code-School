@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import ImputLogin from "../../components/ImputLogin";
+import ImputLogin from "../components/ImputLogin";
 import fondoLogin from "../../img/backLogin.png";
 import AppContext from "../../AppContext";
-import "../css/auth.css";
+import "../../style/modal.css";
 
 function Login() {
   const { isModalOpen, setIsModalOpen } = useContext(AppContext);

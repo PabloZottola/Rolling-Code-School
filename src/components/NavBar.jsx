@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import CreateStudents from "../auth/pages/CreateStudents";
 import { Link, useNavigate } from "react-router-dom";
 import createuser from "../img/createuser.png";
-import Register from "../auth/pages/Register";
-import Popover from "../components/Popover";
+import Popover from "../admin/components/Popover";
 import students from "../img/students.png";
 import AppContext from "../AppContext";
 import login from "../img/login.png";
 import Logo from "../img/Logo.png";
 import user from "../img/user.png";
 import "../style/navbar.css";
+import CreateStudents from "../admin/pages/CreateStudents";
+import Register from "../admin/pages/Register";
 
 function NavBar({ getStudents }) {
   const {
@@ -79,7 +79,7 @@ function NavBar({ getStudents }) {
                 </button>
               )}
               <button onClick={handleOpenModalStudents}>
-                <img src={students} alt="Boton para salir de su cuenta" />
+                <img src={students} alt="Boton para crear un alumnos" />
               </button>
             </>
           ) : (
@@ -94,10 +94,10 @@ function NavBar({ getStudents }) {
                 </button>
               )}
               <button onClick={handleOpenModalProfesor}>
-                <img src={createuser} alt="Boton para salir de su cuenta" />
+                <img src={createuser} alt="Boton para crear un profesor" />
               </button>
               <button onClick={handleOpenModalStudents}>
-                <img src={students} alt="Boton para salir de su cuenta" />
+                <img src={students} alt="Boton para crear un alumnos" />
               </button>
             </>
           )}

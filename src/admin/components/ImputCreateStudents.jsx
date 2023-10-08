@@ -1,6 +1,6 @@
-import useCrearAlumnosForm from "../hook/FormCrearAlumnos";
+import useCrearAlumnosForm from "../../hook/FormCrearAlumnos";
 
-function ImputCreateStudents({getStudents}) {
+function ImputCreateStudents({ getStudents }) {
   const {
     firstName,
     setFirstName,
@@ -14,7 +14,7 @@ function ImputCreateStudents({getStudents}) {
     setEmail,
     errorMessage,
     handleSubmit,
-  } = useCrearAlumnosForm({getStudents});
+  } = useCrearAlumnosForm({ getStudents });
   return (
     <>
       <form onSubmit={handleSubmit}>
