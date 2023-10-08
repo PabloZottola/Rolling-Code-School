@@ -13,7 +13,7 @@ function PublicRouter() {
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/about-us" element={<AboutUs />} />
         <Route exact path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFoundPage />} /> 
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

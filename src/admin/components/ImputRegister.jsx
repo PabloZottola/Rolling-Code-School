@@ -1,6 +1,6 @@
-import useCrearAlumnosForm from "../hook/FormCrearAlumnos";
+import useRegistrationForm from "../../hook/FormRegistration";
 
-function ImputCreateStudents() {
+function ImputRegister() {
   const {
     firstName,
     setFirstName,
@@ -8,13 +8,15 @@ function ImputCreateStudents() {
     setLastName,
     phone,
     setPhone,
-    yearOfStudy,
-    setYearOfStudy,
     email,
     setEmail,
+    password,
+    setPassword,
+    repeatPassword,
+    setRepeatPassword,
     errorMessage,
     handleSubmit,
-  } = useCrearAlumnosForm();
+  } = useRegistrationForm();
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -41,25 +43,6 @@ function ImputCreateStudents() {
             />
             <label>Apellido</label>
           </div>
-
-          <div>
-            <select
-              name="YearOfStudy"
-              value={yearOfStudy}
-              onChange={(e) => setYearOfStudy(e.target.value)}
-              className={yearOfStudy ? "custom-input active" : "custom-input"}
-            >
-              <option value=""></option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-            </select>
-            <label>Año de cursado</label>
-          </div>
-
           <div>
             <input
               type="phone"
@@ -69,7 +52,7 @@ function ImputCreateStudents() {
               value={phone}
               onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))}
             />
-            <label>Número de teléfono</label>
+            <label>Numero de telefono</label>
           </div>
           <div>
             <input
@@ -82,12 +65,36 @@ function ImputCreateStudents() {
             />
             <label>Email</label>
           </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              maxLength="20"
+              className={password ? "custom-input active" : "custom-input"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label>Contraseña</label>
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              maxLength="20"
+              className={
+                repeatPassword ? "custom-input active" : "custom-input"
+              }
+              value={repeatPassword}
+              onChange={(e) => setRepeatPassword(e.target.value)}
+            />
+            <label>Repetir Contraseña</label>
+          </div>
         </div>
         <span>{errorMessage}</span>
-        <button type="submit">Registrar alumno</button>
+        <button type="submit">Registrarse</button>
       </form>
     </>
   );
 }
 
-export default ImputCreateStudents;
+export default ImputRegister;

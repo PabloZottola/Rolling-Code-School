@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import AppContext from "../../AppContext";
+import ImputLogin from "../components/ImputLogin";
 import fondoLogin from "../../img/backLogin.png";
-import ImputLogin from "../../components/ImputLogin";
-import "../css/auth.css";
+import AppContext from "../../AppContext";
+import "../../style/modal.css";
 
 function Login() {
   const { isModalOpen, setIsModalOpen } = useContext(AppContext);
@@ -17,9 +17,12 @@ function Login() {
     <section className="auth">
       <div className="wrapper">
         <div className="top">
-          <button onClick={closeModal}>X</button>
+          <button className="closeModal" onClick={closeModal}>
+            X
+          </button>
           <h2>LOGIN</h2>
           <img
+            className="fondo"
             src={fondoLogin}
             alt="Formulario de registro para los profesores"
           />

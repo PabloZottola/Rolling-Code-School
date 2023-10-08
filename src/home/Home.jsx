@@ -1,18 +1,19 @@
 import { useContext } from "react";
-import AppContext from "../AppContext";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import escuela1 from "../img/escuela1.jpg";
 import escuela2 from "../img/escuela2.jpg";
 import escuela3 from "../img/escuela3.jpg";
 import escuela4 from "../img/escuela4.jpg";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import AppContext from "../AppContext";
+import "../home/css/home.css";
 import Login from "../auth/pages/Login";
-import "../style/home.css";
 
 function Index() {
   const { isModalOpen } = useContext(AppContext);
   return (
     <>
+      {isModalOpen ? <Login /> : ""}
       <div className="layout">
         <div>
           <div>
@@ -33,7 +34,7 @@ function Index() {
           </div>
         </div>
       </div>
-      {isModalOpen ? <Login /> : ""}
+
       <NavBar />
       <Footer />
     </>

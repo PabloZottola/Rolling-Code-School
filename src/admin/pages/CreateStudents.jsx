@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import ImputCreateStudents from "../../components/ImputCreateStudents";
+import ImputCreateStudents from "../components/ImputCreateStudents";
 import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
-import "../css/auth.css";
 import AppContext from "../../AppContext";
+import "../../style/modal.css";
 
-function CreateStudents() {
+function CreateStudents({ getStudents }) {
   const { isModalOpenStudents, setIsModalOpenStudents } =
     useContext(AppContext);
 
@@ -18,14 +18,20 @@ function CreateStudents() {
     <section className="auth">
       <div className="wrapper">
         <div className="top">
-          <button onClick={closeModal}>X</button>
+          <button className="closeModal" onClick={closeModal}>
+            X
+          </button>
           <h2>
             REGISTRO <br />
             DE ALUMNOS
           </h2>
-          <img src={fondoRegistro} alt="Formulario de registro de alumnos" />
+          <img
+            className="fondo"
+            src={fondoRegistro}
+            alt="Formulario de registro de alumnos"
+          />
         </div>
-        <ImputCreateStudents />
+        <ImputCreateStudents getStudents={getStudents} />
       </div>
     </section>
   );

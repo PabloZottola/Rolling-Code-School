@@ -1,14 +1,13 @@
 import EscuelaApi from "../api/EscuelaApi";
 import { useState } from "react";
 
-function useCrearAlumnosForm() {
+function useCrearAlumnosForm({getStudents}) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [yearOfStudy, setYearOfStudy] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrorMessage("");
@@ -18,7 +17,7 @@ function useCrearAlumnosForm() {
       lastName.trim() === "" ||
       yearOfStudy.trim() === "" ||
       phone.trim() === "" ||
-      email.trim() === "" //aquí no hay ||
+      email.trim() === ""
     ) {
       setErrorMessage("Todos los campos son obligatorios.");
       return;
@@ -50,6 +49,7 @@ function useCrearAlumnosForm() {
     }
 
     startRegister();
+    getStudents("");
   };
 
   const startRegister = async () => {

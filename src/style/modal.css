@@ -1,5 +1,6 @@
 .auth {
-  z-index: 10;
+  overflow: hidden;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +9,7 @@
   position: absolute;
   background-color: rgba(0, 0, 0, 0.7);
 }
-.auth div img {
+.fondo {
   height: 156px;
   width: 556px;
   object-fit: cover;
@@ -62,7 +63,23 @@
   align-items: center;
   position: relative;
 }
-.top button {
+.padLock {
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  background: none;
+  transition: transform 250ms ease;
+}
+.padLock img {
+  width: 32px;
+  height: auto;
+}
+.padLock:hover {
+  transform: scale(1.11);
+}
+.closeModal {
   border: none;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
@@ -75,8 +92,9 @@
   font-size: x-large;
   font-weight: 600;
   transition: transform 250ms ease;
+  z-index: 10;
 }
-.top button:hover {
+.closeModal:hover {
   transform: scale(1.11);
 }
 .top h2 {
@@ -121,15 +139,35 @@ label {
   color: rgb(100, 100, 100);
 }
 @media screen and (max-width: 580px) {
+  .wrapper {
+    border-radius: 0;
+    width: auto;
+    height: 100%;
+  }
+  .auth {
+    display: block;
+    position: fixed;
+  }
   .auth div form {
     padding: 38px 16px 24px 16px;
   }
   .auth div form div {
     grid-template-columns: repeat(1, 0fr);
-    gap: 8px;
+    gap: 6px;
   }
-  .auth div img {
-    width: 42vh;
+  .padLock {
+    position: relative;
+    left: 8px;
+  }
+  .top {
+    position: relative;
+    justify-content: flex-start;
+  }
+  .top h2 {
+    display: none;
+  }
+  .fondo {
+    display: none;
   }
   .auth div form button {
     padding: 12px 20px;
