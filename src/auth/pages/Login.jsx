@@ -17,10 +17,10 @@ function Login() {
     <section className="auth">
       <div className="wrapper">
         <div className="top">
+          <h2>LOGIN</h2>
           <button className="closeModal" onClick={closeModal}>
             X
           </button>
-          <h2>LOGIN</h2>
           <img
             className="fondo"
             src={fondoLogin}

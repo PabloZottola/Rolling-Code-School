@@ -17,12 +17,12 @@ function Register() {
     <section className="auth">
       <div className="wrapper">
         <div className="top">
-          <button className="closeModal" onClick={closeModal}>
-            X
-          </button>
           <h2>
             REGISTRO <br /> DE PROFESORES
           </h2>
+          <button className="closeModal" onClick={closeModal}>
+            X
+          </button>
           <img
             className="fondo"
             src={fondoRegistro}

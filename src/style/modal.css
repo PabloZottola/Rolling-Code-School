@@ -143,28 +143,44 @@ label {
     border-radius: 0;
     width: auto;
     height: 100%;
+    overflow: auto;
   }
   .auth {
     display: block;
-    position: fixed;
+    position: relative;
+    overflow: auto;
+    height: 100vh;
   }
   .auth div form {
-    padding: 38px 16px 24px 16px;
+    padding: 4px 16px 24px 16px;
   }
   .auth div form div {
     grid-template-columns: repeat(1, 0fr);
-    gap: 6px;
+    gap: 0;
   }
   .padLock {
     position: relative;
     left: 8px;
   }
   .top {
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
     position: relative;
-    justify-content: flex-start;
+    justify-content: space-evenly;
+  }
+  .top button {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
   }
   .top h2 {
-    display: none;
+    position: relative;
+    color: azure;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
+    user-select: none;
   }
   .fondo {
     display: none;
@@ -182,10 +198,10 @@ label {
   }
   .custom-input:focus + label {
     font-size: smaller;
-    bottom: 60px;
+    bottom: 42px;
   }
   .custom-input.active + label {
     font-size: smaller;
-    bottom: 60px;
+    bottom: 42px;
   }
 }
