@@ -1,4 +1,4 @@
-import UseCrearAlumnosForm from "../../hook/useCrearAlumnosForm";
+import UseCrearAlumnosForm from "../../hook/UseCrearAlumnosForm";
 
 function ImputCreateStudents({ getStudents }) {
   const {
