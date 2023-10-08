@@ -1,0 +1,191 @@
+.auth {
+  overflow: hidden;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.fondo {
+  height: 156px;
+  width: 556px;
+  object-fit: cover;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.auth div form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 30px 30px 30px;
+}
+.auth div form button {
+  padding: 14px 28px;
+  font-size: x-large;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
+  background-color: rgba(0, 0, 255, 0.6);
+  cursor: pointer;
+  transition: transform 250ms ease;
+}
+.auth div form button:hover {
+  transform: scale(1.08);
+}
+.auth div form span {
+  font-size: large;
+  font-weight: 600;
+  color: red;
+  height: 10px;
+  margin-bottom: 24px;
+}
+.auth div form div {
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+  grid-gap: 16px;
+}
+.auth div form div div {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper {
+  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+  border-radius: 20px;
+  background-color: white;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.padLock {
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  background: none;
+  transition: transform 250ms ease;
+}
+.padLock img {
+  width: 32px;
+  height: auto;
+}
+.padLock:hover {
+  transform: scale(1.11);
+}
+.closeModal {
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
+  width: 38px;
+  background-color: rgba(24, 24, 255, 0.9);
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: x-large;
+  font-weight: 600;
+  transition: transform 250ms ease;
+  z-index: 10;
+}
+.closeModal:hover {
+  transform: scale(1.11);
+}
+.top h2 {
+  position: absolute;
+  text-align: center;
+  color: azure;
+  font-size: 54px;
+  text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
+  user-select: none;
+}
+label {
+  position: relative;
+  bottom: 48px;
+  padding-left: 1px;
+  min-width: 240px;
+  height: 24px;
+  pointer-events: none;
+  user-select: none;
+  color: rgb(110, 110, 110);
+  font-size: x-large;
+  transition: all 250ms ease;
+}
+.custom-input {
+  margin-top: 10px;
+  padding: 1px;
+  border: none;
+  border-bottom: 0.8px solid black;
+  font-size: large;
+}
+.custom-input:focus {
+  outline: none;
+}
+.custom-input:focus + label {
+  bottom: 70px;
+  font-size: medium;
+  transition: all 250ms ease;
+  color: rgb(90, 90, 90);
+}
+.custom-input.active + label {
+  bottom: 70px;
+  font-size: medium;
+  color: rgb(100, 100, 100);
+}
+@media screen and (max-width: 580px) {
+  .wrapper {
+    border-radius: 0;
+    width: auto;
+    height: 100%;
+  }
+  .auth {
+    display: block;
+    position: fixed;
+  }
+  .auth div form {
+    padding: 38px 16px 24px 16px;
+  }
+  .auth div form div {
+    grid-template-columns: repeat(1, 0fr);
+    gap: 6px;
+  }
+  .padLock {
+    position: relative;
+    left: 8px;
+  }
+  .top {
+    position: relative;
+    justify-content: flex-start;
+  }
+  .top h2 {
+    display: none;
+  }
+  .fondo {
+    display: none;
+  }
+  .auth div form button {
+    padding: 12px 20px;
+    font-size: large;
+  }
+  label {
+    font-size: x-large;
+    bottom: 40px;
+  }
+  .custom-input {
+    font-size: medium;
+  }
+  .custom-input:focus + label {
+    font-size: smaller;
+    bottom: 60px;
+  }
+  .custom-input.active + label {
+    font-size: smaller;
+    bottom: 60px;
+  }
+}

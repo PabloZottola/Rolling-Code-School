@@ -1,0 +1,53 @@
+.popover-container button {
+  border: none;
+  background: none;
+}
+.popover-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fff;
+  border-radius: 16px;
+  width: auto;
+  position: absolute;
+  top: 85%;
+  right: 34px;
+  font-size: medium;
+  font-weight: 600;
+  list-style: none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 255, 0.7);
+  padding: 0;
+  margin: 0;
+}
+.popover-container ul img {
+  height: 140px;
+  width: auto;
+  object-fit: cover;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+.popover-container ul li {
+  color: black;
+  text-shadow: none;
+  padding: 8px 12px;
+}
+.popover-container ul button {
+  padding: 4px 12px;
+  font-size: large;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 255, 0.6);
+  background-color: rgba(0, 0, 255, 0.6);
+  transition: transform 250ms ease;
+  margin: 0 30px 20px;
+}
+.popover-container ul button:hover {
+  transform: scale(1.04);
+}
+@media screen and (max-width: 280px) {
+  .popover-container ul {
+    top: 100%;
+    right: 16px;
+  }
+}
