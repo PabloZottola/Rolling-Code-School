@@ -1,7 +1,7 @@
 import EscuelaApi from "../api/EscuelaApi";
 import { useState } from "react";
 
-function useCrearAlumnosForm({ getStudents }) {
+function UseCrearAlumnosForm({ getStudents }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [yearOfStudy, setYearOfStudy] = useState("");
@@ -88,4 +88,4 @@ function useCrearAlumnosForm({ getStudents }) {
   };
 }
 
-export default useCrearAlumnosForm;
+export default UseCrearAlumnosForm;
