@@ -140,6 +140,9 @@ label {
 }
 @media screen and (max-width: 580px) {
   .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 0;
     width: auto;
     height: 100%;
