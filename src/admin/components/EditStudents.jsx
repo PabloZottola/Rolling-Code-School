@@ -46,7 +46,7 @@ function EditStudents({ getStudents }) {
             alt="Formulario de registro de alumnos"
           />
         </div>
-        <ImputEditStudents getStudents={getStudents} />
+        <ImputEditStudents getStudents={getStudents} closeModal={closeModal} />
       </div>
     </section>
   );

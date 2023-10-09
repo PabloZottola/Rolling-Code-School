@@ -49,7 +49,6 @@ function UseCrearAlumnosForm({ getStudents }) {
     }
 
     startRegister();
-    getStudents("");
   };
 
   const startRegister = async () => {
@@ -61,7 +60,7 @@ function UseCrearAlumnosForm({ getStudents }) {
         phone,
         email,
       });
-      setErrorMessage(res.data.msg);
+      getStudents("");
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }

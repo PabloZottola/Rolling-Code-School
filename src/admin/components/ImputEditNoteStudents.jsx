@@ -1,39 +1,16 @@
-import { useContext, useState } from "react";
-import AppContext from "../../AppContext";
-import EscuelaApi from "../../api/EscuelaApi";
+import useEditNoteInput from "../../hook/UseEditNoteStudents";
 
-function ImputEditNoteStudents({ getStudents }) {
-  const [noteIndex, setNoteIndex] = useState(0);
-  const { selectedStudent, isEdit } = useContext(AppContext);
-  const { Notes, _id } = selectedStudent;
-  const [editedNotes, setEditedNotes] = useState(Notes);
-
-  const handleChangeEditar = (propiedad, valor) => {
-    const newNotes = [...editedNotes];
-    newNotes[noteIndex][propiedad] = valor;
-    setEditedNotes(newNotes);
-  };
-
-  const handleChangeNote = (selectedValue) => {
-    setNoteIndex(selectedValue);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    editStudents();
-  };
-
-  const editStudents = async () => {
-    try {
-      const resp = await EscuelaApi.put("/admin/editstudentsnote", {
-        _id,
-        editedNotes,
-      });
-      getStudents("");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+function ImputEditNoteStudents({ getStudents, closeModal }) {
+  const {
+    noteIndex,
+    errorMessage,
+    editedNotes,
+    handleChangeEditar,
+    handleChangeNote,
+    handleSubmit,
+    isEdit,
+    isValidInput,
+  } = useEditNoteInput({ getStudents, closeModal });
 
   return (
     <>
@@ -55,20 +32,14 @@ function ImputEditNoteStudents({ getStudents }) {
           <div>
             <input
               disabled={!isEdit}
-              type="text"
-              name="Biologia"
+              type="number"
+              id="Biologia"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Biologia}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar("Biologia", inputVal.replace(/[^0-9]/g, ""));
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Biología</label>
@@ -77,19 +48,13 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Economia"
+              id="Economia"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Economia}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar("Economia", inputVal.replace(/[^0-9]/g, ""));
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Economía</label>
@@ -98,22 +63,13 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="EducacionFisica"
+              id="EducacionFisica"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.EducacionFisica}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar(
-                  "EducacionFisica",
-                  inputVal.replace(/[^0-9]/g, "")
-                );
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Educación Física</label>
@@ -122,19 +78,13 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Fisica"
+              id="Fisica"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Fisica}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar("Fisica", inputVal.replace(/[^0-9]/g, ""));
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Física</label>
@@ -143,22 +93,13 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Geografia"
+              id="Geografia"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Geografia}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar(
-                  "Geografia",
-                  inputVal.replace(/[^0-9]/g, "")
-                );
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Geografía</label>
@@ -167,19 +108,13 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Historia"
+              id="Historia"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Historia}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar("Historia", inputVal.replace(/[^0-9]/g, ""));
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Historia</label>
@@ -188,22 +123,13 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="LenguayLiteratura"
+              id="LenguayLiteratura"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.LenguayLiteratura}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar(
-                  "LenguayLiteratura",
-                  inputVal.replace(/[^0-9]/g, "")
-                );
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Lengua y Literatura</label>
@@ -212,22 +138,13 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Matematicas"
+              id="Matematicas"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Matematicas}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar(
-                  "Matematicas",
-                  inputVal.replace(/[^0-9]/g, "")
-                );
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Matemáticas</label>
@@ -236,25 +153,28 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Quimica"
+              id="Quimica"
               maxLength={2}
               minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Quimica}
               onChange={(e) => {
-                let inputVal = e.target.value;
-                let intValue = parseInt(inputVal, 10);
-                if (!isNaN(intValue)) {
-                  intValue = Math.min(10, intValue);
-                  inputVal = intValue.toString();
-                }
-                handleChangeEditar("Quimica", inputVal.replace(/[^0-9]/g, ""));
+                handleChangeEditar(e.target.id, e.target.value);
               }}
             />
             <label>Química</label>
           </div>
         </div>
-        {isEdit ? <button type="submit">Editar notas del alumno</button> : ""}
+        {isEdit ? (
+          <>
+            <span>{errorMessage}</span>
+            <button type="submit" disabled={!isValidInput}>
+              Editar notas del alumno
+            </button>
+          </>
+        ) : (
+          ""
+        )}
       </form>
     </>
   );

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import AppContext from "../../AppContext";
 import UseEdiStudents from "../../hook/UseEdiStudents";
 
-function ImputEditStudents({ getStudents }) {
+function ImputEditStudents({ getStudents, closeModal }) {
   const { selectedStudent, setSelectedStudent, isEdit } =
     useContext(AppContext);
   const {
@@ -15,7 +15,7 @@ function ImputEditStudents({ getStudents }) {
     BlockedStudent,
     errorMessage,
     handleSubmit,
-  } = UseEdiStudents({ getStudents });
+  } = UseEdiStudents({ getStudents, closeModal });
 
   const handleChangeEditar = (propiedad, valor) => {
     setSelectedStudent({

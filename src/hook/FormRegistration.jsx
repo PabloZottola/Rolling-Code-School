@@ -65,7 +65,6 @@ function useRegistrationForm() {
         password,
         repeatPassword,
       });
-      setErrorMessage(res.data.msg);
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }

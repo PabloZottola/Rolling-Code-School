@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import EscuelaApi from "../api/EscuelaApi";
 import AppContext from "../AppContext";
 
-function UseEdiStudents({ getStudents }) {
+function UseEdiStudents({ getStudents, closeModal }) {
   const [errorMessage, setErrorMessage] = useState("");
   const { selectedStudent } = useContext(AppContext);
   const {
@@ -63,8 +63,8 @@ function UseEdiStudents({ getStudents }) {
       return;
     }
     setErrorMessage("");
-    // await editStudents();
-    getStudents("");
+    editStudents();
+    closeModal();
   };
 
   const editStudents = async () => {

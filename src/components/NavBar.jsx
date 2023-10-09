@@ -50,7 +50,7 @@ function NavBar({ getStudents }) {
         <ul className="NavUl">
           {window.location.href ===
           "https://highschoolrolling.netlify.app/admin" ? (
-            ""
+            <li>LISTA DE ALUMNOS</li>
           ) : (
             <>
               <li>Nosotros</li>
