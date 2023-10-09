@@ -1,9 +1,8 @@
-import { useContext, useState } from "react";
-import EscuelaApi from "../../api/EscuelaApi";
+import { useContext } from "react";
 import AppContext from "../../AppContext";
+import UseEdiStudents from "../../hook/UseEdiStudents";
 
 function ImputEditStudents({ getStudents }) {
-  const [openModal, setOpenModal] = useState(false);
   const { selectedStudent, setSelectedStudent, isEdit } =
     useContext(AppContext);
   const {
@@ -12,33 +11,11 @@ function ImputEditStudents({ getStudents }) {
     phone,
     email,
     yearOfStudy,
-    _id,
     monthlyFees,
     BlockedStudent,
-  } = selectedStudent;
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    editStudents();
-  };
-
-  const editStudents = async () => {
-    try {
-      const resp = await EscuelaApi.put("/admin/editstudents", {
-        firstName,
-        lastName,
-        yearOfStudy,
-        phone,
-        email,
-        monthlyFees,
-        BlockedStudent,
-        _id,
-      });
-      getStudents("");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    errorMessage,
+    handleSubmit,
+  } = UseEdiStudents({ getStudents });
 
   const handleChangeEditar = (propiedad, valor) => {
     setSelectedStudent({
@@ -59,7 +36,12 @@ function ImputEditStudents({ getStudents }) {
               maxLength="24"
               className={firstName ? "custom-input active" : "custom-input"}
               value={firstName}
-              onChange={(e) => handleChangeEditar("firstName", e.target.value.replace(/[^A-Za-z\s']+/g, ""))}
+              onChange={(e) =>
+                handleChangeEditar(
+                  "firstName",
+                  e.target.value.replace(/[^A-Za-z\s']+/g, "")
+                )
+              }
             />
             <label>Nombre</label>
           </div>
@@ -71,7 +53,12 @@ function ImputEditStudents({ getStudents }) {
               maxLength="24"
               className={lastName ? "custom-input active" : "custom-input"}
               value={lastName}
-              onChange={(e) => handleChangeEditar("lastName", e.target.value.replace(/[^A-Za-z\s']+/g, ""))}
+              onChange={(e) =>
+                handleChangeEditar(
+                  "lastName",
+                  e.target.value.replace(/[^A-Za-z\s']+/g, "")
+                )
+              }
             />
             <label>Apellido</label>
           </div>
@@ -159,7 +146,14 @@ function ImputEditStudents({ getStudents }) {
             <label>Estado de alumno</label>
           </div>
         </div>
-        {isEdit ? <button type="submit">Editar alumno</button> : ""}
+        {isEdit ? (
+          <>
+            <span>{errorMessage}</span>
+            <button type="submit">Editar alumno</button>
+          </>
+        ) : (
+          ""
+        )}
       </form>
     </>
   );

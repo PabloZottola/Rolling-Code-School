@@ -21,7 +21,7 @@ function Admin() {
 
   return (
     <>
-      {<EditStudents getStudents={getStudents} />}
+      <EditStudents getStudents={getStudents} />
       <EditNoteStudents getStudents={getStudents} />
       <NavBar getStudents={getStudents} />
       <form className="search">

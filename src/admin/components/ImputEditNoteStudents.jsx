@@ -69,8 +69,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("Biologia", inputVal);
-              }
-              }
+              }}
             />
             <label>Biología</label>
           </div>
@@ -112,8 +111,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("EducacionFisica", inputVal);
-              }
-              }
+              }}
             />
             <label>Educación Física</label>
           </div>
@@ -134,8 +132,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("Fisica", inputVal);
-              }
-              }
+              }}
             />
             <label>Física</label>
           </div>
@@ -156,8 +153,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("Geografia", inputVal);
-              }
-              }
+              }}
             />
             <label>Geografía</label>
           </div>
@@ -178,8 +174,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("Historia", inputVal);
-              }
-              }
+              }}
             />
             <label>Historia</label>
           </div>
@@ -200,8 +195,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("LenguayLiteratura", inputVal);
-              }
-              }
+              }}
             />
             <label>Lengua y Literatura</label>
           </div>
@@ -222,8 +216,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("Matematicas", inputVal);
-              }
-              }
+              }}
             />
             <label>Matemáticas</label>
           </div>
@@ -244,8 +237,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   inputVal = intValue.toString();
                 }
                 handleChangeEditar("Quimica", inputVal);
-              }
-              }
+              }}
             />
             <label>Química</label>
           </div>
