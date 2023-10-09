@@ -17,7 +17,7 @@ function CreateStudents({ getStudents }) {
   return (
     <section className="auth">
       <div className="wrapper">
-        <div className="top">
+        <div className="top-nav">
           <h2>
             REGISTRO <br />
             DE ALUMNOS

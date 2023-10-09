@@ -16,7 +16,7 @@ function Register() {
   return (
     <section className="auth">
       <div className="wrapper">
-        <div className="top">
+        <div className="top-nav">
           <h2>
             REGISTRO <br /> DE PROFESORES
           </h2>

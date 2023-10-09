@@ -57,12 +57,7 @@
   border-radius: 20px;
   background-color: white;
 }
-.top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+
 .padLock {
   border: none;
   padding: 0;
@@ -97,7 +92,27 @@
 .closeModal:hover {
   transform: scale(1.11);
 }
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 .top h2 {
+  position: absolute;
+  text-align: center;
+  color: azure;
+  font-size: 54px;
+  text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
+  user-select: none;
+}
+.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.top-nav h2 {
   position: absolute;
   text-align: center;
   color: azure;
@@ -180,10 +195,31 @@ label {
   }
   .top h2 {
     position: relative;
-    color: azure;
+    color: black;
     font-size: 24px;
     text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
     user-select: none;
+  }
+  .top-nav button {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+  .top-nav h2 {
+    position: relative;
+    left: 20px;
+    text-align: justify;
+    color: black;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
+    user-select: none;
+  }
+  .top-nav button {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
   }
   .fondo {
     display: none;
