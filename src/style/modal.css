@@ -57,7 +57,11 @@
   border-radius: 20px;
   background-color: white;
 }
-
+.wrapper-note {
+  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+  border-radius: 20px;
+  background-color: white;
+}
 .padLock {
   border: none;
   padding: 0;
@@ -163,6 +167,14 @@ label {
     height: 100%;
     overflow: auto;
   }
+  .wrapper-note {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
+    width: auto;
+    height: 100%;
+    overflow: auto;
+  }
   .auth {
     display: block;
     position: relative;
@@ -198,6 +210,9 @@ label {
     color: black;
     font-size: 24px;
     user-select: none;
+  }
+  .top-nav {
+    justify-content: space-around;
   }
   .top-nav button {
     position: relative;

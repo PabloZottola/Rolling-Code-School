@@ -23,7 +23,7 @@ function EditNoteStudents({ getStudents }) {
 
   return (
     <section className="auth">
-      <div className="wrapper">
+      <div className="wrapper-note">
         <div className="top">
           {isEdit ? (
             <button className="padLock" onClick={handleIsEdit} type="submit">
