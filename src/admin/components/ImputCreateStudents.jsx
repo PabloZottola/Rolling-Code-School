@@ -26,7 +26,7 @@ function ImputCreateStudents({ getStudents }) {
               maxLength="24"
               className={firstName ? "custom-input active" : "custom-input"}
               value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value.replace(/[^A-Za-z\s']+/g, ""))}
             />
             <label>Nombre</label>
           </div>
@@ -37,7 +37,7 @@ function ImputCreateStudents({ getStudents }) {
               maxLength="24"
               className={lastName ? "custom-input active" : "custom-input"}
               value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value.replace(/[^A-Za-z\s']+/g, ""))}
             />
             <label>Apellido</label>
           </div>

@@ -59,7 +59,7 @@ function ImputEditStudents({ getStudents }) {
               maxLength="24"
               className={firstName ? "custom-input active" : "custom-input"}
               value={firstName}
-              onChange={(e) => handleChangeEditar("firstName", e.target.value)}
+              onChange={(e) => handleChangeEditar("firstName", e.target.value.replace(/[^A-Za-z\s']+/g, ""))}
             />
             <label>Nombre</label>
           </div>
@@ -71,7 +71,7 @@ function ImputEditStudents({ getStudents }) {
               maxLength="24"
               className={lastName ? "custom-input active" : "custom-input"}
               value={lastName}
-              onChange={(e) => handleChangeEditar("lastName", e.target.value)}
+              onChange={(e) => handleChangeEditar("lastName", e.target.value.replace(/[^A-Za-z\s']+/g, ""))}
             />
             <label>Apellido</label>
           </div>

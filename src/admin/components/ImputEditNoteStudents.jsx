@@ -57,14 +57,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="Biologia"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Biologia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Biologia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("Biologia", inputVal);
+              }
               }
             />
             <label>Biología</label>
@@ -74,15 +79,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="Economia"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Economia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Economia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("Economia", inputVal);
+              }}
             />
             <label>Economía</label>
           </div>
@@ -91,14 +100,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="EducacionFisica"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.EducacionFisica}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "EducacionFisica",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("EducacionFisica", inputVal);
+              }
               }
             />
             <label>Educación Física</label>
@@ -108,14 +122,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="Fisica"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Fisica}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Fisica",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("Fisica", inputVal);
+              }
               }
             />
             <label>Física</label>
@@ -125,14 +144,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="Geografia"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Geografia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Geografia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("Geografia", inputVal);
+              }
               }
             />
             <label>Geografía</label>
@@ -142,14 +166,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="Historia"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Historia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Historia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("Historia", inputVal);
+              }
               }
             />
             <label>Historia</label>
@@ -159,14 +188,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="LenguayLiteratura"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.LenguayLiteratura}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "LenguayLiteratura",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("LenguayLiteratura", inputVal);
+              }
               }
             />
             <label>Lengua y Literatura</label>
@@ -176,14 +210,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="Matematicas"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Matematicas}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Matematicas",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("Matematicas", inputVal);
+              }
               }
             />
             <label>Matemáticas</label>
@@ -193,14 +232,19 @@ function ImputEditNoteStudents({ getStudents }) {
               disabled={!isEdit}
               type="text"
               name="Quimica"
-              maxLength={1}
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Quimica}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Quimica",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
+              onChange={(e) => {
+                let inputVal = e.target.value;
+                let intValue = parseInt(inputVal, 10);
+                if (!isNaN(intValue)) {
+                  intValue = Math.min(10, intValue);
+                  inputVal = intValue.toString();
+                }
+                handleChangeEditar("Quimica", inputVal);
+              }
               }
             />
             <label>Química</label>
