@@ -197,7 +197,6 @@ label {
     position: relative;
     color: black;
     font-size: 24px;
-    text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
     user-select: none;
   }
   .top-nav button {
@@ -208,11 +207,9 @@ label {
   }
   .top-nav h2 {
     position: relative;
-    left: 20px;
     text-align: justify;
     color: black;
     font-size: 24px;
-    text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
     user-select: none;
   }
   .top-nav button {
