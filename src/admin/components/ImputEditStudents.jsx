@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import EscuelaApi from "../../api/EscuelaApi";
 import AppContext from "../../AppContext";
 
@@ -19,7 +19,6 @@ function ImputEditStudents({ getStudents }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setOpenModal(true);
     editStudents();
   };
 
@@ -48,19 +47,8 @@ function ImputEditStudents({ getStudents }) {
     });
   };
 
-  useEffect(() => {
-    getStudents("");
-  }, []);
-
   return (
     <>
-      {openModal === true ? (
-        <div className="editModal">
-          <button>Cerrar sesion</button>
-        </div>
-      ) : (
-        ""
-      )}
       <form onSubmit={handleSubmit}>
         <div>
           <div>

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import AppContext from "../../AppContext";
 import EscuelaApi from "../../api/EscuelaApi";
 
@@ -34,10 +34,6 @@ function ImputEditNoteStudents({ getStudents }) {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    getStudents("");
-  }, []);
 
   return (
     <>
