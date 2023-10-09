@@ -68,7 +68,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("Biologia", inputVal);
+                handleChangeEditar("Biologia", inputVal.replace(/[^0-9]/g, ""));
               }}
             />
             <label>Biología</label>
@@ -89,7 +89,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("Economia", inputVal);
+                handleChangeEditar("Economia", inputVal.replace(/[^0-9]/g, ""));
               }}
             />
             <label>Economía</label>
@@ -110,7 +110,10 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("EducacionFisica", inputVal);
+                handleChangeEditar(
+                  "EducacionFisica",
+                  inputVal.replace(/[^0-9]/g, "")
+                );
               }}
             />
             <label>Educación Física</label>
@@ -131,7 +134,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("Fisica", inputVal);
+                handleChangeEditar("Fisica", inputVal.replace(/[^0-9]/g, ""));
               }}
             />
             <label>Física</label>
@@ -152,7 +155,10 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("Geografia", inputVal);
+                handleChangeEditar(
+                  "Geografia",
+                  inputVal.replace(/[^0-9]/g, "")
+                );
               }}
             />
             <label>Geografía</label>
@@ -173,7 +179,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("Historia", inputVal);
+                handleChangeEditar("Historia", inputVal.replace(/[^0-9]/g, ""));
               }}
             />
             <label>Historia</label>
@@ -194,7 +200,10 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("LenguayLiteratura", inputVal);
+                handleChangeEditar(
+                  "LenguayLiteratura",
+                  inputVal.replace(/[^0-9]/g, "")
+                );
               }}
             />
             <label>Lengua y Literatura</label>
@@ -215,7 +224,10 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("Matematicas", inputVal);
+                handleChangeEditar(
+                  "Matematicas",
+                  inputVal.replace(/[^0-9]/g, "")
+                );
               }}
             />
             <label>Matemáticas</label>
@@ -236,7 +248,7 @@ function ImputEditNoteStudents({ getStudents }) {
                   intValue = Math.min(10, intValue);
                   inputVal = intValue.toString();
                 }
-                handleChangeEditar("Quimica", inputVal);
+                handleChangeEditar("Quimica", inputVal.replace(/[^0-9]/g, ""));
               }}
             />
             <label>Química</label>
