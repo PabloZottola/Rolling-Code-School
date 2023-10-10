@@ -7,7 +7,6 @@ import ImputEditNoteStudents from "./ImputEditNoteStudents";
 import "../../style/modal.css";
 
 function EditNoteStudents({ getStudents }) {
-  const [isShowModal, setIsShowModal] = useState(false);
   const { isModalOpenEditNote, setIsModalOpenEditNote, isEdit, setIsEdit } =
     useContext(AppContext);
 
@@ -23,20 +22,7 @@ function EditNoteStudents({ getStudents }) {
   };
 
   return (
-    <>
-      {isShowModal ? (
-        <section className="modaloverlay">
-          <div className="modalcontent">
-            <button className="close" onClick={() => setIsShowModal(false)}>
-              X
-            </button>
-            <h2>Confirmar edición de las notas del alumno</h2>
-            <button>Confirmar</button>
-          </div>
-        </section>
-      ) : (
-        ""
-      )}
+    
       <section className="auth">
         <div className="wrapper-note">
           <div className="top">
@@ -67,11 +53,9 @@ function EditNoteStudents({ getStudents }) {
           <ImputEditNoteStudents
             getStudents={getStudents}
             closeModal={closeModal}
-            setIsShowModal={setIsShowModal}
           />
         </div>
       </section>
-    </>
   );
 }
 

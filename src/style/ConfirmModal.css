@@ -11,7 +11,7 @@
 .modalcontent {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: column;
   box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
   border-radius: 20px;
@@ -23,7 +23,7 @@
   font-size: 54px;
   text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
   user-select: none;
-  padding: 30px 16px;
+  padding: 30px 16px 16px;
 }
 .close {
   position: absolute;
@@ -41,5 +41,20 @@
   z-index: 10;
 }
 .close:hover {
+  transform: scale(1.11);
+}
+.buttonConfirm{
+  margin-bottom: 16px;
+  padding: 14px 28px;
+  font-size: x-large;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.6);
+  background-color: rgba(0, 0, 255, 0.6);
+  cursor: pointer;
+  transition: transform 250ms ease;
+}
+.buttonConfirm:hover {
   transform: scale(1.11);
 }

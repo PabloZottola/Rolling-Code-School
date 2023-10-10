@@ -46,8 +46,8 @@ function EditStudents({getStudents}) {
             <button className="close" onClick={() => setIsShowModal(false)}>
               X
             </button>
-            <h2>Por favor, confirme la edición del alumno</h2>
-            <button onClick={handleConfirmEdit}>Confirmar</button>
+            <h2>Por favor, confirme <br />la edición del alumno</h2>
+            <button onClick={handleConfirmEdit} className="buttonConfirm">Confirmar</button>
           </div>
         </section>
       ) : (
