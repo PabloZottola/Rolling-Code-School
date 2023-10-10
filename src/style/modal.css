@@ -177,7 +177,7 @@ label {
   }
   .auth {
     display: block;
-    position: relative;
+    position: fixed;
     overflow: auto;
     height: 100vh;
   }
