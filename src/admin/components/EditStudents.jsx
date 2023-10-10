@@ -5,11 +5,15 @@ import ImputEditStudents from "./ImputEditStudents";
 import padLockOpen from "../../img/candado-abierto.png";
 import padLockBlock from "../../img/candado-cerrado.png";
 import "../../style/modal.css";
+import UseEdiStudents from "../../hook/UseEdiStudents";
 
-function EditStudents({ getStudents }) {
+function EditStudents({getStudents}) {
   const [isShowModal, setIsShowModal] = useState(false);
   const { isModalOpenEdit, setIsModalOpenEdit, isEdit, setIsEdit } =
     useContext(AppContext);
+    const {
+      handleSubmit
+    } = UseEdiStudents();
 
   const closeModal = () => {
     setIsEdit(false);
@@ -21,6 +25,19 @@ function EditStudents({ getStudents }) {
     setIsEdit(!isEdit);
   };
 
+  const handleConfirmEdit=(e)=>{
+    e.preventDefault();
+    handleSubmit();
+    setTimeout(() => {
+      getStudents("");
+    }, 1000);
+    setTimeout(() => {
+      setIsShowModal(false);
+      setIsEdit(false);
+      setIsModalOpenEdit(false);
+    }, 2000);
+  }
+
   return (
     <>
       {isShowModal ? (
@@ -29,8 +46,8 @@ function EditStudents({ getStudents }) {
             <button className="close" onClick={() => setIsShowModal(false)}>
               X
             </button>
-            <h2>Confirmar edición del alumno</h2>
-            <button>Confirmar</button>
+            <h2>Por favor, confirme la edición del alumno</h2>
+            <button onClick={handleConfirmEdit}>Confirmar</button>
           </div>
         </section>
       ) : (
@@ -63,8 +80,7 @@ function EditStudents({ getStudents }) {
             />
           </div>
           <ImputEditStudents
-            getStudents={getStudents}
-            closeModal={closeModal}
+          getStudents={getStudents}
             setIsShowModal={setIsShowModal}
           />
         </div>

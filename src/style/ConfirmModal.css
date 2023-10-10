@@ -25,7 +25,7 @@
   user-select: none;
   padding: 30px 16px;
 }
-.modalcontent button {
+.close {
   position: absolute;
   border: none;
   border-radius: 50%;
@@ -40,6 +40,6 @@
   transition: transform 250ms ease;
   z-index: 10;
 }
-.modalcontent button:hover {
+.close:hover {
   transform: scale(1.11);
 }

@@ -2,7 +2,8 @@ import { useContext } from "react";
 import AppContext from "../../AppContext";
 import UseEdiStudents from "../../hook/UseEdiStudents";
 
-function ImputEditStudents({ getStudents, closeModal, setIsShowModal }) {
+function ImputEditStudents({ setIsShowModal}) {
+
   const { selectedStudent, setSelectedStudent, isEdit } =
     useContext(AppContext);
   const {
@@ -14,8 +15,7 @@ function ImputEditStudents({ getStudents, closeModal, setIsShowModal }) {
     monthlyFees,
     BlockedStudent,
     errorMessage,
-    handleSubmit,
-  } = UseEdiStudents({ getStudents, closeModal });
+  } = UseEdiStudents();
 
   const handleChangeEditar = (propiedad, valor) => {
     setSelectedStudent({
@@ -24,9 +24,13 @@ function ImputEditStudents({ getStudents, closeModal, setIsShowModal }) {
     });
   };
 
+  const handleShowModal =(e)=>{
+    e.preventDefault();
+    setIsShowModal(true)
+  }
+
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleShowModal}>
         <div>
           <div>
             <input
@@ -149,14 +153,12 @@ function ImputEditStudents({ getStudents, closeModal, setIsShowModal }) {
         {isEdit ? (
           <>
             <span>{errorMessage}</span>
-            <button type="submit">Editar alumno</button>
+            <button onClick={handleShowModal}>Editar alumno</button>
           </>
         ) : (
           ""
         )}
       </form>
-    </>
-  );
-}
+  );}
 
 export default ImputEditStudents;

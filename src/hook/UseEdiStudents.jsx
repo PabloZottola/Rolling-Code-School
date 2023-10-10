@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import EscuelaApi from "../api/EscuelaApi";
 import AppContext from "../AppContext";
 
-function UseEdiStudents({ getStudents, closeModal }) {
+function UseEdiStudents() {
   const [errorMessage, setErrorMessage] = useState("");
   const { selectedStudent } = useContext(AppContext);
   const {
@@ -22,8 +22,7 @@ function UseEdiStudents({ getStudents, closeModal }) {
     return validateEmail;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setErrorMessage("");
     console.log(phone);
     if (
@@ -64,7 +63,6 @@ function UseEdiStudents({ getStudents, closeModal }) {
     }
     setErrorMessage("");
     editStudents();
-    closeModal();
   };
 
   const editStudents = async () => {
@@ -79,7 +77,6 @@ function UseEdiStudents({ getStudents, closeModal }) {
         BlockedStudent,
         _id,
       });
-      getStudents("");
     } catch (error) {
       console.log(error);
     }
