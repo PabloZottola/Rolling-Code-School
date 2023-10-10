@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AppContext from "../../AppContext";
 import fondoEdit from "../../img/fondoEditarAlum.jpg";
 import padLockOpen from "../../img/candado-abierto.png";
