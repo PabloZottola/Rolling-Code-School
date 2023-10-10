@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ImputCreateStudents from "../components/ImputCreateStudents";
 import fondoRegistro from "../../img/fondoCrearAlumnos.jpg";
 import AppContext from "../../AppContext";
 import "../../style/modal.css";
 
 function CreateStudents({ getStudents }) {
+  const [isShowModal, setIsShowModal] = useState(false);
   const { isModalOpenStudents, setIsModalOpenStudents } =
     useContext(AppContext);
 
@@ -15,25 +16,42 @@ function CreateStudents({ getStudents }) {
   if (!isModalOpenStudents) return null;
 
   return (
-    <section className="auth">
-      <div className="wrapper">
-        <div className="top-nav">
-          <h2>
-            REGISTRO <br />
-            DE ALUMNOS
-          </h2>
-          <button className="closeModal" onClick={closeModal}>
-            X
-          </button>
-          <img
-            className="fondo"
-            src={fondoRegistro}
-            alt="Formulario de registro de alumnos"
+    <>
+      {isShowModal ? (
+        <section className="modaloverlay">
+          <div className="modalcontent">
+            <button className="close" onClick={() => setIsShowModal(false)}>
+              X
+            </button>
+            <h2>Alumno registrado</h2>
+          </div>
+        </section>
+      ) : (
+        ""
+      )}
+      <section className="auth">
+        <div className="wrapper">
+          <div className="top-nav">
+            <h2>
+              REGISTRO <br />
+              DE ALUMNOS
+            </h2>
+            <button className="closeModal" onClick={closeModal}>
+              X
+            </button>
+            <img
+              className="fondo"
+              src={fondoRegistro}
+              alt="Formulario de registro de alumnos"
+            />
+          </div>
+          <ImputCreateStudents
+            getStudents={getStudents}
+            setIsShowModal={setIsShowModal}
           />
         </div>
-        <ImputCreateStudents getStudents={getStudents} />
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

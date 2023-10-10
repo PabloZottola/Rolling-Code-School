@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import EscuelaApi from "../api/EscuelaApi";
+import AppContext from "../AppContext";
 
-function useRegistrationForm() {
+function useRegistrationForm({ setIsShowModal }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -9,6 +10,7 @@ function useRegistrationForm() {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const { setIsModalOpenProfesor } = useContext(AppContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,6 +55,12 @@ function useRegistrationForm() {
     }
 
     startRegister();
+    setIsShowModal(true);
+
+    setTimeout(() => {
+      setIsShowModal(false);
+      setIsModalOpenProfesor(false);
+    }, 3000);
   };
 
   const startRegister = async () => {

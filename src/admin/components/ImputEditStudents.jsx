@@ -2,7 +2,7 @@ import { useContext } from "react";
 import AppContext from "../../AppContext";
 import UseEdiStudents from "../../hook/UseEdiStudents";
 
-function ImputEditStudents({ getStudents, closeModal }) {
+function ImputEditStudents({ getStudents, closeModal, setIsShowModal }) {
   const { selectedStudent, setSelectedStudent, isEdit } =
     useContext(AppContext);
   const {

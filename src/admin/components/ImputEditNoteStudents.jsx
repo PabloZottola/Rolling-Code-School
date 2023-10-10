@@ -1,6 +1,6 @@
 import useEditNoteInput from "../../hook/UseEditNoteStudents";
 
-function ImputEditNoteStudents({ getStudents, closeModal }) {
+function ImputEditNoteStudents({ getStudents, closeModal, setIsShowModal }) {
   const {
     noteIndex,
     errorMessage,
@@ -10,7 +10,7 @@ function ImputEditNoteStudents({ getStudents, closeModal }) {
     handleSubmit,
     isEdit,
     isValidInput,
-  } = useEditNoteInput({ getStudents, closeModal });
+  } = useEditNoteInput({ getStudents, closeModal, setIsShowModal });
 
   return (
     <>

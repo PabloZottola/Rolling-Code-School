@@ -1,13 +1,15 @@
+import AppContext from "../AppContext";
 import EscuelaApi from "../api/EscuelaApi";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
-function UseCrearAlumnosForm({ getStudents }) {
+function UseCrearAlumnosForm({ getStudents, setIsShowModal }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [yearOfStudy, setYearOfStudy] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const { setIsModalOpenStudents } = useContext(AppContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrorMessage("");
@@ -47,8 +49,13 @@ function UseCrearAlumnosForm({ getStudents }) {
       setErrorMessage("E-mail no válido.");
       return;
     }
-
     startRegister();
+    setIsShowModal(true);
+
+    setTimeout(() => {
+      setIsShowModal(false);
+      setIsModalOpenStudents(false);
+    }, 3000);
   };
 
   const startRegister = async () => {
