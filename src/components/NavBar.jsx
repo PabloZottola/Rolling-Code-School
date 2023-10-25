@@ -53,8 +53,13 @@ function NavBar({ getStudents }) {
             <li className="liAlumnos">LISTA DE ALUMNOS</li>
           ) : (
             <>
-              <li className="NavUlLi">Nosotros</li>
-              <li className="NavUlLi">Contacto</li>
+              <li>
+                <Link to="../admin/pages/AboutUs">Nosotros</Link>
+              </li>
+              <li>
+                <Link to="../admin/pages/Contact">Contacto</Link>
+              </li>
+
             </>
           )}
         </ul>
