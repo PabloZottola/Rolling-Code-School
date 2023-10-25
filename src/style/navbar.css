@@ -17,6 +17,10 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0);
 }
+.NavUl a {
+  color: white; /* Establece el color del texto de los enlaces en blanco */
+  text-decoration: none; /* Elimina la subrayado predeterminado de los enlaces */
+}
 .header div {
   display: flex;
   flex-grow: 1;
