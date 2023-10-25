@@ -43,7 +43,7 @@ function Popover() {
 
   const handleLoggout = () => {
     localStorage.removeItem("token");
-    window.location.href = "http://localhost:5173/home";
+    window.location.href = "https://highschoolrolling.netlify.app/admin";
   };
   useEffect(() => {
     cargarProfesor();

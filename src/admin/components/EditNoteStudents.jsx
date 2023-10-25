@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AppContext from "../../AppContext";
 import fondoEdit from "../../img/fondoEditarAlum.jpg";
 import padLockOpen from "../../img/candado-abierto.png";
 import padLockBlock from "../../img/candado-cerrado.png";
-import ImputEditNoteStudents from "./imputEditNoteStudents";
+import ImputEditNoteStudents from "./ImputEditNoteStudents";
 import "../../style/modal.css";
 
 function EditNoteStudents({ getStudents }) {
@@ -22,36 +22,40 @@ function EditNoteStudents({ getStudents }) {
   };
 
   return (
-    <section className="auth">
-      <div className="wrapper">
-        <div className="top">
-          {isEdit ? (
-            <button className="padLock" onClick={handleIsEdit} type="submit">
-              <img src={padLockOpen} alt="" />
-            </button>
-          ) : (
-            <button className="padLock" onClick={handleIsEdit} type="submit">
-              <img src={padLockBlock} alt="" />
-            </button>
-          )}
+    
+      <section className="auth">
+        <div className="wrapper-note">
+          <div className="top">
+            {isEdit ? (
+              <button className="padLock" onClick={handleIsEdit} type="submit">
+                <img src={padLockOpen} alt="" />
+              </button>
+            ) : (
+              <button className="padLock" onClick={handleIsEdit} type="submit">
+                <img src={padLockBlock} alt="" />
+              </button>
+            )}
 
-          <h2>
-            NOTAS DEL
-            <br />
-            ALUMNOS
-          </h2>
-          <button className="closeModal" onClick={closeModal}>
-            X
-          </button>
-          <img
-            className="fondo"
-            src={fondoEdit}
-            alt="Formulario de registro de alumnos"
+            <h2>
+              NOTAS DEL
+              <br />
+              ALUMNOS
+            </h2>
+            <button className="closeModal" onClick={closeModal}>
+              X
+            </button>
+            <img
+              className="fondo"
+              src={fondoEdit}
+              alt="Formulario de registro de alumnos"
+            />
+          </div>
+          <ImputEditNoteStudents
+            getStudents={getStudents}
+            closeModal={closeModal}
           />
         </div>
-        <ImputEditNoteStudents getStudents={getStudents} />
-      </div>
-    </section>
+      </section>
   );
 }
 

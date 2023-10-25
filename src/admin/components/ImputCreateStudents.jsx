@@ -1,6 +1,6 @@
-import useCrearAlumnosForm from "../../hook/FormCrearAlumnos";
+import UseCrearAlumnosForm from "../../hook/UseCrearAlumnosForm";
 
-function ImputCreateStudents({ getStudents }) {
+function ImputCreateStudents({ getStudents, setIsShowModal }) {
   const {
     firstName,
     setFirstName,
@@ -14,7 +14,7 @@ function ImputCreateStudents({ getStudents }) {
     setEmail,
     errorMessage,
     handleSubmit,
-  } = useCrearAlumnosForm({ getStudents });
+  } = UseCrearAlumnosForm({ getStudents, setIsShowModal });
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -26,7 +26,9 @@ function ImputCreateStudents({ getStudents }) {
               maxLength="24"
               className={firstName ? "custom-input active" : "custom-input"}
               value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) =>
+                setFirstName(e.target.value.replace(/[^A-Za-z\s']+/g, ""))
+              }
             />
             <label>Nombre</label>
           </div>
@@ -37,7 +39,9 @@ function ImputCreateStudents({ getStudents }) {
               maxLength="24"
               className={lastName ? "custom-input active" : "custom-input"}
               value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              onChange={(e) =>
+                setLastName(e.target.value.replace(/[^A-Za-z\s']+/g, ""))
+              }
             />
             <label>Apellido</label>
           </div>

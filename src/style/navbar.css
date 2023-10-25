@@ -6,6 +6,11 @@
   padding: 16px 32px 0px;
   margin-bottom: 0;
 }
+.liAlumnos {
+  color: rgb(0, 0, 0);
+  font-size: large;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0);
+}
 .NavUl {
   display: flex;
   list-style: none;
@@ -13,8 +18,9 @@
   margin: 0;
   gap: 60px;
 }
-.NavUl li {
+.NavUlLi {
   color: white;
+  font-size: large;
   text-shadow: 2px 2px 4px rgba(0, 0, 0);
 }
 .NavUl a {
@@ -38,9 +44,12 @@
   border: none;
   background: none;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   .header {
     padding: 8px 12px 0;
     margin: 0;
+  }
+  .NavUl {
+    display: none;
   }
 }

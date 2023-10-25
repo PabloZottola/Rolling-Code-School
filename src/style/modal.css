@@ -6,7 +6,7 @@
   justify-content: center;
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.7);
 }
 .fondo {
@@ -57,11 +57,10 @@
   border-radius: 20px;
   background-color: white;
 }
-.top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+.wrapper-note {
+  box-shadow: 3px 3px 8px rgba(0, 0, 255, 0.7);
+  border-radius: 20px;
+  background-color: white;
 }
 .padLock {
   border: none;
@@ -97,7 +96,27 @@
 .closeModal:hover {
   transform: scale(1.11);
 }
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 .top h2 {
+  position: absolute;
+  text-align: center;
+  color: azure;
+  font-size: 54px;
+  text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
+  user-select: none;
+}
+.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.top-nav h2 {
   position: absolute;
   text-align: center;
   color: azure;
@@ -140,6 +159,17 @@ label {
 }
 @media screen and (max-width: 580px) {
   .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0;
+    width: auto;
+    height: 100%;
+    overflow: auto;
+  }
+  .wrapper-note {
+    display: flex;
+    flex-direction: column;
     border-radius: 0;
     width: auto;
     height: 100%;
@@ -147,7 +177,7 @@ label {
   }
   .auth {
     display: block;
-    position: relative;
+    position: fixed;
     overflow: auto;
     height: 100vh;
   }
@@ -177,10 +207,31 @@ label {
   }
   .top h2 {
     position: relative;
-    color: azure;
+    color: black;
     font-size: 24px;
-    text-shadow: 2px 2px 4px rgba(60, 95, 155, 0.7);
     user-select: none;
+  }
+  .top-nav {
+    justify-content: space-around;
+  }
+  .top-nav button {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+  }
+  .top-nav h2 {
+    position: relative;
+    text-align: justify;
+    color: black;
+    font-size: 24px;
+    user-select: none;
+  }
+  .top-nav button {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
   }
   .fondo {
     display: none;

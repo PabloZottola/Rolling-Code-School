@@ -1,43 +1,16 @@
-import { useContext, useEffect, useState } from "react";
-import AppContext from "../../AppContext";
-import EscuelaApi from "../../api/EscuelaApi";
+import useEditNoteInput from "../../hook/UseEditNoteStudents";
 
-function ImputEditNoteStudents({ getStudents }) {
-  const [noteIndex, setNoteIndex] = useState(0);
-  const { selectedStudent, isEdit } = useContext(AppContext);
-  const { Notes, _id } = selectedStudent;
-  const [editedNotes, setEditedNotes] = useState(Notes);
-
-  const handleChangeEditar = (propiedad, valor) => {
-    const newNotes = [...editedNotes];
-    newNotes[noteIndex][propiedad] = valor;
-    setEditedNotes(newNotes);
-  };
-
-  const handleChangeNote = (selectedValue) => {
-    setNoteIndex(selectedValue);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    editStudents();
-  };
-
-  const editStudents = async () => {
-    try {
-      const resp = await EscuelaApi.put("/admin/editstudentsnote", {
-        _id,
-        editedNotes,
-      });
-      getStudents("");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getStudents("");
-  }, []);
+function ImputEditNoteStudents({ getStudents, closeModal }) {
+  const {
+    noteIndex,
+    errorMessage,
+    editedNotes,
+    handleChangeEditar,
+    handleChangeNote,
+    handleSubmit,
+    isEdit,
+    isValidInput,
+  } = useEditNoteInput({ getStudents, closeModal });
 
   return (
     <>
@@ -59,17 +32,15 @@ function ImputEditNoteStudents({ getStudents }) {
           <div>
             <input
               disabled={!isEdit}
-              type="text"
-              name="Biologia"
-              maxLength={1}
+              type="number"
+              id="Biologia"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Biologia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Biologia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Biología</label>
           </div>
@@ -77,16 +48,14 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Economia"
-              maxLength={1}
+              id="Economia"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Economia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Economia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Economía</label>
           </div>
@@ -94,16 +63,14 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="EducacionFisica"
-              maxLength={1}
+              id="EducacionFisica"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.EducacionFisica}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "EducacionFisica",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Educación Física</label>
           </div>
@@ -111,16 +78,14 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Fisica"
-              maxLength={1}
+              id="Fisica"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Fisica}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Fisica",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Física</label>
           </div>
@@ -128,16 +93,14 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Geografia"
-              maxLength={1}
+              id="Geografia"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Geografia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Geografia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Geografía</label>
           </div>
@@ -145,16 +108,14 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Historia"
-              maxLength={1}
+              id="Historia"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Historia}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Historia",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Historia</label>
           </div>
@@ -162,16 +123,14 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="LenguayLiteratura"
-              maxLength={1}
+              id="LenguayLiteratura"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.LenguayLiteratura}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "LenguayLiteratura",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Lengua y Literatura</label>
           </div>
@@ -179,16 +138,14 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Matematicas"
-              maxLength={1}
+              id="Matematicas"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Matematicas}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Matematicas",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Matemáticas</label>
           </div>
@@ -196,21 +153,28 @@ function ImputEditNoteStudents({ getStudents }) {
             <input
               disabled={!isEdit}
               type="text"
-              name="Quimica"
-              maxLength={1}
+              id="Quimica"
+              maxLength={2}
+              minLength={1}
               className={"custom-input active"}
               value={editedNotes[noteIndex]?.Quimica}
-              onChange={(e) =>
-                handleChangeEditar(
-                  "Quimica",
-                  e.target.value.replace(/[^0-9]/g, "")
-                )
-              }
+              onChange={(e) => {
+                handleChangeEditar(e.target.id, e.target.value);
+              }}
             />
             <label>Química</label>
           </div>
         </div>
-        {isEdit ? <button type="submit">Editar notas del alumno</button> : ""}
+        {isEdit ? (
+          <>
+            <span>{errorMessage}</span>
+            <button type="submit" disabled={!isValidInput}>
+              Editar notas del alumno
+            </button>
+          </>
+        ) : (
+          ""
+        )}
       </form>
     </>
   );

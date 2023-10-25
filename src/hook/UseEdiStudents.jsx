@@ -1,23 +1,37 @@
+import { useContext, useState } from "react";
 import EscuelaApi from "../api/EscuelaApi";
-import { useState } from "react";
+import AppContext from "../AppContext";
 
-function useCrearAlumnosForm({getStudents}) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [yearOfStudy, setYearOfStudy] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+function UseEdiStudents() {
   const [errorMessage, setErrorMessage] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrorMessage("");
+  const { selectedStudent } = useContext(AppContext);
+  const {
+    firstName,
+    lastName,
+    yearOfStudy,
+    phone,
+    email,
+    _id,
+    monthlyFees,
+    BlockedStudent,
+  } = selectedStudent;
 
+  const validateEmail = () => {
+    const regEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const validateEmail = regEx.test(email);
+    return validateEmail;
+  };
+
+  const handleSubmit = () => {
+    setErrorMessage("");
+    console.log(phone);
     if (
       firstName.trim() === "" ||
       lastName.trim() === "" ||
       yearOfStudy.trim() === "" ||
-      phone.trim() === "" ||
-      email.trim() === ""
+      phone === "" ||
+      email.trim() === "" ||
+      monthlyFees.trim() === ""
     ) {
       setErrorMessage("Todos los campos son obligatorios.");
       return;
@@ -47,45 +61,39 @@ function useCrearAlumnosForm({getStudents}) {
       setErrorMessage("E-mail no válido.");
       return;
     }
-
-    startRegister();
-    getStudents("");
+    setErrorMessage("");
+    editStudents();
   };
 
-  const startRegister = async () => {
+  const editStudents = async () => {
     try {
-      const res = await EscuelaApi.post("/createstudents", {
+      const resp = await EscuelaApi.put("/admin/editstudents", {
         firstName,
         lastName,
         yearOfStudy,
         phone,
         email,
+        monthlyFees,
+        BlockedStudent,
+        _id,
       });
-      setErrorMessage(res.data.msg);
     } catch (error) {
-      setErrorMessage(error.response.data.msg);
+      console.log(error);
     }
-  };
-  const validateEmail = () => {
-    const regEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const validateEmail = regEx.test(email);
-    return validateEmail;
   };
 
   return {
     firstName,
-    setFirstName,
     lastName,
-    setLastName,
-    yearOfStudy,
-    setYearOfStudy,
     phone,
-    setPhone,
     email,
-    setEmail,
+    yearOfStudy,
+    _id,
+    monthlyFees,
+    BlockedStudent,
     errorMessage,
     handleSubmit,
   };
 }
 
-export default useCrearAlumnosForm;
+export default UseEdiStudents;
