@@ -54,10 +54,10 @@ function NavBar({ getStudents }) {
           ) : (
             <>
               <li>
-                <Link to="../auth/pages/AboutUs">Nosotros</Link>
+                <Link to="/about-us">Nosotros</Link>
               </li>
               <li>
-                <Link to="../auth/pages/Contact">Contacto</Link>
+                <Link to="/contact">Contacto</Link>
               </li>
 
             </>
