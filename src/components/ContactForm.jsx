@@ -47,7 +47,6 @@ function ImputFormContact() {
         <Form.Group>
           <Form.Label></Form.Label>
           <Form.Control
-            style="height: 200px;"
             as="textarea"
             id="message"
             minLength="15"
