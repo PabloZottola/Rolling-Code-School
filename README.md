@@ -10,3 +10,6 @@ Se simulará un proyecto C.R.U.D. donde el desarrollo de la web se construirá e
 Los trabajos de merge se haran en las Branch "Developer" y el main se reservará para cuando este funcional la página web con cada uno de los componentes.
 
 Los componentes de React serán  trabajados en Pascal Case
+
+ Usuario administrador: admin@gmail.com
+ Contraseña administrador: qwe123
