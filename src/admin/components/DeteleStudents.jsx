@@ -17,7 +17,6 @@ function DeleteStudents({getStudents}) {
     } catch (error) {
       console.log(error);
     }
-    console.log("hola")
     setLoading(false);
   };
 
