@@ -2,7 +2,12 @@ import AppContext from "../AppContext";
 import EscuelaApi from "../api/EscuelaApi";
 import { useContext, useState } from "react";
 
-function UseCrearAlumnosForm({ getStudents, setIsShowModal }) {
+function UseCrearAlumnosForm({
+  getStudents,
+  setIsShowModal,
+  setIsShowModalLoading,
+}) {
+  const [loading, setLoading] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [yearOfStudy, setYearOfStudy] = useState("");
@@ -49,11 +54,13 @@ function UseCrearAlumnosForm({ getStudents, setIsShowModal }) {
       setErrorMessage("E-mail no válido.");
       return;
     }
+    setLoading(!loading);
     startRegister();
   };
 
   const startRegister = async () => {
     try {
+      setIsShowModalLoading(true);
       const res = await EscuelaApi.post("/createstudents", {
         firstName,
         lastName,
@@ -61,16 +68,18 @@ function UseCrearAlumnosForm({ getStudents, setIsShowModal }) {
         phone,
         email,
       });
+      setIsShowModalLoading(false);
       getStudents("");
       setIsShowModal(true);
       setTimeout(() => {
         setIsShowModal(false);
         setIsModalOpenStudents(false);
-      }, 3000);
+      }, 1000);
     } catch (error) {
+      setLoading(false);
+      setIsShowModalLoading(false);
       setErrorMessage(error.response.data.msg);
     }
-
   };
   const validateEmail = () => {
     const regEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -91,6 +100,7 @@ function UseCrearAlumnosForm({ getStudents, setIsShowModal }) {
     setEmail,
     errorMessage,
     handleSubmit,
+    loading,
   };
 }
 

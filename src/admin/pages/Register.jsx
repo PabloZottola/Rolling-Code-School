@@ -6,6 +6,7 @@ import "../../style/modal.css";
 
 function Register() {
   const [isShowModal, setIsShowModal] = useState(false);
+  const [isShowModalLoading, setIsShowModalLoading] = useState(false);
   const { isModalOpenProfesor, setIsModalOpenProfesor } =
     useContext(AppContext);
   const closeModal = () => {
@@ -20,6 +21,15 @@ function Register() {
         <section className="modaloverlay">
           <div className="modalcontent">
             <h2>Profesor registrado</h2>
+          </div>
+        </section>
+      ) : (
+        ""
+      )}
+      {isShowModalLoading ? (
+        <section className="modaloverlay">
+          <div className="modalcontent">
+            <h2>Espere, por favor</h2>
           </div>
         </section>
       ) : (
@@ -40,7 +50,7 @@ function Register() {
               alt="Formulario de registro para los profesores"
             />
           </div>
-          <ImputRegister setIsShowModal={setIsShowModal} />
+          <ImputRegister setIsShowModal={setIsShowModal} setIsShowModalLoading={setIsShowModalLoading}/>
         </div>
       </section>
     </>

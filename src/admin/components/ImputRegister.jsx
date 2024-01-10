@@ -1,6 +1,6 @@
 import useRegistrationForm from "../../hook/FormRegistration";
 
-function ImputRegister({ setIsShowModal }) {
+function ImputRegister({ setIsShowModal, setIsShowModalLoading }) {
   const {
     firstName,
     setFirstName,
@@ -16,7 +16,8 @@ function ImputRegister({ setIsShowModal }) {
     setRepeatPassword,
     errorMessage,
     handleSubmit,
-  } = useRegistrationForm({ setIsShowModal });
+    loading,
+  } = useRegistrationForm({ setIsShowModal, setIsShowModalLoading });
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -95,7 +96,7 @@ function ImputRegister({ setIsShowModal }) {
           </div>
         </div>
         <span>{errorMessage}</span>
-        <button type="submit">Registrarse</button>
+        <button type="submit" disabled={loading}>Registrarse</button>
       </form>
     </>
   );

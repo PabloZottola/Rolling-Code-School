@@ -2,7 +2,8 @@ import { useContext, useState } from "react";
 import EscuelaApi from "../api/EscuelaApi";
 import AppContext from "../AppContext";
 
-function useRegistrationForm({ setIsShowModal }) {
+function useRegistrationForm({ setIsShowModal, setIsShowModalLoading,}) {
+  const [loading, setLoading] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -53,12 +54,13 @@ function useRegistrationForm({ setIsShowModal }) {
       setErrorMessage("Contraseña invalida o las contraseñas no coinciden.");
       return;
     }
-
+    setLoading(!loading);
     startRegister();
   };
-
+  
   const startRegister = async () => {
     try {
+      setIsShowModalLoading(true);
       const res = await EscuelaApi.post("/auth/register", {
         firstName,
         lastName,
@@ -67,12 +69,15 @@ function useRegistrationForm({ setIsShowModal }) {
         password,
         repeatPassword,
       });
+      setIsShowModalLoading(false);
       setIsShowModal(true);
       setTimeout(() => {
         setIsShowModal(false);
         setIsModalOpenProfesor(false);
-      }, 3000);
+      }, 1000);
     } catch (error) {
+      setLoading(false);
+      setIsShowModalLoading(false);
       setErrorMessage(error.response.data.msg);
     }
   };
@@ -97,6 +102,7 @@ function useRegistrationForm({ setIsShowModal }) {
     setRepeatPassword,
     errorMessage,
     handleSubmit,
+    loading,
   };
 }
 

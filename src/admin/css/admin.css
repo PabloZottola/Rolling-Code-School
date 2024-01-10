@@ -99,6 +99,9 @@ main {
   display: flex;
   gap: 8px;
 }
+.disabled {
+  pointer-events:none;
+}
 
 @media screen and (max-width: 480px) {
   .search {

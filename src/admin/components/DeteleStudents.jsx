@@ -38,7 +38,7 @@ function DeleteStudents({getStudents}) {
             </button>
             <h2>
               Por favor, confirme <br />
-              la edición del alumno
+              la eliminacion del alumno
             </h2>
             <button
               onClick={handleConfirmDelete}

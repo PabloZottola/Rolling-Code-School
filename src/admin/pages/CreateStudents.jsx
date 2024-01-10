@@ -6,6 +6,7 @@ import "../../style/modal.css";
 
 function CreateStudents({ getStudents }) {
   const [isShowModal, setIsShowModal] = useState(false);
+  const [isShowModalLoading, setIsShowModalLoading] = useState(false);
   const { isModalOpenStudents, setIsModalOpenStudents } =
     useContext(AppContext);
 
@@ -21,6 +22,15 @@ function CreateStudents({ getStudents }) {
         <section className="modaloverlay">
           <div className="modalcontent">
             <h2>Alumno registrado</h2>
+          </div>
+        </section>
+      ) : (
+        ""
+      )}
+      {isShowModalLoading ? (
+        <section className="modaloverlay">
+          <div className="modalcontent">
+            <h2>Espere, por favor</h2>
           </div>
         </section>
       ) : (
@@ -45,6 +55,7 @@ function CreateStudents({ getStudents }) {
           <ImputCreateStudents
             getStudents={getStudents}
             setIsShowModal={setIsShowModal}
+            setIsShowModalLoading={setIsShowModalLoading}
           />
         </div>
       </section>

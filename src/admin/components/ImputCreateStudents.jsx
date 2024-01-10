@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import UseCrearAlumnosForm from "../../hook/UseCrearAlumnosForm";
 
-function ImputCreateStudents({ getStudents, setIsShowModal }) {
+function ImputCreateStudents({
+  getStudents,
+  setIsShowModal,
+  setIsShowModalLoading,
+}) {
   const {
     firstName,
     setFirstName,
@@ -14,7 +19,13 @@ function ImputCreateStudents({ getStudents, setIsShowModal }) {
     setEmail,
     errorMessage,
     handleSubmit,
-  } = UseCrearAlumnosForm({ getStudents, setIsShowModal });
+    loading,
+  } = UseCrearAlumnosForm({
+    getStudents,
+    setIsShowModal,
+    setIsShowModalLoading,
+  });
+  console.log(loading);
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -88,7 +99,9 @@ function ImputCreateStudents({ getStudents, setIsShowModal }) {
           </div>
         </div>
         <span>{errorMessage}</span>
-        <button type="submit">Registrar alumno</button>
+        <button type="submit" disabled={loading}>
+          Registrar alumno
+        </button>
       </form>
     </>
   );
