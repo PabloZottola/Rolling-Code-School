@@ -20,9 +20,6 @@ function CreateStudents({ getStudents }) {
       {isShowModal ? (
         <section className="modaloverlay">
           <div className="modalcontent">
-            <button className="close" onClick={() => setIsShowModal(false)}>
-              X
-            </button>
             <h2>Alumno registrado</h2>
           </div>
         </section>

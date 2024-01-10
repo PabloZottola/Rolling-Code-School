@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Stack } from "react-bootstrap";
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
 function AboutUs() {

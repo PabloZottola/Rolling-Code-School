@@ -1,7 +1,7 @@
 import useLoginForm from "../../hook/FormLogin";
 
 function ImputLogin() {
-  const { email, setEmail, password, setPassword, errorMessage, handleSubmit } =
+  const {loading ,email, setEmail, password, setPassword, errorMessage, handleSubmit } =
     useLoginForm();
 
   return (
@@ -32,7 +32,7 @@ function ImputLogin() {
           </div>
         </div>
         <span>{errorMessage}</span>
-        <button type="submit">Ingresar</button>
+        <button type="submit" disabled={loading}>Ingresar</button>
       </form>
     </>
   );

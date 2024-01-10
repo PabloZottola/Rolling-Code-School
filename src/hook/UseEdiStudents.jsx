@@ -24,7 +24,6 @@ function UseEdiStudents() {
 
   const handleSubmit = () => {
     setErrorMessage("");
-    console.log(phone);
     if (
       firstName.trim() === "" ||
       lastName.trim() === "" ||

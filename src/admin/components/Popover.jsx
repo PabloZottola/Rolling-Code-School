@@ -26,19 +26,7 @@ function Popover() {
     }
   };
   const handleClick = () => {
-    if (popupVisible) {
-      document.addEventListener("click", handleOutsideClick, false);
-    } else {
-      document.removeEventListener("click", handleOutsideClick, false);
-    }
     setPopupVisible(!popupVisible);
-  };
-
-  const handleOutsideClick = (e) => {
-    if (node.current.contains(e.target)) {
-      return;
-    }
-    handleClick();
   };
 
   const handleLoggout = () => {

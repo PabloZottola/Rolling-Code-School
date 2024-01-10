@@ -1,8 +1,8 @@
 import React from "react";
-import ContactForm from "../../components/ContactForm";
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
-import "../../style/contact.css";
+import ContactForm from "./ContactForm";
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import "../style/contact.css";
 
 function Contact() {
   return (

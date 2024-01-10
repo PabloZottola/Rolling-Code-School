@@ -55,12 +55,6 @@ function useRegistrationForm({ setIsShowModal }) {
     }
 
     startRegister();
-    setIsShowModal(true);
-
-    setTimeout(() => {
-      setIsShowModal(false);
-      setIsModalOpenProfesor(false);
-    }, 3000);
   };
 
   const startRegister = async () => {
@@ -73,6 +67,11 @@ function useRegistrationForm({ setIsShowModal }) {
         password,
         repeatPassword,
       });
+      setIsShowModal(true);
+      setTimeout(() => {
+        setIsShowModal(false);
+        setIsModalOpenProfesor(false);
+      }, 3000);
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }

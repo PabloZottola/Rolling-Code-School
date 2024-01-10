@@ -22,40 +22,39 @@ function EditNoteStudents({ getStudents }) {
   };
 
   return (
-    
-      <section className="auth">
-        <div className="wrapper-note">
-          <div className="top">
-            {isEdit ? (
-              <button className="padLock" onClick={handleIsEdit} type="submit">
-                <img src={padLockOpen} alt="" />
-              </button>
-            ) : (
-              <button className="padLock" onClick={handleIsEdit} type="submit">
-                <img src={padLockBlock} alt="" />
-              </button>
-            )}
-
-            <h2>
-              NOTAS DEL
-              <br />
-              ALUMNOS
-            </h2>
-            <button className="closeModal" onClick={closeModal}>
-              X
+    <section className="auth">
+      <div className="wrapper-note">
+        <div className="top">
+          {isEdit ? (
+            <button className="padLock" onClick={handleIsEdit} type="submit">
+              <img src={padLockOpen} alt="" />
             </button>
-            <img
-              className="fondo"
-              src={fondoEdit}
-              alt="Formulario de registro de alumnos"
-            />
-          </div>
-          <ImputEditNoteStudents
-            getStudents={getStudents}
-            closeModal={closeModal}
+          ) : (
+            <button className="padLock" onClick={handleIsEdit} type="submit">
+              <img src={padLockBlock} alt="" />
+            </button>
+          )}
+
+          <h2>
+            NOTAS DEL
+            <br />
+            ALUMNOS
+          </h2>
+          <button className="closeModal" onClick={closeModal}>
+            X
+          </button>
+          <img
+            className="fondo"
+            src={fondoEdit}
+            alt="Formulario de registro de alumnos"
           />
         </div>
-      </section>
+        <ImputEditNoteStudents
+          getStudents={getStudents}
+          closeModal={closeModal}
+        />
+      </div>
+    </section>
   );
 }
 

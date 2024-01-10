@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import "../css/admin.css";
 import AppContext from "../../AppContext";
+import trash from "../../img/eliminar.png";
 
 function ListStudents({ alumnos }) {
-  const { setIsModalOpenEdit, setSelectedStudent, setIsModalOpenEditNote } =
-    useContext(AppContext);
+  const {
+    setIsModalOpenEdit,
+    setSelectedStudent,
+    setIsModalOpenEditNote,
+    setIsModalOpenDelete,
+  } = useContext(AppContext);
 
   const handleEditStudents = (alumnos) => {
     setSelectedStudent(alumnos);
@@ -13,6 +18,10 @@ function ListStudents({ alumnos }) {
   const handleEditNoteStudents = (alumnos) => {
     setSelectedStudent(alumnos);
     setIsModalOpenEditNote(true);
+  };
+  const handleDeleteStudents = () => {
+    setSelectedStudent();
+    setIsModalOpenDelete(true);
   };
   const fecha = new Date().toISOString().slice(5, -14).replace("-", "");
   return (
@@ -28,15 +37,27 @@ function ListStudents({ alumnos }) {
               : "backBlue"
           }
         >
+          <button
+            onClick={() => handleDeleteStudents(alumno._id)}
+            className="Delete"
+          >
+            <img src={trash} alt="borrar alumno" />
+          </button>
           <span>Nombre: {alumno.firstName}</span>
           <span>Apellido: {alumno.lastName}</span>
           <span>Telefono: {alumno.phone}</span>
           <span>Años: {alumno.yearOfStudy}</span>
           <span>Expediente: {alumno._id}</span>
-          <button onClick={() => handleEditStudents(alumno)}>
+          <button
+            onClick={() => handleEditStudents(alumno)}
+            className="buttonEdit"
+          >
             Detalle del Alumno
           </button>
-          <button onClick={() => handleEditNoteStudents(alumno)}>
+          <button
+            onClick={() => handleEditNoteStudents(alumno)}
+            className="buttonEdit"
+          >
             Notas del Alumno
           </button>
         </li>

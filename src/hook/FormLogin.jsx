@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import AppContext from "../AppContext";
 
 function useLoginForm() {
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -12,6 +13,7 @@ function useLoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(!loading);
     setErrorMessage("");
     if (email.trim() === "" || password.trim() === "") {
       setErrorMessage("Todos los campos son obligatorios.");
@@ -42,6 +44,7 @@ function useLoginForm() {
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }
+    setLoading(false);
   };
 
   const validateEmail = () => {
@@ -51,6 +54,7 @@ function useLoginForm() {
   };
 
   return {
+    loading,
     email,
     setEmail,
     password,

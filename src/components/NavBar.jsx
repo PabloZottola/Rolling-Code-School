@@ -69,7 +69,7 @@ function NavBar({ getStudents }) {
           ) : decoded.role === "Profesor" ? (
             <>
               {window.location.href ===
-              "https://highschoolrolling.netlify.app/admin" ? (
+              "http://localhost:5173/admin" ? (
                 <>
                   <Popover />{" "}
                 </>
@@ -85,7 +85,7 @@ function NavBar({ getStudents }) {
           ) : (
             <>
               {window.location.href ===
-              "https://highschoolrolling.netlify.app/admin" ? (
+              "http://localhost:5173/admin" ? (
                 <>
                   <Popover />{" "}
                 </>

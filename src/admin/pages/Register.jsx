@@ -19,9 +19,6 @@ function Register() {
       {isShowModal ? (
         <section className="modaloverlay">
           <div className="modalcontent">
-            <button className="close" onClick={() => setIsShowModal(false)}>
-              X
-            </button>
             <h2>Profesor registrado</h2>
           </div>
         </section>

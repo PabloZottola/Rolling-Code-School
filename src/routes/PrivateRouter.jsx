@@ -2,8 +2,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import React from "react";
 import Admin from "../admin/pages/Admin";
 import Home from "../home/Home";
-import AboutUs from "../auth/pages/AboutUs";
-import Contact from "../auth/pages/Contact";
+import AboutUs from "../components/AboutUs";
+import Contact from "../components/Contact";
 
 function PrivateRouter() {
   return (

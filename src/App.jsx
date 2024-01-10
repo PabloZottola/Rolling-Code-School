@@ -12,6 +12,7 @@ function App() {
   const [isModalOpenStudents, setIsModalOpenStudents] = useState(false);
   const [isModalOpenEdit, setIsModalOpenEdit] = useState(false);
   const [isModalOpenEditNote, setIsModalOpenEditNote] = useState(false);
+  const [isModalOpenDelete, setIsModalOpenDelete] = useState(false);
   const [isModalOpenProfesor, setIsModalOpenProfesor] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState({});
@@ -49,6 +50,8 @@ function App() {
         setIsEdit,
         isModalOpenEditNote,
         setIsModalOpenEditNote,
+        isModalOpenDelete,
+        setIsModalOpenDelete,
       }}
     >
       {isUserLogged ? (

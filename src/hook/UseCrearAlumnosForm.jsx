@@ -50,12 +50,6 @@ function UseCrearAlumnosForm({ getStudents, setIsShowModal }) {
       return;
     }
     startRegister();
-    setIsShowModal(true);
-
-    setTimeout(() => {
-      setIsShowModal(false);
-      setIsModalOpenStudents(false);
-    }, 3000);
   };
 
   const startRegister = async () => {
@@ -68,9 +62,15 @@ function UseCrearAlumnosForm({ getStudents, setIsShowModal }) {
         email,
       });
       getStudents("");
+      setIsShowModal(true);
+      setTimeout(() => {
+        setIsShowModal(false);
+        setIsModalOpenStudents(false);
+      }, 3000);
     } catch (error) {
       setErrorMessage(error.response.data.msg);
     }
+
   };
   const validateEmail = () => {
     const regEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
