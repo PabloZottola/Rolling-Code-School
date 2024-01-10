@@ -19,8 +19,8 @@ function ListStudents({ alumnos }) {
     setSelectedStudent(alumnos);
     setIsModalOpenEditNote(true);
   };
-  const handleDeleteStudents = () => {
-    setSelectedStudent();
+  const handleDeleteStudents = (id) => {
+    setSelectedStudent(id);
     setIsModalOpenDelete(true);
   };
   const fecha = new Date().toISOString().slice(5, -14).replace("-", "");

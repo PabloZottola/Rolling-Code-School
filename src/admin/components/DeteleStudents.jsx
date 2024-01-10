@@ -3,27 +3,26 @@ import AppContext from "../../AppContext";
 import EscuelaApi from "../../api/EscuelaApi";
 import { useStudents } from "../../hook/useStudents";
 
-function DeleteStudents() {
+function DeleteStudents({getStudents}) {
   const [loading, setLoading] = useState(false);
   const { selectedStudent, setIsModalOpenDelete, isModalOpenDelete } =
     useContext(AppContext);
-  const { getStudents } = useStudents();
-  const deleteStudents = async () => {
+  const callDeleteStudents = async () => {
+    setLoading(true);
     try {
       const resp = await EscuelaApi.delete(
         `/admin/deletestudents/${selectedStudent}`
       );
-      getStudents("");
+      getStudents("")
     } catch (error) {
       console.log(error);
     }
+    console.log("hola")
+    setLoading(false);
   };
 
   const handleConfirmDelete = () => {
-    setLoading(true);
-    deleteStudents("");
-    getStudents("");
-    setLoading(false);
+    callDeleteStudents();
     setIsModalOpenDelete(false);
   };
 
@@ -43,7 +42,7 @@ function DeleteStudents() {
               la edición del alumno
             </h2>
             <button
-              onClick={handleConfirmDelete()}
+              onClick={handleConfirmDelete}
               className="buttonConfirm"
               disabled={loading}
             >
