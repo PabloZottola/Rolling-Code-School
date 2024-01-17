@@ -13,12 +13,6 @@ export function useStudents() {
       setError(null);
       const students = await EscuelaApi.get("/admin/students");
       const leakedStudents = students.data.students.filter((student) => {
-        if (search.length === 1) {
-          if (student.yearOfStudy.trim().includes(search.trim())) {
-            return student;
-          }
-          return;
-        }
         if (
           student.firstName
             .toLowerCase()

@@ -25,7 +25,6 @@ function ImputCreateStudents({
     setIsShowModal,
     setIsShowModalLoading,
   });
-  console.log(loading);
   return (
     <>
       <form onSubmit={handleSubmit}>
